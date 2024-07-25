@@ -1,0 +1,49 @@
+header {
+    .prenav {
+        font-size: var(--fs-200);
+        a {
+            text-decoration: none;
+        }
+        .active {
+            background-color: var(--col-black);
+            color: var(--col-white);
+        }
+        .inactive {
+            background-color: var(--col-grey-400);
+            color: var(--col-black);
+        }
+    }
+    .prenav, .navbar {
+        position: fixed;
+        width: 100%;
+
+        transition: top var(--transition);
+    }
+
+    .prenav {
+        top: 0;
+        z-index: 9999;
+    }
+    .navbar {
+        background-color: var(--col-white);
+        top: 0;
+        padding-top: 1rem;
+        z-index: 9998;
+        .nav-link {
+            color: var(--col-black);
+            &:hover {
+                color: var(--col-orange-400);
+            }
+        }
+        .nav-link[aria-current], .current-menu-ancestor a {
+            font-weight: var(--fw-400);
+        }
+        .dropdown-menu .dropdown-item[aria-current] {
+            color: var(--col-orange-400);
+        }
+    }
+
+    .hidden {
+        top: -115px;
+    }
+}

@@ -1,0 +1,75 @@
+@import "props";
+@import "typography";
+@import "colours";
+@import "buttons";
+@import "header";
+@import "footer";
+@import "forms";
+@import "sidebar_page";
+@import "blocks/blocks";
+
+
+
+*,
+input,
+select,
+textarea,
+option,
+button {
+    outline: none !important;
+}
+
+::selection {
+    background-color: $primary;
+    color: white;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container-xl .container-xl {
+    padding-inline: 0;
+}
+
+a {
+    transition: color var(--transition);
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+
+main a:not([class]) {
+    text-decoration: none;
+    font-weight: var(--fw-400);
+    color: var(--col-black);
+    &:hover {
+        color: var(--col-orange-400);
+    }
+}
+a.noline {
+    text-decoration: none;
+}
+
+
+@media all and (min-width:992px) {
+    .cols-lg-2 {
+        columns: 2;
+    }
+    .cols-lg-3 {
+        columns: 3;
+    }
+}
+
+
+ul:not([class]) {
+    padding-inline-start: 1.25rem;
+    li {
+        margin-bottom: 0.5rem;
+    }
+}

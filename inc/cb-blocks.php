@@ -4,11 +4,74 @@ function acf_blocks()
 {
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type(array(
-            'name'				=> 'cb_hero',
-            'title'				=> __('CB Hero'),
+            'name'				=> 'cb_form_hero',
+            'title'				=> __('CB Form Hero'),
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_hero.php',
+            'render_template'	=> 'page-templates/blocks/cb_form_hero.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_three_col_usp',
+            'title'				=> __('CB Three Col USP'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_three_col_usp.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_featured_in',
+            'title'				=> __('CB Featured Slider'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_featured_in.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_title',
+            'title'				=> __('CB Title'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_title.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_steps',
+            'title'				=> __('CB Steps'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_steps.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_short_cta',
+            'title'				=> __('CB Short CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_short_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_text_video',
+            'title'				=> __('CB Text Video'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_text_video.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_calc',
+            'title'				=> __('CB Calculator'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_calc.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
@@ -21,6 +84,25 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_review_slider',
+            'title'				=> __('CB Review Slider'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_review_slider.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_area_cta',
+            'title'				=> __('CB Area CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_area_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+
         acf_register_block_type(array(
             'name'				=> 'cb_faq',
             'title'				=> __('CB FAQs'),
@@ -37,6 +119,15 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_latest_news.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_form_block',
+            'title'				=> __('CB Enquiry Form'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_form_block.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));

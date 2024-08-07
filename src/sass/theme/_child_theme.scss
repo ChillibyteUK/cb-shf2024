@@ -1,3 +1,4 @@
+@import "sizing";
 @import "props";
 @import "typography";
 @import "colours";
@@ -5,7 +6,6 @@
 @import "header";
 @import "footer";
 @import "forms";
-@import "sidebar_page";
 @import "blocks/blocks";
 
 
@@ -20,13 +20,28 @@ button {
 }
 
 ::selection {
-    background-color: $primary;
-    color: white;
+    background-color: var(--col-yellow-400);
+    color: var(--col-black);
 }
 
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.pt-6 {
+    padding-top: 4rem !important;
+}
+.pb-6 {
+    padding-top: 4rem !important;
+}
+.py-6 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+main {
+    padding-top: var(--h-top);
 }
 
 .container-xl .container-xl {
@@ -46,10 +61,10 @@ a.anchor {
 
 main a:not([class]) {
     text-decoration: none;
-    font-weight: var(--fw-400);
+    // font-weight: var(--fw-400);
     color: var(--col-black);
     &:hover {
-        color: var(--col-orange-400);
+        color: var(--col-blue-400);
     }
 }
 a.noline {

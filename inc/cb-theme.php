@@ -3,6 +3,7 @@ defined('ABSPATH') || exit;
 
 // require_once get_theme_file_path('inc/class-bs-collapse-navwalker.php');
 
+require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 // require_once CB_THEME_DIR . '/inc/cb-blog.php';
@@ -28,6 +29,7 @@ function widgets_init()
         'primary_nav' => __('Primary Nav', 'cb-shf2024'),
         'footer_menu_1' => __('Footer Services', 'cb-shf2024'),
         'footer_menu_2' => __('Footer Guides', 'cb-shf2024'),
+        'footer_menu_3' => __('Footer About', 'cb-shf2024'),
     ));
  
     unregister_sidebar('hero');
@@ -145,4 +147,38 @@ function override_yoast_breadcrumb_trail($links)
     // }
     return $links;
 }
+
+function disable_taxonomy_archive() {
+    // Check if the taxonomy exists
+    if (taxonomy_exists('location')) {
+      global $wp_taxonomies;
+      // Disable archive functionality
+      $wp_taxonomies['location']->public = false;
+      $wp_taxonomies['location']->rewrite = false;
+      // You may also want to set the following to true, depending on your use case
+      // $wp_taxonomies['location']->show_ui = true;
+      // $wp_taxonomies['location']->show_in_menu = true;
+    }
+  }
+add_action('init', 'disable_taxonomy_archive');
+
+function get_custom_term_link($term) {
+    // Get the term slug
+    $term_slug = $term->slug;
+
+    $page_path = 'locations/' . $term_slug;
+
+    // Check if a page with the term slug exists
+    $page = get_page_by_path($page_path);
+
+    if ($page) {
+        // If the page exists, create a custom link
+        $page_link = get_permalink($page->ID);
+        return '<a href="' . esc_url($page_link) . '">' . esc_html($term->name) . '</a>';
+    } else {
+        // If no page exists, return the term name as plain text
+        return esc_html($term->name);
+    }
+}
+
 ?>

@@ -68,7 +68,7 @@
 
 body .gform_wrapper .gform_footer button {
     @extend .button;
-    @extend .button-white;
+    // @extend .button-white;
 }
 
 // .gfield_checkbox,
@@ -86,10 +86,10 @@ body .gform_wrapper .gform_footer button {
     margin-top: 0.25rem !important;
 }
 
-label:not(.gfield_consent_label) {
+.gform_wrapper label:not(.gfield_consent_label) {
     display: none;
 }
-label.gfield_consent_label {
+.gform_wrapper label.gfield_consent_label {
     display: inline;
 }
 .gchoice label {

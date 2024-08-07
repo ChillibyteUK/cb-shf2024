@@ -1,47 +1,34 @@
 :root {
 
-    --col-black: #212529;
+    --col-black: #1B2021;
     --col-white: #FFFFFF;
 
-    --col-grey-400: #f2f2f2;
-    --col-grey-500: #eeeeee;
-    --col-grey-600: #999999;
-    --col-grey-900: #333333;
+    --col-yellow-400: #FFE41F;
+    --col-blue-400: #0073CC;
 
-    --col-neutral: #F1F7F8;
+    --col-grey-400: #F5F5F5;
+    --col-grey-600: #CACBCB;
 
-    --col-green-400: #a4bf9d;
-    --col-green-600: #8db993;
-
-    --col-orange-400: #ff783c;
-
-    --col-beige-400: #e7cf9f;
-    --col-beige-600: #d5a762;
-
-
-    --col-blue-400: #a8cede;
-    --col-blue-500: #64a6c3;
-
-    --fs-900: 72px; // huge title
-    --fs-800: 56px; // large title
-    --fs-700: 40px; // medium title
-    --fs-600: 24px; // small title
-    --fs-500: 18px; // captions
-    --fs-400: 18px; // body
-    --fs-300: 15px; // small text
-    --fs-200: 15px; // button
-    --fs-100: 12px; // tiny text
+    --fs-999: 3.815rem; // h1
+    --fs-900: 3.052rem; // h2
+    --fs-800: 2.441rem; // h3
+    --fs-700: 1.953rem; // h4
+    --fs-600: 1.563rem; // h5
+    --fs-500: 1.25rem; // h6
+    --fs-400: 1rem; // body text
+    --fs-300: 0.8rem; // small text
+    --fs-200: 0.64rem; // button
 
 
-    --fw-300: 300;
     --fw-400: 400;
-    --fw-900: 700;
+    --fw-600: 600;
+    --fw-700: 700;
 
     --fw-fa-solid: 600;
 
 
-    --ff-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --ff-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-body: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-heading: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
     --ff-fa: 'Font Awesome 6 Free';
 
     --transition: 250ms ease-in-out;
@@ -54,6 +41,6 @@
     --border-radius-lg: 1rem;
 
 
-    --h-top: 110px;
+    --h-top: 90px;
 
 }

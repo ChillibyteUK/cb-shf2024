@@ -72,6 +72,9 @@ function social_icons($size = null)
     if ($s['linkedin_url'] ?? null) {
         $output .= '<a href="' . $s['linkedin_url'] . '" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in ' . $size . '"></i></a>';
     }
+    if ($s['youtube_url'] ?? null) {
+        $output .= '<a href="' . $s['youtube_url'] . '" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-youtube ' . $size . '"></i></a>';
+    }
     if ($s['instagram_url'] ?? null) {
         $output .= '<a href="' . $s['instagram_url'] . '" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram ' . $size . '"></i></a>';
     }

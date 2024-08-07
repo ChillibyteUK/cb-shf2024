@@ -19,11 +19,18 @@ defined('ABSPATH') || exit;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/jost-v15-latin-300.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v21-latin-700.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v21-latin-600.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v21-latin-regular.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
 
     <?php
     if (get_field('gtm_property', 'options')) {
+        if (!is_user_logged_in()) {
         ?>
     <!-- Google Tag Manager -->
     <script>
@@ -46,6 +53,7 @@ defined('ABSPATH') || exit;
     </script>
     <!-- End Google Tag Manager -->
     <?php
+        }
     }
 
 
@@ -89,6 +97,7 @@ if (is_front_page() || is_page('contact-us')) {
 do_action('wp_body_open');
 
 if (get_field('gtm_property', 'options')) {
+    if (!is_user_logged_in()) {
     ?>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe
@@ -96,24 +105,29 @@ if (get_field('gtm_property', 'options')) {
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <?php
+    }
 }
 ?>
     <header>
         <nav id="navbar" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
-            <div class="container-xl pt-4 pb-3">
-                <a href="/"><img
+            <div class="container-xl py-2">
+                <a href="/" class="header_logo"><img
                         src="<?=get_stylesheet_directory_uri()?>/img/shf-logo--dark.svg"
-                        width=224 height=84 alt="SellHouseFast"></a>
-                <button class="navbar-toggler input-button" id="navToggle" data-bs-toggle="collapse"
+                        width=187 height=58 alt="SellHouseFast"></a>
+                <button class="header_toggle navbar-toggler input-button" id="navToggle" data-bs-toggle="collapse"
                     data-bs-target=".navbars" type="button" aria-label="Navigation"><i
                         class="fa fa-navicon"></i></button>
+                <div class="header_ctas">
+                    <a href="/free-cash-offer/" class="button button-sm">FREE CASH OFFER</a>
+                    <div>Call us: <?=contact_phone()?></div>
+                </div>
                 <?php
 wp_nav_menu(
     array(
         'theme_location'  => 'primary_nav',
-        'container_class' => 'collapse navbar-collapse navbars',
+        'container_class' => 'header_nav collapse navbar-collapse navbars',
         'container_id'    => 'primaryNav',
-        'menu_class'      => 'navbar-nav w-100 justify-content-end gap-lg-4',
+        'menu_class'      => 'navbar-nav w-100 justify-content-start gap-lg-3 ps-lg-4',
         'menu_id'         => 'main-menu',
         'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
     )

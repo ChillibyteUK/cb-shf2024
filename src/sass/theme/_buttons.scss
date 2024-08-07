@@ -1,23 +1,19 @@
 .button {
     display: inline-block;
-    border-radius: 100vw;
+    border-radius: 0;
+    border: none;
     padding: 0.75rem 3rem;
     text-decoration: none;
     transition: color var(--transition);
+    background-color: var(--col-blue-400);
+    font-weight: var(--fw-600);
+    color: var(--col-white);
+
     &:hover {
-        color: var(--col-orange-400);
+        color: var(--col-yellow-400);
     }
 }
 
-.button-white {
-    background-color: var(--col-white);
-    color: var(--col-black);
-}
-
-.button-black {
-    background-color: var(--col-black);
-    color: var(--col-white);
-}
 
 .button-outline {
     background-color: transparent;
@@ -27,23 +23,4 @@
 
 .button-sm {
     padding: 0.5rem 2rem;
-}
-
-.link-arrow-inline {
-    position: relative;
-    text-decoration: none;
-    color: var(--col-black);
-    text-transform: uppercase;
-    padding-left: 1.5rem;
-    &::before {
-        content: "\f061";
-        font-weight: 600;
-        font-family: var(--ff-fa);
-        position: absolute;
-        left: 0;
-        transition: left var(--transition);
-    }
-    &:hover::before {
-        left: 0.5rem;
-    }
 }

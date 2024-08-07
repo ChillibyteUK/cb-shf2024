@@ -14,36 +14,30 @@ defined('ABSPATH') || exit;
 <footer>
     <div class="container-xl pt-5">
         <div class="row g-4 pb-5">
-            <div class="col-md-3">
-                LOGO
+            <div class="col-sm-6 col-md-3 text-center">
+                <img class="footer__logo mb-4" src="<?=get_stylesheet_directory_uri()?>/img/shf-logo--light.svg" alt="">
+                <div class="mb-4">Call us today on<br><strong><?=do_shortcode('[contact_phone]')?></strong></div>
+                <?=social_icons()?>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3 footer__border">
                 <div class="menu-title">Services</div>
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu_1')); ?>
             </div>
-            <div class="col-md-3">
-                <div class="menu-title">Guides</div>
+            <div class="col-sm-6 col-md-3 footer__border">
+                <div class="menu-title">Selling Guides</div>
                 <?php wp_nav_menu(array('theme_location' => 'footer_menu_2')); ?>
             </div>
-            <div class="col-md-3">
-                <div class="menu-title">Contact</div>
-                <div class="pb-2">
-                    <?=do_shortcode('[contact_phone]')?>
-                </div>
-                <div class="pb-3">
-                    <?=do_shortcode('[contact_email]')?>
-                </div>
-                <div class="pb-2 socials">
-                    <?=do_shortcode('[social_tw_icon]')?>
-                    <?=do_shortcode('[social_in_icon]')?>
-                </div>
+            <div class="col-sm-6 col-md-3 footer__border">
+                <div class="menu-title">About Us</div>
+                <?php wp_nav_menu(array('theme_location' => 'footer_menu_3')); ?>
             </div>
         </div>
     </div>
     <div class="container-xl colophon pb-4">
         <div class="row g-4">
             <div class="col-md-6 order-2 order-md-1">
-                &copy; <?=date('Y')?> SellHouseFast
+                &copy; <?=date('Y')?> SellHouseFast | Sell House Fast is a trading style of Jolack Limited Registered in England, no. 15683659.<br>
+                Registered address: Office 1.01, 411 - 413 Oxford Street, London, England, W1C 2PE
             </div>
             <div class="col-md-6 order-1 order-md-2 d-flex align-items-center justify-content-md-end flex-wrap gap-1">
                 <a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookie</a> Policy</a>

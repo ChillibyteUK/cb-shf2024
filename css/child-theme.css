@@ -21883,6 +21883,10 @@ ul:not([class]) li {
   margin-bottom: 0.5rem;
 }
 
+.location_page {
+  padding-top: calc(var(--h-top) + 3rem);
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

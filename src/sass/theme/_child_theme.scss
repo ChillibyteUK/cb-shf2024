@@ -88,3 +88,7 @@ ul:not([class]) {
         margin-bottom: 0.5rem;
     }
 }
+
+.location_page {
+    padding-top: calc( var(--h-top) + 3rem);
+}

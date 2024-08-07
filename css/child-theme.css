@@ -21091,6 +21091,22 @@ header .header_nav {
     order: 1;
   }
 }
+header .dropdown-menu {
+  background-color: var(--col-blue-400);
+  border-radius: 0;
+  border: none;
+}
+header .dropdown-menu a {
+  color: var(--col-white);
+}
+header .dropdown-menu .dropdown-item {
+  transition: all 100ms ease;
+}
+header .dropdown-menu .dropdown-item:hover,
+header .dropdown-menu .dropdown-item:focus {
+  background-color: var(--col-yellow-400);
+  color: var(--col-black);
+}
 
 footer {
   background-color: var(--col-black);

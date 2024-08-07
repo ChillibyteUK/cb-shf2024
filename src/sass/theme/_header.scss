@@ -72,4 +72,23 @@ header {
         }
     }
 
+    .dropdown-menu {
+        background-color: var(--col-blue-400);
+        border-radius: 0;
+        border: none;
+        
+        a {
+            color: var(--col-white);
+        }
+
+        .dropdown-item {
+            transition: all 100ms ease;
+        }
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: var(--col-yellow-400);
+            color: var(--col-black);
+        }
+    }
+
 }

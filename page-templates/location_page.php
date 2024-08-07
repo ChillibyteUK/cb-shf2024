@@ -17,7 +17,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
     the_post();
     the_content();
     ?>
-    <div class="bg-grey-400">
+    <div class="bg-grey-400 py-5">
         <div class="container-xl">
             <h2 class="mb-4"><?=$first_term->name?> Property News</h2>
             <div class="row g-2">

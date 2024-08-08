@@ -1,4 +1,4 @@
-<section class="text_map">
+<section class="text_map py-5">
     <div class="container-xl">
         <div class="row g-4">
             <div class="col-lg-7">

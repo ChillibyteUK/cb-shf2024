@@ -1,6 +1,12 @@
 <section class="services_nav pt-5">
     <div class="container-xl">
+        <?php
+        if (get_field('title') ?? null) {
+            ?>
         <h2><?=get_field('title')?></h2>
+            <?php
+        }
+        ?>
         <div class="services_nav__grid">
             <?php
             while (have_rows('services')) {

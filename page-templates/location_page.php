@@ -1,5 +1,5 @@
 <?php
-/* template name: Location Index */
+/* template name: Location Page */
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 get_header();
@@ -17,7 +17,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
     the_post();
     the_content();
     ?>
-    <div class="bg-grey-400 py-5">
+    <div class="bg-grey-400 py-5 mt-5">
         <div class="container-xl">
             <h2 class="mb-4 h3"><?=$first_term->name?> Property News</h2>
             <div class="row g-2">

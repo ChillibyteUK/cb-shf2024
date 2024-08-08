@@ -1,6 +1,6 @@
 <section class="services_nav pt-5">
     <div class="container-xl">
-        <h2>Choose a service to <span>suit you</span>.</h2>
+        <h2><?=get_field('title')?></h2>
         <div class="services_nav__grid">
             <?php
             while (have_rows('services')) {

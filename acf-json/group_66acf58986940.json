@@ -21,6 +21,26 @@
             "esc_html": 0
         },
         {
+            "key": "field_66b494b1d9d88",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Use &lt;span&gt; tags to emphasise.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66b39ea8fdc51",
             "label": "Services",
             "name": "services",
@@ -122,5 +142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723047632
+    "modified": 1723110617
 }

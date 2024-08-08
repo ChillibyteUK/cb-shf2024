@@ -82,9 +82,12 @@
         color: var(--col-blue-400);
     }
     &__inner {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-around;
+        // display: flex;
+        // flex-wrap: wrap;
+        // align-content: space-around;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        align-items: stretch;
         height: 100%;
         width: 100%;
         padding: calc(52px + 1rem) 1rem 1rem 1rem;

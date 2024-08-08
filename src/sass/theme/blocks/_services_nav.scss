@@ -40,6 +40,14 @@
                 max-width: calc(33.3333% - 1rem); /* Three items per row at min-width 768px */
             }
         }
+        &.two_cols > * {
+            flex: 1 1 415px; /* Allow the items to grow and shrink, with a base width of 215px */
+            max-width: 100%;
+            
+            @media (min-width: 576px) {
+                max-width: calc(50% - 1rem); /* Two items per row at min-width 576px */
+            }
+        }
     }
 
     &__card {

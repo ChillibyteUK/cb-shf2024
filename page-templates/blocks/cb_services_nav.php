@@ -1,3 +1,8 @@
+<?php
+// $cards = get_field('services');
+$cols = get_field('columns') == '3' ? '' : 'two_cols';
+
+?>
 <section class="services_nav pt-5">
     <div class="container-xl">
         <?php
@@ -7,7 +12,7 @@
             <?php
         }
         ?>
-        <div class="services_nav__grid">
+        <div class="services_nav__grid <?=$cols?>">
             <?php
             while (have_rows('services')) {
                 the_row();

@@ -21566,6 +21566,15 @@ footer .colophon {
     max-width: calc(33.3333% - 1rem); /* Three items per row at min-width 768px */
   }
 }
+.services_nav__grid.two_cols > * {
+  flex: 1 1 415px; /* Allow the items to grow and shrink, with a base width of 215px */
+  max-width: 100%;
+}
+@media (min-width: 576px) {
+  .services_nav__grid.two_cols > * {
+    max-width: calc(50% - 1rem); /* Two items per row at min-width 576px */
+  }
+}
 .services_nav__card {
   border-right: 1px solid var(--col-grey-600);
   border-bottom: 1px solid var(--col-grey-600);

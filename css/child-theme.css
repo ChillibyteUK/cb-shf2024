@@ -21576,11 +21576,13 @@ footer .colophon {
   }
 }
 .services_nav__card {
-  border-right: 1px solid var(--col-grey-600);
-  border-bottom: 1px solid var(--col-grey-600);
-  border-left: 1px solid var(--col-grey-600);
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-color: var(--col-grey-600);
   position: relative;
   text-decoration: none;
+  transition: border-color var(--transition);
 }
 .services_nav__card::before {
   content: "";
@@ -21590,6 +21592,13 @@ footer .colophon {
   width: 100%;
   height: 52px;
   position: absolute;
+  transition: background-image var(--transition);
+}
+.services_nav__card:hover {
+  border-color: var(--col-blue-400);
+}
+.services_nav__card:hover::before {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 386 51.17'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D .cls-1, .cls-2 %7B stroke-width: 0px; %7D .cls-2 %7B fill: %230073cc; %7D %3C/style%3E%3C/defs%3E%3Cg id='NAV_BAR' data-name='NAV BAR'%3E%3Cg%3E%3Crect class='cls-2' y='.17' width='386' height='51'/%3E%3Cg%3E%3Crect class='cls-1' x='277.12' y='40.15' width='10.22' height='11.02'/%3E%3Cpath class='cls-1' d='m264.87,38.11h10.21v-11.13c-5.71.52-10.19,5.29-10.21,11.13Z'/%3E%3Crect class='cls-1' x='264.87' y='40.15' width='10.21' height='11.02'/%3E%3Cpath class='cls-1' d='m277.12,26.98v11.13h10.21c-.02-5.83-4.5-10.62-10.21-11.13Z'/%3E%3Cpolygon class='cls-1' points='272.17 6 226.99 51.17 219.09 51.17 268.22 2.04 272.17 6'/%3E%3Cpath class='cls-1' d='m386,46.32v4.85h-62.72L272.11,0h18.32c.71,0,1.37.06,1.98.17,2.13.37,3.65,1.31,4.61,2.27.97.97,31.11,31.12,43.88,43.88h45.1Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .services_nav h3, .services_nav .h3 {
   font-size: var(--fs-600);

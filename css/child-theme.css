@@ -21592,12 +21592,14 @@ footer .colophon {
   position: absolute;
 }
 .services_nav h3, .services_nav .h3 {
-  font-size: var(--fs-700);
+  font-size: var(--fs-600);
   color: var(--col-blue-400);
 }
 .services_nav__inner {
-  display: grid;
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  height: 100%;
   width: 100%;
   padding: calc(52px + 1rem) 1rem 1rem 1rem;
 }

@@ -43,7 +43,7 @@
         &.two_cols > * {
             flex: 1 1 415px; /* Allow the items to grow and shrink, with a base width of 215px */
             max-width: 100%;
-            
+
             @media (min-width: 576px) {
                 max-width: calc(50% - 1rem); /* Two items per row at min-width 576px */
             }
@@ -68,12 +68,14 @@
         
     }
     h3 {
-        font-size: var(--fs-700);
+        font-size: var(--fs-600);
         color: var(--col-blue-400);
     }
     &__inner {
-        display: grid;
-        grid-template-rows: 1fr auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 100%;
         width: 100%;
         padding: calc(52px + 1rem) 1rem 1rem 1rem;
     }

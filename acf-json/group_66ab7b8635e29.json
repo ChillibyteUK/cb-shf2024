@@ -12,13 +12,38 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "75",
                 "class": "",
                 "id": ""
             },
             "message": "Wrap text in &lt;strong&gt; tags to embolden.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_66b632206c79d",
+            "label": "Width",
+            "name": "width",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Narrow": "Narrow",
+                "Wide": "Wide"
+            },
+            "default_value": "Narrow",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
         },
         {
             "key": "field_66ab7b97e972b",
@@ -38,7 +63,7 @@
             "maxlength": "",
             "rows": 4,
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "br"
         },
         {
             "key": "field_66ab7c30e972c",
@@ -58,7 +83,7 @@
             "maxlength": "",
             "rows": 4,
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "br"
         },
         {
             "key": "field_66ab7c32e972d",
@@ -78,7 +103,7 @@
             "maxlength": "",
             "rows": 4,
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "br"
         }
     ],
     "location": [
@@ -99,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722514585
+    "modified": 1723216435
 }

@@ -1,7 +1,7 @@
 <?php
 $cols = get_field('columns') == 2 ? 'col-md-6' : 'col-md-4';
 ?>
-<section class="use_quote py-5">
+<section class="use_quote pt-5">
     <div class="container-xl">
         <h2 class="text-center"><?=get_field('title')?></h2>
         <div class="text-center mb-5"><?=get_field('intro')?></div>

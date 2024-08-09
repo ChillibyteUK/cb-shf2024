@@ -3,6 +3,7 @@
     display: grid;
     text-decoration: none;
     height: 100%;
+    grid-template-rows: auto 1fr;
     &:hover {
         .news_card__link {
             color: var(--col-yellow-400);

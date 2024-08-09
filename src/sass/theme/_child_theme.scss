@@ -7,6 +7,7 @@
 @import "footer";
 @import "forms";
 @import "blocks/blocks";
+@import "blog";
 
 
 
@@ -41,7 +42,7 @@ html {
 }
 
 main {
-    padding-top: var(--h-top);
+    padding-top: calc(var(--h-top) + 1rem);
 }
 
 .container-xl .container-xl {
@@ -91,4 +92,16 @@ ul:not([class]) {
 
 .location_page {
     padding-top: calc( var(--h-top) + 3rem);
+}
+
+#breadcrumbs {
+    font-size: var(--fs-300);
+    a { 
+        font-weight: var(--fw-600);
+    }
+}
+
+.reading {
+    font-size: var(--fs-300);
+    font-style: italic;
 }

@@ -21708,21 +21708,6 @@ footer .colophon {
   overflow-y: scroll;
   height: 340px;
 }
-.area_cta__areas::-webkit-scrollbar {
-  width: 10px;
-}
-.area_cta__areas::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-.area_cta__areas::-webkit-scrollbar-thumb {
-  background: red;
-  width: 24px; /* Thumb width */
-  height: 24px; /* Thumb height */
-  background: var(--col-white);
-  border: 6px solid var(--col-blue-400);
-  border-radius: 50%;
-  margin-top: -6px; /* Center the thumb on the track */
-}
 .area_cta__areas .locations-list {
   list-style: none;
   padding-inline-start: 0;

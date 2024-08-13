@@ -2,7 +2,8 @@
     h2 {
         text-align: center;
         span {
-            border-bottom: 0.2em solid var(--col-blue-400);
+            // border-bottom: 0.2em solid var(--col-blue-400);
+            text-decoration: underline var(--col-blue-400) solid 0.2em;
         }
         margin-bottom: 4rem;
     }

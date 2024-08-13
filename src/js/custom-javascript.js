@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Scrolling up
             mainNav.classList.remove('hidden');
-            if (scrollTop === 0) {
-                topNav.classList.remove('hidden');
-            }
+            // if (scrollTop === 0) {
+            //     topNav.classList.remove('hidden');
+            // }
         }
 
         lastScrollTop = scrollTop;

@@ -114,7 +114,8 @@ strong {
 h1 > span {
     color: var(--col-blue-400);
     font-style: italic;
-    border-bottom: 0.2em solid var(--col-blue-400);
+    text-decoration: underline var(--col-blue-400) solid 0.2em;
+    // border-bottom: 0.2em solid var(--col-blue-400);
 }
 
 .max-ch {

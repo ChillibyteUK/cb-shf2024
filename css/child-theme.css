@@ -20974,7 +20974,8 @@ strong {
 h1 > span, .h1 > span {
   color: var(--col-blue-400);
   font-style: italic;
-  border-bottom: 0.2em solid var(--col-blue-400);
+  -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
+  text-decoration: underline var(--col-blue-400) solid 0.2em;
 }
 
 .max-ch {
@@ -21402,7 +21403,8 @@ footer .colophon {
   margin-bottom: 4rem;
 }
 .calculator h2 span, .calculator .h2 span {
-  border-bottom: 0.2em solid var(--col-blue-400);
+  -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
+  text-decoration: underline var(--col-blue-400) solid 0.2em;
 }
 .calculator__input {
   display: grid;
@@ -21544,7 +21546,8 @@ footer .colophon {
   margin-bottom: 4rem;
 }
 .services_nav h2 span, .services_nav .h2 span {
-  border-bottom: 0.2em solid var(--col-blue-400);
+  -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
+  text-decoration: underline var(--col-blue-400) solid 0.2em;
 }
 .services_nav__grid {
   display: flex;
@@ -21684,7 +21687,8 @@ footer .colophon {
   font-style: normal;
 }
 .area_cta__words h2 span, .area_cta__words .h2 span {
-  border-bottom: 0.2em solid var(--col-blue-400);
+  -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
+  text-decoration: underline var(--col-blue-400) solid 0.2em;
 }
 .area_cta__arrow {
   height: 50px;
@@ -21703,6 +21707,21 @@ footer .colophon {
 .area_cta__areas {
   overflow-y: scroll;
   height: 340px;
+}
+.area_cta__areas::-webkit-scrollbar {
+  width: 10px;
+}
+.area_cta__areas::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.area_cta__areas::-webkit-scrollbar-thumb {
+  background: red;
+  width: 24px; /* Thumb width */
+  height: 24px; /* Thumb height */
+  background: var(--col-white);
+  border: 6px solid var(--col-blue-400);
+  border-radius: 50%;
+  margin-top: -6px; /* Center the thumb on the track */
 }
 .area_cta__areas .locations-list {
   list-style: none;

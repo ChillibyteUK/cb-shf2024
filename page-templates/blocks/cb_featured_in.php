@@ -1,6 +1,5 @@
 <section class="featured_in py-5">
     <div class="container-xl featured_in__grid">
-        <div class="featured_in__label mb-3 mb-md-0">Featured in:</div>
         <div class="featuredSwiper swiper">
             <div class="swiper-wrapper">
         <?php

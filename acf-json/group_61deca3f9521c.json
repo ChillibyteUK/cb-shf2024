@@ -378,6 +378,442 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_66bc7e99ce8b5",
+            "label": "Location Data",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66bc81aa8be48",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The average sold price for a property in [LOCATION] in the last 12 months is [AVG_PRICE].\r\n\r\nThe majority of sales around [LOCATION] during the last year were [PROP_TYPE1] properties, selling for an average price of [TYPE1_AVG].\r\n\r\n[PROP_TYPE2] properties sold for an average of [TYPE2_AVG], with [PROP_TYPE3] fetching [TYPE3_AVG].\r\n\r\nOverall, sold prices around [LOCATION] over the last year were [VARIATION] the previous year and [PCT] [PCT_UPDOWN] on the [PEAK_YEAR] peak of [PEAK_AVG].",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_66bc7ea5ce8b6",
+            "label": "Locations",
+            "name": "locations",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66bc7ed5ce8b7",
+                    "label": "Location",
+                    "name": "location",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "location",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_66bc7ea5ce8b6"
+                },
+                {
+                    "key": "field_66bc7eeece8b8",
+                    "label": "Annual Data",
+                    "name": "annual_data",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "80",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_66bc7ef8ce8b9",
+                            "label": "Year",
+                            "name": "year",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": 2000,
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7f09ce8ba",
+                            "label": "Average Sold Price",
+                            "name": "avg_price",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "£",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7f1fce8bb",
+                            "label": "Most Common Property Type",
+                            "name": "type1",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "semi-detached properties": "semi-detached properties",
+                                "terraced properties": "terraced properties",
+                                "detached properties": "detached properties",
+                                "flats": "flats"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7f66ce8bc",
+                            "label": "Average Price",
+                            "name": "type1_avg",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "£",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7fc5ce8bd",
+                            "label": "Second Property Type",
+                            "name": "type2",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "semi-detached properties": "semi-detached properties",
+                                "terraced properties": "terraced properties",
+                                "detached properties": "detached properties",
+                                "flats": "flats"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7fd8ce8be",
+                            "label": "Average Price",
+                            "name": "type2_avg",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "£",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7fe8ce8bf",
+                            "label": "Third Property Type",
+                            "name": "type3",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "semi-detached properties": "semi-detached properties",
+                                "terraced properties": "terraced properties",
+                                "detached properties": "detached properties",
+                                "flats": "flats"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc7ff6ce8c0",
+                            "label": "Average Price",
+                            "name": "type3_avg",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "£",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc8006ce8c1",
+                            "label": "Variation Compared to Previous Year",
+                            "name": "variation",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "similar to": "similar to",
+                                "higher than": "higher than",
+                                "lower than": "lower than"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc806dce8c2",
+                            "label": "Percentage Change from Peak",
+                            "name": "pct_change",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": "%",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc809cce8c3",
+                            "label": "Direction of Change",
+                            "name": "pct_updown",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "up": "up",
+                                "down": "down"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc80b9ce8c4",
+                            "label": "Peak Year",
+                            "name": "peak_year",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
+                            "key": "field_66bc80c8ce8c5",
+                            "label": "Peak Average Price",
+                            "name": "peak_avg",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "placeholder": "",
+                            "step": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        }
+                    ],
+                    "parent_repeater": "field_66bc7ea5ce8b6"
+                }
+            ]
         }
     ],
     "location": [
@@ -398,5 +834,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723024387
+    "modified": 1723631368
 }

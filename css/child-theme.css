@@ -21832,6 +21832,21 @@ footer .colophon {
   font-style: normal;
 }
 
+.stats .container-xl {
+  background-color: var(--col-blue-400);
+  color: var(--col-white);
+}
+.stats .container-xl ul {
+  margin-bottom: 0;
+}
+.stats .container-xl li {
+  list-style-type: square;
+}
+.stats .container-xl li::marker {
+  color: var(--col-yellow-400);
+  font-size: var(--fs-500);
+}
+
 .news_card {
   background-color: var(--col-white);
   display: grid;

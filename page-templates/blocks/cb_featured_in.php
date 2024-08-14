@@ -1,4 +1,4 @@
-<section class="featured_in py-5">
+<section class="featured_in py-4">
     <div class="container-xl featured_in__grid">
         <div class="featuredSwiper swiper">
             <div class="swiper-wrapper">

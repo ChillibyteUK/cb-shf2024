@@ -485,6 +485,25 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
+                            "key": "field_66bc91a3817dd",
+                            "label": "Year",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0,
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
                             "key": "field_66bc7ef8ce8b9",
                             "label": "Year",
                             "name": "year",
@@ -509,7 +528,7 @@
                         },
                         {
                             "key": "field_66bc7f09ce8ba",
-                            "label": "Average Sold Price",
+                            "label": "Average Sold Price [AVG_PRICE]",
                             "name": "avg_price",
                             "aria-label": "",
                             "type": "number",
@@ -531,8 +550,27 @@
                             "parent_repeater": "field_66bc7eeece8b8"
                         },
                         {
+                            "key": "field_66bc91b1817de",
+                            "label": "Line 2",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0,
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
                             "key": "field_66bc7f1fce8bb",
-                            "label": "Most Common Property Type",
+                            "label": "Most Common Property Type [PROP_TYPE1]",
                             "name": "type1",
                             "aria-label": "",
                             "type": "select",
@@ -561,7 +599,7 @@
                         },
                         {
                             "key": "field_66bc7f66ce8bc",
-                            "label": "Average Price",
+                            "label": "Average Price [TYPE1_AVG]",
                             "name": "type1_avg",
                             "aria-label": "",
                             "type": "number",
@@ -583,8 +621,27 @@
                             "parent_repeater": "field_66bc7eeece8b8"
                         },
                         {
+                            "key": "field_66bc91c9817df",
+                            "label": "Line 3",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0,
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
                             "key": "field_66bc7fc5ce8bd",
-                            "label": "Second Property Type",
+                            "label": "Second Property Type [PROP_TYPE2]",
                             "name": "type2",
                             "aria-label": "",
                             "type": "select",
@@ -613,7 +670,7 @@
                         },
                         {
                             "key": "field_66bc7fd8ce8be",
-                            "label": "Average Price",
+                            "label": "Average Price [TYPE2_AVG]",
                             "name": "type2_avg",
                             "aria-label": "",
                             "type": "number",
@@ -636,7 +693,7 @@
                         },
                         {
                             "key": "field_66bc7fe8ce8bf",
-                            "label": "Third Property Type",
+                            "label": "Third Property Type [PROP_TYPE3]",
                             "name": "type3",
                             "aria-label": "",
                             "type": "select",
@@ -665,7 +722,7 @@
                         },
                         {
                             "key": "field_66bc7ff6ce8c0",
-                            "label": "Average Price",
+                            "label": "Average Price [TYPE3_AVG]",
                             "name": "type3_avg",
                             "aria-label": "",
                             "type": "number",
@@ -687,8 +744,27 @@
                             "parent_repeater": "field_66bc7eeece8b8"
                         },
                         {
+                            "key": "field_66bc921e817e0",
+                            "label": "Line 4",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0,
+                            "parent_repeater": "field_66bc7eeece8b8"
+                        },
+                        {
                             "key": "field_66bc8006ce8c1",
-                            "label": "Variation Compared to Previous Year",
+                            "label": "Variation Compared to Previous Year [VARIATION]",
                             "name": "variation",
                             "aria-label": "",
                             "type": "select",
@@ -716,7 +792,7 @@
                         },
                         {
                             "key": "field_66bc806dce8c2",
-                            "label": "Percentage Change from Peak",
+                            "label": "Percentage Change from Peak [PCT]",
                             "name": "pct_change",
                             "aria-label": "",
                             "type": "number",
@@ -739,7 +815,7 @@
                         },
                         {
                             "key": "field_66bc809cce8c3",
-                            "label": "Direction of Change",
+                            "label": "Direction of Change [PCT_UPDOWN]",
                             "name": "pct_updown",
                             "aria-label": "",
                             "type": "select",
@@ -766,7 +842,7 @@
                         },
                         {
                             "key": "field_66bc80b9ce8c4",
-                            "label": "Peak Year",
+                            "label": "Peak Year [PEAK_YEAR]",
                             "name": "peak_year",
                             "aria-label": "",
                             "type": "number",
@@ -789,7 +865,7 @@
                         },
                         {
                             "key": "field_66bc80c8ce8c5",
-                            "label": "Peak Average Price",
+                            "label": "Peak Average Price [PEAK_AVG]",
                             "name": "peak_avg",
                             "aria-label": "",
                             "type": "number",
@@ -834,5 +910,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723631368
+    "modified": 1723634514
 }

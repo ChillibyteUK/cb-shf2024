@@ -5,7 +5,7 @@ $title = get_field('title') ?: 'Latest Property News';
     <div class="container-xl">
         <div class="mb-5 d-flex justify-content-between flex-wrap align-items-center">
             <h2><?=$title?></h2>
-            <a href="/news/" class="button">See all articles</a>
+            <a href="/insights/" class="button">See all articles</a>
         </div>
         <div class="row g-2">
         <?php

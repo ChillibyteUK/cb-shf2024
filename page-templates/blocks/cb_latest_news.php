@@ -1,11 +1,13 @@
 <?php
 $title = get_field('title') ?: 'Latest Property News';
+$posts_page_id = get_option('page_for_posts');
+$blog_url = get_permalink($posts_page_id);
 ?>
 <section class="latest_news py-5">
     <div class="container-xl">
         <div class="mb-5 d-flex justify-content-between flex-wrap align-items-center">
             <h2><?=$title?></h2>
-            <a href="/insights/" class="button">See all articles</a>
+            <a href="<?=$blog_url?>" class="button">See all articles</a>
         </div>
         <div class="row g-2">
         <?php

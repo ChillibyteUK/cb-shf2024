@@ -13,4 +13,12 @@
         background-position: center;
         margin: 0 auto 1rem auto;
     }
+    
+    &__content--hide {
+        @media (max-width:768px) {
+            span {
+                display: none;
+            }
+        }
+    }
 }

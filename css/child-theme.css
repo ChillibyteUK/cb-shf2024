@@ -21267,6 +21267,11 @@ footer .colophon {
   background-position: center;
   margin: 0 auto 1rem auto;
 }
+@media (max-width: 768px) {
+  .three_col_usp__content--hide span {
+    display: none;
+  }
+}
 
 .featured_in {
   background-color: var(--col-black);
@@ -22069,17 +22074,20 @@ a.noline {
     gap: 2rem;
   }
 }
-ul:not([class]),
-ul.wp-block-list {
+main ul,
+main ul:not([class]),
+main ul.wp-block-list {
   padding-inline-start: 1.25rem;
 }
-ul:not([class]) li,
-ul.wp-block-list li {
+main ul li,
+main ul:not([class]) li,
+main ul.wp-block-list li {
   list-style-type: square;
   margin-bottom: 0 !important;
 }
-ul:not([class]) li::marker,
-ul.wp-block-list li::marker {
+main ul li::marker,
+main ul:not([class]) li::marker,
+main ul.wp-block-list li::marker {
   color: var(--col-blue-400);
   font-size: var(--fs-500);
 }

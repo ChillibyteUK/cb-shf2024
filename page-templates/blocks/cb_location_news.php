@@ -20,7 +20,7 @@ $q = new WP_Query(array(
             'terms'    => $first_term->term_id, // The ID of the term you want to match
         ),
     ),
-);
+));
 ?>
 <section class="py-5 bg-grey-400">
     <div class="container-xl">
@@ -32,10 +32,10 @@ $q = new WP_Query(array(
                 $q->the_post();
                 ?>
                 <div class="col-md-4">
-                    <a class="news_card" href="<?=get_the_permalink()?>">
+                    <a class="news_card" href="<?=get_the_permalink(get_the_ID())?>">
                         <?=get_the_post_thumbnail(get_the_ID(),'large',array('class' => 'news_card__image'))?>
                         <div class="news_card__inner">
-                            <h3><?=get_the_title()?></h3>
+                            <h3><?=get_the_title(get_the_ID())?></h3>
                             <div class="news_card__excerpt"><?=wp_trim_words(get_the_content(), 30)?></div>
                             <div class="news_card__link">Read more</div>
                         </div>

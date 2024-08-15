@@ -13,6 +13,15 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
+            'name'				=> 'cb_page_hero',
+            'title'				=> __('CB Page Hero'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_page_hero.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
             'name'				=> 'cb_three_col_usp',
             'title'				=> __('CB Three Col USP'),
             'category'			=> 'layout',
@@ -165,6 +174,15 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_location_stats.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_title_two_col',
+            'title'				=> __('CB Title / Two Col Text'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_title_two_col.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));

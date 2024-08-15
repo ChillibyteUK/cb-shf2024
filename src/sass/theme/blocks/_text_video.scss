@@ -6,14 +6,7 @@
     h2, h3 {
         font-size: var(--fs-600);
     }
-    li {
-        list-style-type: square;
-        margin-bottom: 0 !important;
-        &::marker {
-            color: var(--col-blue-400);
-            font-size: var(--fs-500);
-        }
-    }
+
     vimeo-embed {
         cursor: pointer;
         position: relative;

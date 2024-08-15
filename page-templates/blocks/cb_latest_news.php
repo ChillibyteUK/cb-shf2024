@@ -1,7 +1,10 @@
+<?php
+$title = get_field('title') ?: 'Latest Property News';
+?>
 <section class="latest_news py-5">
     <div class="container-xl">
         <div class="mb-5 d-flex justify-content-between flex-wrap align-items-center">
-            <h2><?=get_field('title')?></h2>
+            <h2><?=$title?></h2>
             <a href="/news/" class="button">See all articles</a>
         </div>
         <div class="row g-2">

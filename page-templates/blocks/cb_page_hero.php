@@ -1,0 +1,15 @@
+<section class="form_hero">
+    <div class="container-xl py-6 text-center">
+        <h1><?=get_field('title')?></h1>
+        <?php
+        if (get_field('leadin') ?? null) {
+            ?>
+        <div class="h3 font-weight-medium"><?=get_field('leadin')?></div>
+            <?php
+        }
+        ?>
+        <div class="form_hero__form">
+            <input type="text" name="postcode" id="" placeholder="Enter your postcode"><button class="button button-sm">Get Free Cash Offer</button>
+        </div>
+    </div>
+</section>

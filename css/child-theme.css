@@ -21334,16 +21334,6 @@ footer .colophon {
 .text_image .h3 {
   font-size: var(--fs-600);
 }
-.text_video li,
-.text_image li {
-  list-style-type: square;
-  margin-bottom: 0 !important;
-}
-.text_video li::marker,
-.text_image li::marker {
-  color: var(--col-blue-400);
-  font-size: var(--fs-500);
-}
 .text_video vimeo-embed,
 .text_image vimeo-embed {
   cursor: pointer;
@@ -22071,17 +22061,27 @@ a.noline {
   .cols-lg-2 {
     -moz-columns: 2;
     columns: 2;
+    gap: 2rem;
   }
   .cols-lg-3 {
     -moz-columns: 3;
     columns: 3;
+    gap: 2rem;
   }
 }
-ul:not([class]) {
+ul:not([class]),
+ul.wp-block-list {
   padding-inline-start: 1.25rem;
 }
-ul:not([class]) li {
-  margin-bottom: 0.5rem;
+ul:not([class]) li,
+ul.wp-block-list li {
+  list-style-type: square;
+  margin-bottom: 0 !important;
+}
+ul:not([class]) li::marker,
+ul.wp-block-list li::marker {
+  color: var(--col-blue-400);
+  font-size: var(--fs-500);
 }
 
 .location_page {

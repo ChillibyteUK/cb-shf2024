@@ -22,6 +22,15 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
+            'name'				=> 'cb_ps_hero',
+            'title'				=> __('CB Property Sourcing Hero'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_ps_hero.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
             'name'				=> 'cb_three_col_usp',
             'title'				=> __('CB Three Col USP'),
             'category'			=> 'layout',

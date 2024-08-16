@@ -45,9 +45,14 @@ function widgets_init()
         'editor-color-palette',
         array(
             array(
-                'name' => 'Grey 500',
-                'slug' => 'grey-500',
-                'color' => '#eeeeee'
+                'name' => 'Yellow',
+                'slug' => 'yellow-400',
+                'color' => '#FFE41F'
+            ),
+            array(
+                'name' => 'Blue',
+                'slug' => 'blue-400',
+                'color' => '#0073CC'
             ),
         )
     );

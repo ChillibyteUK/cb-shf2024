@@ -20935,7 +20935,7 @@ h2, .h2, .fs-900 {
   font-size: var(--fs-900);
 }
 
-h3, .h3, .fs-800 {
+h3, .h3, .fs-800, .has-x-large-font-size {
   font-size: var(--fs-800);
 }
 
@@ -20992,6 +20992,14 @@ h1 > span, .h1 > span {
 
 .bg-grey-400 {
   background-color: var(--col-grey-400);
+}
+
+.has-yellow-400-color {
+  color: var(--col-yellow-400);
+}
+
+.has-blue-400-color {
+  color: var(--col-blue-400);
 }
 
 .text-white {

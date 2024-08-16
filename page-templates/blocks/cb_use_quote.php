@@ -1,5 +1,5 @@
 <?php
-$class = $block['className'] ?: 'py-5';
+$class = $block['className'] ?? 'py-5';
 $cols = get_field('columns') == 2 ? 'col-md-6' : 'col-md-4';
 ?>
 <section class="use_quote <?=$class?>">

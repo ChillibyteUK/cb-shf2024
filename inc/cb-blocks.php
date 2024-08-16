@@ -188,7 +188,7 @@ function acf_blocks()
         ));
         acf_register_block_type(array(
             'name'				=> 'cb_title_two_col',
-            'title'				=> __('CB Title / Two Col Text'),
+            'title'				=> __('CB Title / Text'),
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_title_two_col.php',

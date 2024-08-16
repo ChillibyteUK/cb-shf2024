@@ -21261,6 +21261,17 @@ footer .colophon {
   margin-top: 3rem;
 }
 
+.ps_hero__form {
+  background-color: var(--col-blue-400);
+  padding: 1rem;
+}
+.ps_hero__form h2, .ps_hero__form .h2 {
+  color: var(--col-yellow-400);
+}
+.ps_hero__form .ps_hero__form_intro {
+  color: var(--col-white);
+}
+
 .three_col_usp {
   text-align: center;
   font-size: var(--fs-500);

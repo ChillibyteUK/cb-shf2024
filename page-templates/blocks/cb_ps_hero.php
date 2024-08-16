@@ -1,15 +1,26 @@
-<section class="form_hero">
+<section class="ps_hero">
     <div class="container-xl py-6 text-center">
-        <?php
-        if (get_field('pre_title') ?? null) {
-            ?>
-        <div class="h2 mb-0 font-weight-medium"><?=get_field('pre_title')?></div>
-            <?php
-        }
-        ?>
-        <h1><?=get_field('title')?></h1>
-        <div class="form_hero__form">
-            <input type="text" name="postcode" id="" placeholder="Enter your postcode"><button class="button button-sm">Get Free Cash Offer</button>
+        <div class="row">
+            <div class="col-md-6">
+                <h1><?=get_field('title')?></h1>
+                <ul>
+                    <?php
+                    foreach (textarea_array(get_field('bullets')) as $b) {
+                        echo '<li>' . $b . '</li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="ps_hero__form">
+                    <h2>Invest in properties today</h2>
+                    <div class="ps_hero__form_intro">Enter your details below</div>
+                    <div>FORM HERE<br>
+                        <input type="text" name="postcode" id="" placeholder="Enter your postcode">
+                        <button class="button button-sm">Enquire</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -3,23 +3,6 @@ $width = get_field('width') == 'Narrow' ? 'w-lg-75' : '';
 
 $hp = is_front_page() ? 'three_col_usp__content--hide' : '';
 
-function wrap_non_strong_content($input) {
-    // Use regular expression to match content outside <strong> tags
-    $pattern = '/(<strong>.*?<\/strong>)|([^<]+)(?![^<]*<\/strong>)/is';
-
-    // Apply the pattern to the input string
-    $result = preg_replace_callback($pattern, function($matches) {
-        // If the content is within <strong> tags, return it as is
-        if (!empty($matches[1])) {
-            return $matches[1];
-        }
-        // Otherwise, wrap the non-<strong> content in a <span> tag
-        return '<span>' . $matches[2] . '</span>';
-    }, $input);
-
-    return $result;
-}
-
 ?>
 <section class="three_col_usp pb-5">
     <div class="container-xl">

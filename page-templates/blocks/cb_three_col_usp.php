@@ -3,6 +3,16 @@ $width = get_field('width') == 'Narrow' ? 'w-lg-75' : '';
 
 $hp = is_front_page() ? 'three_col_usp__content--hide' : '';
 
+$usp1 = get_field('usp_1');
+$usp2 = get_field('usp_2');
+$usp3 = get_field('usp_3');
+
+if (is_front_page()) {
+    $usp1 = wrap_non_strong_content($usp1);
+    $usp2 = wrap_non_strong_content($usp2);
+    $usp3 = wrap_non_strong_content($usp3);
+}
+
 ?>
 <section class="three_col_usp pb-5">
     <div class="container-xl">
@@ -10,19 +20,19 @@ $hp = is_front_page() ? 'three_col_usp__content--hide' : '';
             <div class="col-md-4">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
-                    <?=wrap_non_strong_content(get_field('usp_1'))?>
+                    <?=$usp3?>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
-                    <?=wrap_non_strong_content(get_field('usp_2'))?>
+                    <?=$usp2?>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
-                    <?=wrap_non_strong_content(get_field('usp_3'))?>
+                    <?=$usp3?>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ function redirectToFormAll() {
     var town = document.getElementById("town").value;
     var county = document.getElementById("county").value;
 
-    var url = "/free-cash-offer?postcode=" + encodeURIComponent(pcode) + "&addr1" + encodeURIComponent(addr1) + "&town" + encodeURIComponent(town) + "&county" + encodeURIComponent(county);
+    var url = "/free-cash-offer?xx=yy&postcode=" + encodeURIComponent(pcode) + "&addr1" + encodeURIComponent(addr1) + "&town" + encodeURIComponent(town) + "&county" + encodeURIComponent(county);
     window.location.href = url;
 
 }

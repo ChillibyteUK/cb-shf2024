@@ -5,19 +5,19 @@
 
         <div class="row g-4 mb-5">
             <div class="col-md-6 offset-md-3">
-                <input type="text" name="pcode" id="pcode" placeholder="Enter your postcode">
+                <input type="text" name="pcode" id="pcode" autocomplete="off" placeholder="Enter your postcode">
             </div>
             <div class="col-md-6">
-                <input type="text" name="addr1" id="addr1" placeholder="Address Line 1">
+                <input type="text" name="addr1" id="addr1" autocomplete="off" placeholder="Address Line 1">
             </div>
             <div class="col-md-6">
-                <input type="text" name="addr2" id="addr2" placeholder="Address Line 2">
+                <input type="text" name="addr2" id="addr2" autocomplete="off" placeholder="Address Line 2">
             </div>
             <div class="col-md-6">
-                <input type="text" name="town" id="town" placeholder="Town/City">
+                <input type="text" name="town" id="town" autocomplete="off" placeholder="Town/City">
             </div>
             <div class="col-md-6">
-                <input type="text" name="county" id="county" placeholder="County">
+                <input type="text" name="county" id="county" autocomplete="off" placeholder="County">
             </div>
         </div>
         

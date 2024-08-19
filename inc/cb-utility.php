@@ -153,12 +153,12 @@ add_action('admin_head', 'gb_gutenberg_admin_styles');
 
 // God I hate Gravity Forms
 // Change textarea rows to 4 instead of 10
-add_filter('gform_field_content', function ($field_content, $field) {
-    if ($field->type == 'textarea') {
-        return str_replace("rows='10'", "rows='4'", $field_content);
-    }
-    return $field_content;
-}, 10, 2);
+// add_filter('gform_field_content', function ($field_content, $field) {
+//     if ($field->type == 'textarea') {
+//         return str_replace("rows='10'", "rows='4'", $field_content);
+//     }
+//     return $field_content;
+// }, 10, 2);
 
 
 function get_the_top_ancestor_id()
@@ -267,11 +267,11 @@ function formatBytes($bytes, $precision = 2)
     return round($bytes, $precision) . ' ' . $units[$pow];
 }
 
-function enable_strict_transport_security_hsts_header()
-{
-    header('Strict-Transport-Security: max-age=31536000');
-}
-add_action('send_headers', 'enable_strict_transport_security_hsts_header');
+// function enable_strict_transport_security_hsts_header()
+// {
+//     header('Strict-Transport-Security: max-age=31536000');
+// }
+// add_action('send_headers', 'enable_strict_transport_security_hsts_header');
 
 // REMOVE TAG AND COMMENT SUPPORT
 

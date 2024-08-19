@@ -20,4 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         lastScrollTop = scrollTop;
     });
+
+    function redirectToForm() {
+        var postcode = document.getElementById("postcode").value;
+        var url = "/free-cash-offer?postcode=" + encodeURIComponent(postcode);
+        window.location.href = url;
+    }
+
 });

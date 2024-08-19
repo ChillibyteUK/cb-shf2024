@@ -13,7 +13,12 @@ function redirectToFormAll() {
               "&addr1=" + encodeURIComponent(addr1) +
               "&town=" + encodeURIComponent(town) +
               "&county=" + encodeURIComponent(county);
-              
+
+    console.log('pcode:', pcode);
+    console.log('addr1:', addr1);
+    console.log('town:', town);
+    console.log('county:', county);
+    
     window.location.href = url;
 
 }

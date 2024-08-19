@@ -11,7 +11,7 @@
                 <input type="text" name="addr1" id="addr1" placeholder="Address Line 1">
             </div>
             <div class="col-md-6">
-                <input type="text" name="addr2" id="addr1" placeholder="Address Line 2">
+                <input type="text" name="addr2" id="addr2" placeholder="Address Line 2">
             </div>
             <div class="col-md-6">
                 <input type="text" name="town" id="town" placeholder="Town/City">

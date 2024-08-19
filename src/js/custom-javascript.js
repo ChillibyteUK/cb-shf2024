@@ -4,10 +4,10 @@
 
 function redirectToFormAll() {
 
-    var pcode = document.getElementById("pcode");
-    var addr1 = document.getElementById("addr1");
-    var town = document.getElementById("town");
-    var county = document.getElementById("county");
+    var pcode = document.getElementById("pcode").value;
+    var addr1 = document.getElementById("addr1").value;
+    var town = document.getElementById("town").value;
+    var county = document.getElementById("county").value;
 
     var url = "/free-cash-offer?postcode=" + encodeURIComponent(pcode) + "&addr1" + encodeURIComponent(addr1) + "&town" + encodeURIComponent(town) + "&county" + encodeURIComponent(county);
     window.location.href = url;

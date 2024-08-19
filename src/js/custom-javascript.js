@@ -24,7 +24,7 @@ window.redirectToFormAll = redirectToFormAll; // Make sure it's accessible globa
 
 
 function redirectToForm() {
-    var postcodes = document.getElementsByName("postcode");
+    var postcodes = document.getElementsByClassName("postcode");
     var postcodeValue = "";
 
     for (var i = 0; i < postcodes.length; i++) {

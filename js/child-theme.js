@@ -6327,7 +6327,7 @@
 	window.redirectToFormAll = redirectToFormAll; // Make sure it's accessible globally
 
 	function redirectToForm() {
-	  var postcodes = document.getElementsByName("postcode");
+	  var postcodes = document.getElementsByClassName("postcode");
 	  var postcodeValue = "";
 	  for (var i = 0; i < postcodes.length; i++) {
 	    if (postcodes[i].value.trim() !== "") {

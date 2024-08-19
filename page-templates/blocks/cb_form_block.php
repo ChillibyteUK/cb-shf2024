@@ -7,7 +7,7 @@
         <input type="text" name="addr1" id="addr1" placeholder="Address Line 1">
         <input type="text" name="town" id="town" placeholder="Town/City">
         <input type="text" name="county" id="county" placeholder="County">
-        <input type="text" name="pcode" id="postcode" placeholder="Enter your postcode">
+        <input type="text" name="pcode" id="pcode" placeholder="Enter your postcode">
         
         <button class="button button-sm" onclick="redirectToFormAll()">Get Free Cash Offer</button>
 

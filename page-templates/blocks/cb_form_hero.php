@@ -1,6 +1,3 @@
-<?php
-$r = random_str(4,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-?>
 <section class="form_hero">
     <div class="container-xl py-6 text-center">
         <?php
@@ -12,7 +9,12 @@ $r = random_str(4,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
         ?>
         <h1><?=get_field('title')?></h1>
         <div class="form_hero__form">
-            <input type="text" class="postcode" name="<?=$r?>_postcode" id="postcode" autocomplete="off" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
+            <input type="text" class="postcode" name="postcode" id="postcode" autocomplete="off" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
+            <input type="hidden" name="addr1">
+            <input type="hidden" name="addr2">
+            <input type="hidden" name="town">
+            <input type="hidden" name="county">
         </div>
     </div>
 </section>
+<!-- BF89-MY52-EG42-KT54 -->

@@ -45,10 +45,10 @@ defined('ABSPATH') || exit;
         </div>
     </div>
 </footer>
-<input type="hidden" name="addr1" id="addr1">
-<input type="hidden" name="addr2" id="addr2">
-<input type="hidden" name="town" id="town">
-<input type="hidden" name="county" id="county">
+<input type="hidden" name="haddr1" id="haddr1">
+<input type="hidden" name="haddr2" id="haddr2">
+<input type="hidden" name="htown" id="htown">
+<input type="hidden" name="hcounty" id="hcounty">
 <?php wp_footer(); ?>
 <script>(function(n,t,i,r){var u,f;n[i]=n[i]||{},n[i].initial={accountCode:"CHILL11133",host:"CHILL11133.pcapredict.com"},n[i].on=n[i].on||function(){(n[i].onq=n[i].onq||[]).push(arguments)},u=t.createElement("script"),u.async=!0,u.src=r,f=t.getElementsByTagName("script")[0],f.parentNode.insertBefore(u,f)})(window,document,"pca","//CHILL11133.pcapredict.com/js/sensor.js")</script>
 </body>

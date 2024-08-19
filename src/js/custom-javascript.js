@@ -35,6 +35,14 @@ function redirectToForm() {
     }
 
     if (postcodeValue) {
+
+
+        var addr1 = document.getElementById("haddr1").value;
+        var addr2 = document.getElementById("haddr2").value;
+        var town = document.getElementById("htown").value;
+        var county = document.getElementById("hcounty").value;
+        console.log(addr1 + ' ' + addr2 + ' ' + town + ' ' + county);
+
         var url = "/free-cash-offer?postcode=" + encodeURIComponent(postcodeValue);
         // window.location.href = url;
     }

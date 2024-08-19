@@ -6318,13 +6318,10 @@
 	function redirectToFormAll() {
 	  var pcode = document.getElementById("pcode").value;
 	  var addr1 = document.getElementById("addr1").value;
+	  var addr2 = document.getElementById("addr2").value;
 	  var town = document.getElementById("town").value;
 	  var county = document.getElementById("county").value;
-	  var url = "/free-cash-offer?postcode=" + encodeURIComponent(pcode) + "&addr1=" + encodeURIComponent(addr1) + "&town=" + encodeURIComponent(town) + "&county=" + encodeURIComponent(county);
-	  console.log('pcode:', pcode);
-	  console.log('addr1:', addr1);
-	  console.log('town:', town);
-	  console.log('county:', county);
+	  var url = "/free-cash-offer?postcode=" + encodeURIComponent(pcode) + "&addr1=" + encodeURIComponent(addr1) + "&addr2=" + encodeURIComponent(addr2) + "&town=" + encodeURIComponent(town) + "&county=" + encodeURIComponent(county);
 	  window.location.href = url;
 	}
 	window.redirectToFormAll = redirectToFormAll; // Make sure it's accessible globally

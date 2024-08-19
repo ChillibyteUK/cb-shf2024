@@ -4,17 +4,20 @@
         <div class="fs-500 mb-5"><?=get_field('content')?></div>
 
         <div class="row g-4 mb-5">
+            <div class="col-md-6 offset-md-3">
+                <input type="text" name="pcode" id="pcode" placeholder="Enter your postcode">
+            </div>
             <div class="col-md-6">
                 <input type="text" name="addr1" id="addr1" placeholder="Address Line 1">
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="addr2" id="addr1" placeholder="Address Line 2">
             </div>
             <div class="col-md-6">
                 <input type="text" name="town" id="town" placeholder="Town/City">
             </div>
             <div class="col-md-6">
                 <input type="text" name="county" id="county" placeholder="County">
-            </div>
-            <div class="col-md-6">
-                <input type="text" name="pcode" id="pcode" placeholder="Enter your postcode">
             </div>
         </div>
         

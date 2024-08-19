@@ -6328,16 +6328,11 @@
 
 	function redirectToForm() {
 	  var postcodes = document.getElementsByClassName("postcode");
-	  var postcodeValue = "";
 	  for (var i = 0; i < postcodes.length; i++) {
 	    if (postcodes[i].value.trim() !== "") {
-	      postcodeValue = postcodes[i].value.trim();
+	      postcodes[i].value.trim();
 	      break; // Exit the loop once the first filled input is found
 	    }
-	  }
-	  if (postcodeValue) {
-	    var url = "/free-cash-offer?postcode=" + encodeURIComponent(postcodeValue);
-	    window.location.href = url;
 	  }
 	}
 	window.redirectToForm = redirectToForm; // Make sure it's accessible globally

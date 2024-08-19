@@ -36,7 +36,7 @@ function redirectToForm() {
 
     if (postcodeValue) {
         var url = "/free-cash-offer?postcode=" + encodeURIComponent(postcodeValue);
-        window.location.href = url;
+        // window.location.href = url;
     }
 
 }

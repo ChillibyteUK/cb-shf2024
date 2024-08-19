@@ -12,7 +12,7 @@ $bg = isset(get_field('background')[0]) && get_field('background')[0] == 'Yes' ?
                 if (isset(get_field('show_form')[0]) && get_field('show_form')[0] == 'Yes') {
                     ?>
                 <div class="text_image__cta">
-                    <input type="text" name="postcode" id="" placeholder="Enter your postcode"><button>Get Free Cash Offer</button>
+                    <input type="text" name="postcode" id="postcode" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
                 </div>
                     <?php
                 }

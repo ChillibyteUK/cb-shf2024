@@ -9,7 +9,7 @@
         }
         ?>
         <div class="form_hero__form">
-            <input type="text" name="postcode" id="" placeholder="Enter your postcode"><button class="button button-sm">Get Free Cash Offer</button>
+            <input type="text" name="postcode" id="postcode" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
         </div>
     </div>
 </section>

@@ -65,8 +65,7 @@ $img = get_the_post_thumbnail(get_the_ID(),'full',array('class' => 'blog__image'
                     }
                     ?>
                     <div class="single_cta">
-                        <input type="text" name="postcode" placeholder="Enter your postcode" id="">
-                        <a href="#" class="button">Get a Free Cash Offer</a>
+                        <input type="text" name="postcode" id="postcode" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
                     </div>
                 </div>
             </div>

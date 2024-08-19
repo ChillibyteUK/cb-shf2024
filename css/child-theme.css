@@ -21535,6 +21535,25 @@ footer .colophon {
   background-color: var(--col-grey-400);
 }
 
+.form_block input,
+.form_hero input,
+.short_cta input,
+.text_image input {
+  border: 2px solid var(--col-blue-400);
+  height: 42px;
+  padding-inline: 0.5rem;
+}
+.form_block button,
+.form_hero button,
+.short_cta button,
+.text_image button {
+  height: 42px;
+}
+
+.form_block input {
+  width: 100%;
+}
+
 .use_quote {
   background-color: var(--col-grey-400);
   margin-top: 3rem;

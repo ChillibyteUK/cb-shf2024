@@ -6311,6 +6311,21 @@
 	  }
 	})();
 
+	/**
+	 * postcode form redirect
+	 **/
+
+	function redirectToForm() {
+	  var postcode = document.getElementById("postcode").value;
+	  var url = "/free-cash-offer?postcode=" + encodeURIComponent(postcode);
+	  window.location.href = url;
+	}
+	window.redirectToForm = redirectToForm; // Make sure it's accessible globally
+
+	/**
+	 * hide navigation
+	 **/
+
 	document.addEventListener('DOMContentLoaded', function () {
 	  // var topNav = document.querySelector('.prenav');
 	  var mainNav = document.querySelector('header');

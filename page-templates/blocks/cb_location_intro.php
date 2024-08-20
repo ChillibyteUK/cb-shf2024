@@ -6,7 +6,7 @@
                 <?=get_field('content')?>
             </div>
             <div class="col-lg-3">
-                <?=wp_get_attachment_image(get_field('image'), 'large', false, null)?>
+                <?=wp_get_attachment_image(get_field('image'), 'full', false, null)?>
             </div>
         </div>
     </div>

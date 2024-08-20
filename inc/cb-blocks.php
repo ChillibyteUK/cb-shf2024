@@ -160,15 +160,6 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_text_map',
-            'title'				=> __('CB Text / Map'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_text_map.php',
-            'mode'	=> 'edit',
-            'supports' => array('mode' => false),
-        ));
-        acf_register_block_type(array(
             'name'				=> 'cb_use_quote',
             'title'				=> __('CB Use Case / Quote'),
             'category'			=> 'layout',
@@ -210,6 +201,15 @@ function acf_blocks()
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_location_news.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_location_intro',
+            'title'				=> __('CB Location Intro'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_location_intro.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));

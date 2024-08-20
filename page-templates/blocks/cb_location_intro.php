@@ -5,8 +5,8 @@
             <div class="col-lg-7 location_intro__content">
                 <?=get_field('content')?>
             </div>
-            <div class="col-lg-3">
-                <?=wp_get_attachment_image(get_field('image'), 'full', false, null)?>
+            <div class="col-lg-5">
+                <?=wp_get_attachment_image(get_field('image'), 'large', false, null)?>
             </div>
         </div>
     </div>

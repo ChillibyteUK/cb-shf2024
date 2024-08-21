@@ -125,6 +125,26 @@
                     "parent_repeater": "field_66c5b4ab7cdc7"
                 }
             ]
+        },
+        {
+            "key": "field_66c6008d12ee5",
+            "label": "Outro",
+            "name": "outro",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -145,5 +165,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724251919
+    "modified": 1724252345
 }

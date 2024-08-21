@@ -24,5 +24,14 @@
             }
             ?>
         </div>
+        <?php
+        if (get_field('outro') ?? null) {
+            ?>
+        <div class="container mt-4 pb-4 has-blue-400-color font-weight-medium">
+            <?=get_field('outro')?>
+        </div>
+            <?php
+        }
+        ?>
     </div>
 </div>

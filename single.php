@@ -13,18 +13,25 @@ $img = get_the_post_thumbnail(get_the_ID(),'full',array('class' => 'blog__image'
     $sidebar = array();
     $after;
     ?>
-    <section class="breadcrumbs container-xl">
-    <?php
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-    }
-    ?>
-    </section>
-    <div class="container-xl">
+    <div class="blog__image">
+        <?=get_the_post_thumbnail(get_the_id(), 'full')?>
+        <div class="overlay"></div>
+    </div>
+    <div class="blog__hero">
+        <section class="breadcrumbs container-xl pt-4">
+        <?php
+        if (function_exists('yoast_breadcrumb')) {
+            yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+        }
+        ?>
+        </section>
+        <div class="container-xl blog__title">
+            <h1><?=get_the_title()?></h1>
+        </div>
+    </div>
+    <div class="container-xl blog__main">
         <div class="row g-4 pb-4">
-            <div class="col-lg-9 order-2">
-                <h1 class="blog__title"><?=get_the_title()?></h1>
-                <?=$img?>
+            <div class="col-lg-9 p-5">
             <?php
             $count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
             echo $count;
@@ -43,7 +50,7 @@ $img = get_the_post_thumbnail(get_the_ID(),'full',array('class' => 'blog__image'
     }
             ?>
             </div>
-            <div class="col-lg-3 order-1">
+            <div class="col-lg-3 d-none d-lg-block">
                 <div class="sidebar-container">
                     <?php
                     if ($sidebar) {

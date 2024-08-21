@@ -21968,7 +21968,7 @@ footer .colophon {
 .news_card__inner {
   padding: 2rem;
   display: grid;
-  grid-template-rows: 5rem auto auto;
+  grid-template-rows: minmax(5rem, auto) auto auto;
 }
 .news_card h3, .news_card .h3 {
   font-size: var(--fs-600);

@@ -21780,12 +21780,6 @@ footer .colophon {
 .three_col_cards2 h2,
 .three_col_cards2 .h2 {
   position: relative;
-  min-height: 120px;
-  display: flex;
-  -moz-column-gap: 0.6rem;
-  column-gap: 0.6rem;
-  flex-wrap: wrap;
-  align-items: center;
 }
 .three_col_cards h2 span, .three_col_cards .h2 span,
 .three_col_cards2 h2 span,
@@ -21797,6 +21791,12 @@ footer .colophon {
   .three_col_cards h2, .three_col_cards .h2,
   .three_col_cards2 h2,
   .three_col_cards2 .h2 {
+    min-height: 120px;
+    display: flex;
+    -moz-column-gap: 0.6rem;
+    column-gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
     padding-inline-start: 4rem;
   }
   .three_col_cards h2::before, .three_col_cards .h2::before,

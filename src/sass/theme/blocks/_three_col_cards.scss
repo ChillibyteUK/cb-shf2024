@@ -2,15 +2,15 @@
 .three_col_cards2 {
     h2 {
         position: relative;
-        min-height: 120px;
-        display: flex;
-        column-gap: 0.6rem;
-        flex-wrap: wrap;
-        align-items: center;
         span {
             text-decoration: underline var(--col-blue-400) solid 0.2em;
         }
         @media (min-width:768px) {
+            min-height: 120px;
+            display: flex;
+            column-gap: 0.6rem;
+            flex-wrap: wrap;
+            align-items: center;
             padding-inline-start: 4rem;
             &::before {
                 content: "";

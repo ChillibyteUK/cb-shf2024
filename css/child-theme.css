@@ -20677,8 +20677,8 @@ readers do not read off random characters that represent icons */
       --fs-400: 1rem; // body text
       --fs-300: 0.8rem; // small text
       --fs-200: 0.64rem; // tiny text */
-  --fs-999: clamp(2.5rem, 5vw + 1rem, 3.815rem);
-  --fs-900: clamp(2.2rem, 4.5vw + 1rem, 3.052rem);
+  --fs-999: clamp(2.4rem, 5vw + 1rem, 3.815rem);
+  --fs-900: clamp(2.0rem, 4.5vw + 1rem, 3.052rem);
   --fs-800: clamp(1.8rem, 4vw + 0.9rem, 2.441rem);
   --fs-700: clamp(1.5rem, 3.5vw + 0.8rem, 1.953rem);
   --fs-600: clamp(1.3rem, 3vw + 0.7rem, 1.563rem);

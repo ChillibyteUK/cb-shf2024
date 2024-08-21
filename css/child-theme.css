@@ -21769,7 +21769,10 @@ footer .colophon {
   position: relative;
   min-height: 120px;
   padding-inline-start: 4rem;
-  line-height: 120px;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .three_col_cards h2 span, .three_col_cards .h2 span,
 .three_col_cards2 h2 span,

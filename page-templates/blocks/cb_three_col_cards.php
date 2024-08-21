@@ -1,9 +1,12 @@
-<section class="three_col_cards">
+<section class="three_col_cards mb-5">
     <div class="container-xl">
         <h2 class="mb-4"><?=get_field('title')?></h2>
     </div>
+    <div class="container pb-4 has-blue-400-color font-weight-medium">
+        <?=get_field('intro')?>
+    </div>
     <div class="three_col_cards__bg">
-        <div class="container-xl three_col_cards__grid">
+        <div class="container-xl three_col_cards__grid mb-4">
             <?php
             $c = 1;
             while (have_rows('cards')) {
@@ -18,6 +21,9 @@
                 $c++;
             }
             ?>
+        </div>
+        <div class="container has-blue-400-color font-weight-medium">
+            <?=get_field('outro')?>
         </div>
     </div>
 </section>

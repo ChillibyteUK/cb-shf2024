@@ -21770,7 +21770,8 @@ footer .colophon {
   min-height: 120px;
   padding-inline-start: 4rem;
   display: flex;
-  gap: 0.6rem;
+  -moz-column-gap: 0.6rem;
+  column-gap: 0.6rem;
   flex-wrap: wrap;
   align-items: center;
 }

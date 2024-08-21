@@ -21898,15 +21898,10 @@ footer .colophon {
 
 .three_col_cards2__card {
   display: grid;
-  grid-template-areas: "marker" "title" "content";
+  grid-template-areas: "marker title" "content content";
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: minmax(50px, auto) 1fr;
   background-color: var(--col-white);
-}
-@media (min-width: 576px) {
-  .three_col_cards2__card {
-    grid-template-areas: "marker title" "content content";
-    grid-template-columns: 50px 1fr;
-    grid-template-rows: minmax(50px, auto) 1fr;
-  }
 }
 .three_col_cards2__marker {
   grid-area: marker;

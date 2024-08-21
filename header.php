@@ -117,7 +117,7 @@ if (get_field('gtm_property', 'options')) {
                 <button class="header_toggle navbar-toggler input-button" id="navToggle" data-bs-toggle="collapse"
                     data-bs-target=".navbars" type="button" aria-label="Navigation"><i
                         class="fa fa-navicon"></i></button>
-                <div class="header_ctas">
+                <div class="header_ctas d-none d-md-block">
                     <a href="/free-cash-offer/" class="button button-sm">FREE CASH OFFER</a>
                     <div>Call us: <?=contact_phone()?></div>
                 </div>

@@ -233,10 +233,19 @@ function acf_blocks()
         ));
         acf_register_block_type(array(
             'name'				=> 'cb_three_col_cards',
-            'title'				=> __('CB Three Col Cards'),
+            'title'				=> __('CB Three Col Numbered Cards'),
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_three_col_cards.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_three_col_cards2',
+            'title'				=> __('CB Three Col Marker Cards'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_three_col_cards2.php',
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));

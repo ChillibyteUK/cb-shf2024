@@ -20668,15 +20668,24 @@ readers do not read off random characters that represent icons */
   --col-blue-400: #0073CC;
   --col-grey-400: #F5F5F5;
   --col-grey-600: #CACBCB;
-  --fs-999: 3.815rem;
-  --fs-900: 3.052rem;
-  --fs-800: 2.441rem;
-  --fs-700: 1.953rem;
-  --fs-600: 1.563rem;
-  --fs-500: 1.25rem;
-  --fs-400: 1rem;
-  --fs-300: 0.8rem;
-  --fs-200: 0.64rem;
+  /*     --fs-999: 3.815rem; // h1
+      --fs-900: 3.052rem; // h2
+      --fs-800: 2.441rem; // h3
+      --fs-700: 1.953rem; // h4
+      --fs-600: 1.563rem; // h5
+      --fs-500: 1.25rem; // h6
+      --fs-400: 1rem; // body text
+      --fs-300: 0.8rem; // small text
+      --fs-200: 0.64rem; // tiny text */
+  --fs-999: clamp(2.5rem, 5vw + 1rem, 3.815rem);
+  --fs-900: clamp(2.2rem, 4.5vw + 1rem, 3.052rem);
+  --fs-800: clamp(1.8rem, 4vw + 0.9rem, 2.441rem);
+  --fs-700: clamp(1.5rem, 3.5vw + 0.8rem, 1.953rem);
+  --fs-600: clamp(1.3rem, 3vw + 0.7rem, 1.563rem);
+  --fs-500: clamp(1.1rem, 2.5vw + 0.6rem, 1.25rem);
+  --fs-400: clamp(0.9rem, 2vw + 0.5rem, 1rem);
+  --fs-300: clamp(0.7rem, 1.5vw + 0.4rem, 0.8rem);
+  --fs-200: clamp(0.6rem, 1vw + 0.3rem, 0.64rem);
   --fw-400: 400;
   --fw-600: 600;
   --fw-700: 700;
@@ -21791,6 +21800,7 @@ footer .colophon {
   transform: translateY(-50%);
   width: 50px;
   height: 100px;
+  background-size: contain;
   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50.31 100.63'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %230073CC; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Cg id='NAV_BAR' data-name='NAV BAR'%3E%3Cpolygon class='cls-1' points='0 35.54 14.79 50.32 0 65.11 0 100.63 50.31 50.32 0 0 0 35.54'/%3E%3C/g%3E%3C/svg%3E");
 }
 .three_col_cards h3, .three_col_cards .h3,

@@ -3,7 +3,7 @@
         <?php
         if (get_field('pre_title') ?? null) {
             ?>
-        <div class="h2 mb-0 font-weight-medium"><?=get_field('pre_title')?></div>
+        <div class="h3 mb-0 font-weight-medium"><?=get_field('pre_title')?></div>
             <?php
         }
         ?>

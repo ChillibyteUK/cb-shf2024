@@ -77,18 +77,15 @@ h1, .h1, .fs-999 {
     line-height: 1.1;
 }
 h2, .h2, .fs-900 {
-    font-size: var(--fs-900);
-}
-h3, .h3, .fs-800, .has-x-large-font-size {
     font-size: var(--fs-800);
 }
-h4, .h4, .fs-700 {
+h3, .h3, .fs-800, .has-x-large-font-size {
     font-size: var(--fs-700);
 }
-h5, .h5, .fs-600{
+h4, .h4, .fs-700 {
     font-size: var(--fs-600);
 }
-h6, .h6, .fs-500 {
+h5, .h5, .fs-600{
     font-size: var(--fs-500);
 }
 

@@ -41,6 +41,26 @@
             "append": ""
         },
         {
+            "key": "field_66c5ff07a5996",
+            "label": "Intro",
+            "name": "intro",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66c5b4ab7cdc7",
             "label": "Cards",
             "name": "cards",
@@ -125,5 +145,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724232917
+    "modified": 1724251919
 }

@@ -1,6 +1,15 @@
 <div class="three_col_cards2">
     <div class="container-xl">
         <h2 class="mb-4"><?=get_field('title')?></h2>
+        <?php
+        if (get_field('intro') ?? null) {
+            ?>
+        <div class="container pb-4 has-blue-400-color font-weight-medium">
+            <?=get_field('intro')?>
+        </div>
+            <?php
+        }
+        ?>
         <div class="three_col_cards2__grid py-5">
             <?php
             while (have_rows('cards')) {

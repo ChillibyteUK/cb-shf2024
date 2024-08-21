@@ -21317,7 +21317,6 @@ footer .colophon {
 }
 .services_nav__grid > * {
   flex: 1 1 415px; /* Allow the items to grow and shrink, with a base width of 215px */
-  max-width: calc(33.3333% - 1rem); /* Ensure three items per row at larger screens with gap taken into account */
 }
 @media (min-width: 576px) {
   .services_nav__grid > * {
@@ -21467,6 +21466,7 @@ footer .colophon {
 .area_cta__areas {
   overflow-y: scroll;
   height: 340px;
+  padding-inline-start: 2rem;
 }
 .area_cta__areas .locations-list {
   list-style: none;

@@ -34,20 +34,7 @@
     &__areas {
         overflow-y: scroll;
         height: 340px;
-
-        // &::-webkit-scrollbar {
-        //     width: 10px;
-        // }
-        // &::-webkit-scrollbar-track {
-        //     background: #f1f1f1;
-        // }
-        // &::-webkit-scrollbar-thumb {
-        //     background: var(--col-white);
-        //     border: 6px solid var(--col-blue-400);
-        //     border-radius: 50%;
-        //     margin-top: -6px; /* Center the thumb on the track */
-    
-        // }
+        padding-inline-start: 2rem;
 
         .locations-list {
             list-style: none;

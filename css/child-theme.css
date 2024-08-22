@@ -21021,6 +21021,10 @@ footer .colophon {
   row-gap: 1rem !important;
 }
 
+.gform_validation_errors {
+  background-color: var(--col-grey-400);
+}
+
 .form_hero__form {
   margin-top: 3rem;
 }

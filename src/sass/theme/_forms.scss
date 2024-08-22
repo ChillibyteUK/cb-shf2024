@@ -2,7 +2,9 @@
     --gf-form-gap-y: 1rem;
     row-gap: 1rem !important;
 }
-
+.gform_validation_errors {
+    background-color: var(--col-grey-400);
+}
 
 // // .gform_wrapper form {
 // //     max-width: 768px;

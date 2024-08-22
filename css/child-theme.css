@@ -21016,6 +21016,10 @@ footer .colophon {
   font-size: var(--fs-200);
 }
 
+:root {
+  --gf-form-gap-y: 1rem;
+}
+
 .form_hero__form {
   margin-top: 3rem;
 }

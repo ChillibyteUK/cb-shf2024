@@ -21137,13 +21137,13 @@ footer .colophon {
 .text_image .h3 {
   font-size: var(--fs-600);
 }
-.text_video vimeo-embed,
-.text_image vimeo-embed {
+.text_video .vimeo-embed,
+.text_image .vimeo-embed {
   cursor: pointer;
   position: relative;
 }
-.text_video vimeo-embed::after,
-.text_image vimeo-embed::after {
+.text_video .vimeo-embed::after,
+.text_image .vimeo-embed::after {
   content: "\f04b";
   font-family: var(--ff-fa);
   font-weight: 600;
@@ -21155,8 +21155,8 @@ footer .colophon {
   color: var(--col-white);
   pointer-events: none;
 }
-.text_video vimeo-embed.video-loaded::after,
-.text_image vimeo-embed.video-loaded::after {
+.text_video .vimeo-embed.video-loaded::after,
+.text_image .vimeo-embed.video-loaded::after {
   display: none;
 }
 .text_video__text_container,

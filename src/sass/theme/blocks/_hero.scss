@@ -18,11 +18,11 @@
         .gform_button.button {
             width: 100%;
             background: var(--col-yellow-400);
-            color: var(--col-black);
-            font-weight: var(--fw-600);
-            text-transform: uppercase;
-            border-radius: 0;
-            text-align: center;
+            color: var(--col-black) !important;
+            font-weight: var(--fw-600) !important;
+            text-transform: uppercase !important;
+            border-radius: 0 !important;
+            text-align: center !important;
         }
     }
 }

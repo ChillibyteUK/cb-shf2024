@@ -84,11 +84,6 @@
     "location": [
         [
             {
-                "param": "page",
-                "operator": "==",
-                "value": "43"
-            },
-            {
                 "param": "block",
                 "operator": "==",
                 "value": "acf\/cb-ps-hero"
@@ -103,5 +98,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0
+    "show_in_rest": 0,
+    "modified": 1724323048
 }

@@ -21040,6 +21040,15 @@ footer .colophon {
 .ps_hero__form .ps_hero__form_intro {
   color: var(--col-white);
 }
+.ps_hero__form .gform_button.button {
+  width: 100%;
+  background: var(--col-yellow-400);
+  color: var(--col-black);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  border-radius: 0;
+  text-align: center;
+}
 
 .three_col_usp {
   text-align: center;

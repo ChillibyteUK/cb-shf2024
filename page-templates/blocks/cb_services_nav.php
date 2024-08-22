@@ -7,7 +7,12 @@ $bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pt-5';
         <?php
         if (get_field('title') ?? null) {
             ?>
-        <h2><?=get_field('title')?></h2>
+        <h2 class="mb-4"><?=get_field('title')?></h2>
+            <?php
+        }
+        if (get_field('intro') ?? null) {
+            ?>
+        <div class="text-center has-blue-400-color fw-bold mb-4"><?=get_field('intro')?></div>
             <?php
         }
         ?>

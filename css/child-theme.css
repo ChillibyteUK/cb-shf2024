@@ -21016,8 +21016,9 @@ footer .colophon {
   font-size: var(--fs-200);
 }
 
-:root {
+.gform-theme--foundation .gform_fields {
   --gf-form-gap-y: 1rem;
+  row-gap: 1rem !important;
 }
 
 .form_hero__form {

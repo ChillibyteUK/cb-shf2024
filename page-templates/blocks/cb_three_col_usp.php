@@ -3,9 +3,9 @@ $width = get_field('width') == 'Narrow' ? 'w-lg-75' : '';
 
 $hp = is_front_page() ? 'three_col_usp__content--hide' : '';
 
-$usp1 = get_field('usp_1');
-$usp2 = get_field('usp_2');
-$usp3 = get_field('usp_3');
+$usp1 = get_field('usp_1') ?: get_field('usp_1','option');
+$usp2 = get_field('usp_2') ?: get_field('usp_2','option');
+$usp3 = get_field('usp_3') ?: get_field('usp_3','option');
 
 if (is_front_page()) {
     $usp1 = wrap_non_strong_content($usp1);

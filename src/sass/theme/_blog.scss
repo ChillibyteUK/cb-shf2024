@@ -1,3 +1,9 @@
+.reading {
+    font-size: var(--fs-200);
+    font-style: italic;
+    margin-bottom: 0;
+}
+
 .news_card {
     background-color: var(--col-white);
     display: grid;
@@ -17,11 +23,14 @@
     &__inner {
         padding: 2rem;
         display: grid;
-        grid-template-rows: minmax(5rem,auto) auto auto;
+        @media (min-width:992px) {
+            grid-template-rows: minmax(5rem,auto) 1.5rem minmax(8rem,auto) 2rem;
+        }
     }
     h3 {
         font-size: var(--fs-600);
         color: var(--col-blue-400);
+        margin-bottom: 0;
     }
     &__excerpt {
         font-size: var(--fs-300);

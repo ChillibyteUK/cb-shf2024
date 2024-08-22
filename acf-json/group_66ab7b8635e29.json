@@ -12,11 +12,11 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "75",
+                "width": "66",
                 "class": "",
                 "id": ""
             },
-            "message": "Wrap text in &lt;strong&gt; tags to embolden.",
+            "message": "Wrap text in &lt;strong&gt; tags to embolden.\r\nUses defaults in Site-Wide Settings if blank.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -42,7 +42,7 @@
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "layout": "vertical",
+            "layout": "horizontal",
             "save_other_choice": 0
         },
         {
@@ -124,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723216435
+    "modified": 1724331214
 }

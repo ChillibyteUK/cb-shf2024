@@ -20,7 +20,7 @@ if (is_front_page()) {
             <div class="col-md-4">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
-                    <?=$usp3?>
+                    <?=$usp1?>
                 </div>
             </div>
             <div class="col-md-4">

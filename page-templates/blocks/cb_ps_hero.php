@@ -15,10 +15,7 @@
                 <div class="ps_hero__form">
                     <h2 class="h3">Invest in properties today</h2>
                     <div class="ps_hero__form_intro">Enter your details below</div>
-                    <div>FORM HERE<br>
-                        <input type="text" name="postcode" id="" placeholder="Enter your postcode">
-                        <button class="button button-sm">Enquire</button>
-                    </div>
+                    <div><?=do_shortcode('[gravityform id="' . get_field('form_id') . '" title="false"]')?></div>
                 </div>
             </div>
         </div>

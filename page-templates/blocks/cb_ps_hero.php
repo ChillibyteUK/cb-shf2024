@@ -11,7 +11,7 @@
                     ?>
                 </ul>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-md-6">
                 <div class="ps_hero__form">
                     <h2 class="h3">Invest in properties today</h2>
                     <div class="ps_hero__form_intro">Enter your details below</div>

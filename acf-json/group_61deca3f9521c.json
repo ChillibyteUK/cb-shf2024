@@ -1001,7 +1001,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "<strong>FREE<\/strong> cash offer, fast",
             "maxlength": "",
             "rows": 2,
             "placeholder": "",
@@ -1021,7 +1021,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "<strong>SELL<\/strong> on <strong>YOUR<\/strong> terms",
             "maxlength": "",
             "rows": 2,
             "placeholder": "",
@@ -1041,7 +1041,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "<strong>GUARANTEED<\/strong> sale on ANY property",
             "maxlength": "",
             "rows": 2,
             "placeholder": "",
@@ -1066,5 +1066,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724843982
+    "modified": 1724858742
 }

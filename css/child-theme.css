@@ -21185,17 +21185,17 @@ footer .colophon {
   -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
   text-decoration: underline var(--col-blue-400) solid 0.2em;
 }
-.calculator__input {
+.calculator__grid {
   display: grid;
-  grid-template-areas: "slider" "current" "message";
   gap: 1rem;
   place-content: center;
+  grid-template-areas: "slider" "current" "arrow" "output" "message";
 }
 @media (min-width: 768px) {
-  .calculator__input {
-    grid-template-areas: "slider current" "message message";
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 4rem 5rem;
+  .calculator__grid {
+    grid-template-columns: 2fr 1fr 0.75fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "slider current arrow output" "message message arrow output";
   }
 }
 .calculator__label {
@@ -21291,6 +21291,7 @@ footer .colophon {
   }
 }
 .calculator__arrow {
+  grid-area: arrow;
   height: 50px;
   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 102.66 205.32'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f1f1f1; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Cg id='NAV_BAR' data-name='NAV BAR'%3E%3Cpolygon class='cls-1' points='90.77 102.66 0 193.43 0 205.32 102.66 102.66 0 0 0 11.89 90.77 102.66'/%3E%3C/g%3E%3C/svg%3E");
   background-size: contain;
@@ -21305,6 +21306,9 @@ footer .colophon {
   }
 }
 .calculator__output_inner {
+  grid-area: output;
+  display: grid;
+  place-content: center;
   background-color: var(--col-blue-400);
   text-align: center;
   padding: 1rem;
@@ -21313,6 +21317,7 @@ footer .colophon {
   color: var(--col-white);
   font-size: var(--fs-700);
   font-weight: var(--fw-600);
+  line-height: 1.1;
 }
 .calculator__output_value {
   color: var(--col-yellow-400);

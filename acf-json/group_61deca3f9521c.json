@@ -314,6 +314,46 @@
             "selected": 0
         },
         {
+            "key": "field_66cef55702276",
+            "label": "Calculator Title",
+            "name": "calculator_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Wrap in &lt;span&lt; tags to embolden.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66cef5a102278",
+            "label": "Default Value",
+            "name": "default_value",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66acc3463386a",
             "label": "Min Value",
             "name": "min_value",
@@ -376,6 +416,26 @@
             "max": "",
             "placeholder": "",
             "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66cef58b02277",
+            "label": "Output Title",
+            "name": "output_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
             "prepend": "",
             "append": ""
         },
@@ -1006,5 +1066,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724330911
+    "modified": 1724839354
 }

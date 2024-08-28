@@ -21489,13 +21489,46 @@ footer .colophon {
 .area_cta__areas {
   overflow-y: scroll;
   height: 340px;
-  padding-inline-start: 2rem;
+}
+.area_cta__areas::-webkit-scrollbar {
+  width: 8px;
+}
+.area_cta__areas::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+.area_cta__areas::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+@media (min-width: 420px) {
+  .area_cta__areas {
+    padding-inline-start: 2rem;
+  }
 }
 .area_cta__areas .locations-list {
-  list-style: none;
   padding-inline-start: 0;
 }
-@media (min-width: 400px) {
+.area_cta__areas .locations-list li {
+  list-style: none;
+}
+@media (min-width: 350px) {
+  .area_cta__areas .locations-list {
+    -moz-columns: 2;
+    columns: 2;
+  }
+}
+@media (min-width: 420px) {
+  .area_cta__areas .locations-list li {
+    list-style: square;
+  }
+}
+@media (min-width: 576px) {
+  .area_cta__areas .locations-list {
+    -moz-columns: 3;
+    columns: 3;
+  }
+}
+@media (min-width: 768px) {
   .area_cta__areas .locations-list {
     -moz-columns: 2;
     columns: 2;

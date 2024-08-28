@@ -319,7 +319,7 @@
             "name": "calculator_title",
             "aria-label": "",
             "type": "text",
-            "instructions": "Wrap in &lt;span&lt; tags to embolden.",
+            "instructions": "Wrap in &lt;span&gt; tags to embolden.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1066,5 +1066,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724839354
+    "modified": 1724843982
 }

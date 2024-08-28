@@ -2,7 +2,7 @@
     <div class="container-xl d-flex w-100">
         <h2><?=get_field('title')?></h2>
     </div>
-    <div class="container pb-4 text-center has-blue-400-color font-weight-medium">
+    <div class="container pb-4 has-blue-400-color font-weight-medium">
         <?=get_field('intro')?>
     </div>
     <div class="three_steps__bg">

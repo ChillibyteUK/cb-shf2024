@@ -1,5 +1,9 @@
 <?php
 $bg = isset(get_field('background')[0]) && get_field('background')[0] == 'Yes' ? 'bg-grey-400' : null;
+
+$containerBg = get_field('background') == 'grey-400' ? 'bg-grey-400' : 'bg-white';
+$contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
+
 ?>
 <section class="text_image <?=$bg?> py-5">
     <div class="container-xl">

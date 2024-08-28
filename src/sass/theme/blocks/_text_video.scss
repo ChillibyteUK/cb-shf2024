@@ -1,8 +1,5 @@
 .text_video,
 .text_image {
-    &__text {
-        background-color: var(--col-white);
-    }
     h2, h3 {
         font-size: var(--fs-600);
     }

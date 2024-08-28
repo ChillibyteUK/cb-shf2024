@@ -20855,6 +20855,10 @@ h1 > span, .h1 > span {
   color: var(--col-white);
 }
 
+.bg-white {
+  background: var(--col-white);
+}
+
 .button {
   display: inline-block;
   border-radius: 0;
@@ -21126,10 +21130,6 @@ footer .colophon {
   font-style: italic;
 }
 
-.text_video__text,
-.text_image__text {
-  background-color: var(--col-white);
-}
 .text_video h2, .text_video .h2, .text_video h3, .text_video .h3,
 .text_image h2,
 .text_image .h2,

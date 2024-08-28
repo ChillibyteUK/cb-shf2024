@@ -1,10 +1,14 @@
 <?php
 $class = $block['className'] ?? 'py-5';
+
+$containerBg = get_field('background') == 'grey-400' ? 'bg-grey-400' : 'bg-white';
+$contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
+
 ?>
-<section class="text_video bg-grey-400 <?=$class?>">
+<section class="text_video <?=$containerBg?> <?=$class?>">
     <div class="container-xl">
         <div class="row g-4">
-            <div class="col-md-6 text_video__text p-5">
+            <div class="col-md-6 <?=$contentBg?> p-5">
                 <?=get_field('text')?>
             </div>
             <div class="col-md-6 text_video__video">

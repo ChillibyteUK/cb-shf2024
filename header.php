@@ -77,7 +77,7 @@ if (is_front_page() || is_page('contact-us')) {
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer support",
-                "telephone": "[+44 (0) 800 123 4567]",
+                "telephone": "[+44 (0) 800 098 3789]",
                 "email": "info@sellhousefast.co.uk"
             },
             "sameAs": [

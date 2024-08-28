@@ -69,9 +69,9 @@ if (is_front_page() || is_page('contact-us')) {
             "logo": "https://www.sellhousefast.co.uk/wp-content/themes/cb-shf2024/img/shf-logo-large.png",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Haslers, Old Station Road",
+                "streetAddress": "Office 1.01, 411 - 413 Oxford Street",
                 "addressLocality": "London",
-                "postalCode": "IG10 4PL",
+                "postalCode": "W1C 2PE",
                 "addressCountry": "United Kingdom"
             },
             "contactPoint": {

@@ -8,7 +8,7 @@ $class = $block['className'] ?? 'py-5';
                 <?=get_field('text')?>
             </div>
             <div class="col-md-6 text_video__video">
-                <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO">
+                <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div>
             </div>
         </div>
     </div>

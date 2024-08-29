@@ -223,4 +223,27 @@ function wrap_non_strong_content($input) {
     return $result;
 }
 
+function styleFirstWord($text) {
+    // Find the position of the first space to isolate the first word
+    $firstSpacePos = strpos($text, ' ');
+
+    if ($firstSpacePos !== false) {
+        // Extract the first word
+        $firstWord = substr($text, 0, $firstSpacePos);
+        // Get the first letter and the rest of the word
+        $firstLetter = substr($firstWord, 0, 1);
+        $restOfWord = substr($firstWord, 1);
+
+        // Wrap the first letter in a span with a blue color and bold the rest of the word
+        $styledWord = "<span class=\"first-letter\">$firstLetter</span>"
+                    . "<span class=\"rest-of-word\">$restOfWord</span>";
+
+        // Replace the first word with the styled version
+        $text = $styledWord . substr($text, $firstSpacePos);
+    }
+
+    return $text;
+}
+
+
 ?>

@@ -21102,6 +21102,13 @@ footer .colophon {
   margin-inline: auto;
   margin-bottom: 1rem;
 }
+.steps .first-letter {
+  color: var(--col-blue-400);
+  font-weight: var(--fw-700);
+}
+.steps .rest-of-word {
+  font-weight: var(--fw-700);
+}
 
 .short_cta {
   background-color: var(--col-white);

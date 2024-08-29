@@ -1,7 +1,8 @@
 <?php
 $class = null;
+$cclass = $block['className'] ?? 'pt-5';
 ?>
-<div class="three_col_cards2">
+<div class="three_col_cards2 <?=$cclass?>">
     <div class="container-xl">
         <?php
         if (get_field('title') ?? null) {

@@ -1,6 +1,6 @@
 <?php
 $class = null;
-$cclass = $block['className'] ?? 'pt-5';
+$cclass = $block['className'] ?? 'pt-4';
 ?>
 <div class="three_col_cards2 <?=$cclass?>">
     <div class="container-xl">

@@ -1,16 +1,25 @@
+<?php
+$class = null;
+?>
 <div class="three_col_cards2">
     <div class="container-xl">
-        <h2 class="mb-4"><?=get_field('title')?></h2>
         <?php
+        if (get_field('title') ?? null) {
+            ?>
+        <h2 class="mb-4"><?=get_field('title')?></h2>
+            <?php
+            $class = 'py-5';
+        }
         if (get_field('intro') ?? null) {
             ?>
         <div class="container pb-4 has-blue-400-color font-weight-medium">
             <?=get_field('intro')?>
         </div>
             <?php
+            $class = 'py-5';
         }
         ?>
-        <div class="three_col_cards2__grid py-5">
+        <div class="three_col_cards2__grid <?=$class?>">
             <?php
             while (have_rows('cards')) {
                 the_row();

@@ -12,52 +12,54 @@
         </div>
         <div class="collapse mt-4" id="transcriptCollapse">
             <div class="card card-body">
-                <?=get_field('transcript')?>
+                <?=get_field('transcript') ?? null?>
             </div>
         </div>
     </div>
 </section>
 <?php
-$vimeo_id = get_field('vimeo_id'); // Assuming you're getting the Vimeo ID from ACF
-$transcript = get_field('transcript'); // Assuming you're getting the transcript text from ACF
+if (get_field('vimeo_id')) {
+    $vimeo_id = get_field('vimeo_id');
+    $transcript = get_field('transcript') ?? null;
 
-$vimeo_data = file_get_contents("https://vimeo.com/api/v2/video/{$vimeo_id}.json");
-$vimeo_data = json_decode($vimeo_data, true);
+    $vimeo_data = file_get_contents("https://vimeo.com/api/v2/video/{$vimeo_id}.json");
+    $vimeo_data = json_decode($vimeo_data, true);
 
-$title = $vimeo_data[0]['title'];
-$description = $vimeo_data[0]['description'];
-$thumbnail = $vimeo_data[0]['thumbnail_large']; // Or create your custom thumbnail URL
-$uploadDate = $vimeo_data[0]['upload_date'];
-$duration = $vimeo_data[0]['duration']; // Duration in seconds, you need to convert it to ISO 8601
+    $title = $vimeo_data[0]['title'];
+    $description = $vimeo_data[0]['description'];
+    $thumbnail = $vimeo_data[0]['thumbnail_large'];
+    $uploadDate = $vimeo_data[0]['upload_date'];
+    $duration = $vimeo_data[0]['duration']; // Duration in seconds - convert to ISO 8601
 
-// Convert duration to ISO 8601 format
-$duration_iso = new DateInterval("PT{$duration}S");
+    // Convert duration to ISO 8601 format
+    $duration_iso = new DateInterval("PT{$duration}S");
 
-$image = get_stylesheet_directory_uri() . '/img/shf-logo--dark.svg';
+    $image = get_stylesheet_directory_uri() . '/img/shf-logo--dark.svg';
 
-// Generate the schema markup
-$schema_markup = [
-    "@context" => "https://schema.org",
-    "@type" => "VideoObject",
-    "name" => $title,
-    "description" => $description,
-    "thumbnailUrl" => $thumbnail,
-    "uploadDate" => $uploadDate,
-    "contentUrl" => "https://vimeo.com/{$vimeo_id}",
-    "embedUrl" => "https://player.vimeo.com/video/{$vimeo_id}",
-    "duration" => $duration_iso->format('PT%hH%iM%sS'),
-    "transcript" => $transcript,
-    "publisher" => [
-        "@type" => "Organization",
-        "name" => "SellHouseFast.co.uk",
-        "logo" => [
-            "@type" => "ImageObject",
-            "url" => $image
+    // Generate the schema markup
+    $schema_markup = [
+        "@context" => "https://schema.org",
+        "@type" => "VideoObject",
+        "name" => $title,
+        "description" => $description,
+        "thumbnailUrl" => $thumbnail,
+        "uploadDate" => $uploadDate,
+        "contentUrl" => "https://vimeo.com/{$vimeo_id}",
+        "embedUrl" => "https://player.vimeo.com/video/{$vimeo_id}",
+        "duration" => $duration_iso->format('PT%hH%iM%sS'),
+        "transcript" => $transcript,
+        "publisher" => [
+            "@type" => "Organization",
+            "name" => "SellHouseFast.co.uk",
+            "logo" => [
+                "@type" => "ImageObject",
+                "url" => $image
+            ]
         ]
-    ]
-];
+    ];
 
-echo '<script type="application/ld+json">' . json_encode($schema_markup) . '</script>';
+    echo '<script type="application/ld+json">' . json_encode($schema_markup) . '</script>';
+}
 
 add_action('wp_footer', function(){
     ?>

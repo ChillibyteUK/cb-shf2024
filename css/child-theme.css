@@ -22431,17 +22431,20 @@ a.noline {
 }
 main ul,
 main ul:not([class]),
+main ul:not(.pagination),
 main ul.wp-block-list {
   padding-inline-start: 1.25rem;
 }
 main ul li,
 main ul:not([class]) li,
+main ul:not(.pagination) li,
 main ul.wp-block-list li {
   list-style-type: square;
   margin-bottom: 0 !important;
 }
 main ul li::marker,
 main ul:not([class]) li::marker,
+main ul:not(.pagination) li::marker,
 main ul.wp-block-list li::marker {
   color: var(--col-blue-400);
   font-size: var(--fs-500);

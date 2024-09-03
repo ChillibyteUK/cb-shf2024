@@ -87,6 +87,7 @@ a.noline {
 main {
     ul,
     ul:not([class]),
+    ul:not(.pagination),
     ul.wp-block-list {
         padding-inline-start: 1.25rem;
         li {

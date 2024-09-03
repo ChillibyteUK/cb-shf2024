@@ -87,7 +87,6 @@ a.noline {
 main {
     ul,
     ul:not([class]),
-    ul:not(.pagination),
     ul.wp-block-list {
         padding-inline-start: 1.25rem;
         li {
@@ -98,6 +97,9 @@ main {
                 font-size: var(--fs-500);
             }
         }
+    }
+    ul.pagination > li.page-item {
+        list-style: none;
     }
 }
 

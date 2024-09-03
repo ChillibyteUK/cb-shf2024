@@ -22133,6 +22133,25 @@ footer .colophon {
   }
 }
 
+.spinner {
+  background-color: var(--col-grey-400);
+}
+.spinner h2 span, .spinner .h2 span {
+  -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
+  text-decoration: underline var(--col-blue-400) solid 0.2em;
+}
+.spinner__stat {
+  font-size: var(--fs-800);
+  font-weight: var(--fw-700);
+  color: var(--col-blue-400);
+}
+.spinner .counter {
+  display: inline;
+}
+.spinner__title {
+  font-weight: var(--fw-600);
+}
+
 .reading {
   font-size: var(--fs-200);
   font-style: italic;

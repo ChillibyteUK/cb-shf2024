@@ -89,6 +89,7 @@ if (is_front_page() || is_page('contact-us')) {
     <?php
 }
 ?>
+<script>(function(n,t,i,r){var u,f;n[i]=n[i]||{},n[i].initial={accountCode:"CHILL11133",host:"CHILL11133.pcapredict.com"},n[i].on=n[i].on||function(){(n[i].onq=n[i].onq||[]).push(arguments)},u=t.createElement("script"),u.async=!0,u.src=r,f=t.getElementsByTagName("script")[0],f.parentNode.insertBefore(u,f)})(window,document,"pca","//CHILL11133.pcapredict.com/js/sensor.js")</script>
     <?php wp_head(); ?>
 </head>
 

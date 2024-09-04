@@ -5,7 +5,7 @@ function acf_blocks()
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type(array(
             'name'				=> 'cb_form_hero',
-            'title'				=> __('CB Form Hero'),
+            'title'				=> __('CB Home Hero'),
             'category'			=> 'layout',
             'icon'				=> 'cover-image',
             'render_template'	=> 'page-templates/blocks/cb_form_hero.php',

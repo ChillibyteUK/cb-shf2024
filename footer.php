@@ -45,23 +45,76 @@ defined('ABSPATH') || exit;
         </div>
     </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/@ideal-postcodes/address-finder-bundled@4"></script>
+
 <script>
-  IdealPostcodes.AddressFinder.setup({
-    apiKey: "ak_test",
-    outputFields: {
-      line_1: "#haddr1",
-      line_2: "#haddr2",
-      line_3: "#haddr3",
-      post_town: "#htown",
-      postcode: "#postcode",
-    },
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all postcode fields
+    var postcodeFields = document.querySelectorAll('input[type="text"][id^="postcode_"]'); 
+
+    console.log("Found postcode fields:", postcodeFields);
+
+    // Initialize Address Finder for each postcode field
+    postcodeFields.forEach(function (field) {
+      console.log("Setting up Address Finder for field:", field.id);
+
+      // Initialize Address Finder for each postcode field
+      IdealPostcodes.AddressFinder.setup({
+        apiKey: "ak_m0nmyml1DLCjYH79nA9dbcf4cRs5v",  // Use your own API key
+        inputField: field,  // Bind to the specific postcode field
+        outputFields: {
+          line_1: "#line_1",
+          line_2: "#line_2",
+          post_town: "#post_town",
+          postcode: "#" + field.id
+        },
+
+        // Log when address is retrieved (for debugging)
+        onAddressRetrieved: function (address) {
+          console.log("Address Retrieved for:", field.id, address);
+        },
+
+        // Log any errors during search (for debugging)
+        onSearchError: function (error) {
+          console.error("Search Error for:", field.id, error);
+        }
+      });
+    });
+
+    // Handle button click to redirect to the form page
+    var buttons = document.querySelectorAll('.button-sm');  // Assume the button has class 'button-sm'
+    
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        var postcodeField = document.querySelector('input[type="text"][id^="postcode_"]');
+        var line1 = document.getElementById('line_1').value;
+        var line2 = document.getElementById('line_2').value;
+        var postTown = document.getElementById('post_town').value;
+        var postcodeOutput = postcodeField ? postcodeField.value : '';
+
+        // Build the URL with query parameters to pass the address data
+        var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
+          line_1: line1,
+          line_2: line2,
+          post_town: postTown,
+          postcode: postcodeOutput
+        }).toString();
+
+        // Redirect to the form page
+        window.location.href = formPageUrl;
+      });
+    });
   });
 </script>
-<input type="hidden" name="haddr1" id="haddr1">
-<input type="hidden" name="haddr2" id="haddr2">
-<input type="hidden" name="haddr3" id="haddr3">
-<input type="hidden" name="htown" id="htown">
+
+<!-- Add Hidden Fields -->
+<input type="hidden" id="line_1" name="line_1">
+<input type="hidden" id="line_2" name="line_2">
+<input type="hidden" id="post_town" name="post_town">
+<input type="hidden" id="postcode_output" name="postcode_output">
 <?php wp_footer(); ?>
 </body>
 </html>

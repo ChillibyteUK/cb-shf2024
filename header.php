@@ -89,7 +89,7 @@ if (is_front_page() || is_page('contact-us')) {
     <?php
 }
 ?>
-    <?php wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

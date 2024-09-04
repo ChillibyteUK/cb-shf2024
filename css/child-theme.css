@@ -21030,6 +21030,10 @@ footer .colophon {
   background-color: var(--col-grey-400) !important;
 }
 
+.idpc_autocomplete {
+  display: inline-block;
+}
+
 .form_hero__form {
   margin-top: 3rem;
 }

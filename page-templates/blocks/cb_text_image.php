@@ -14,9 +14,10 @@ $contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
                 </div>
                 <?php
                 if (isset(get_field('show_form')[0]) && get_field('show_form')[0] == 'Yes') {
+                    $id = random_str(4);
                     ?>
                 <div class="text_image__cta">
-                    <input type="text" name="postcode" id="postcode" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
+                    <input type="text" name="postcode" id="postcode_<?=$id?>" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm('postcode_<?=$id?>')">Get Free Cash Offer</button>
                 </div>
                     <?php
                 }

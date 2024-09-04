@@ -66,7 +66,7 @@ defined('ABSPATH') || exit;
         outputFields: {
           line_1: "#addr1",
           line_2: "#addr2",
-          line_2: "#addr3",
+          line_3: "#addr3",
           post_town: "#town",
           postcode: "#" + field.id
         },

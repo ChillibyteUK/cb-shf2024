@@ -16,4 +16,3 @@ $id = random_str(4);
         </div>
     </div>
 </section>
-<!-- BF89-MY52-EG42-KT54 -->

@@ -12,7 +12,7 @@ $id = random_str(4);
         ?>
         <h1><?=get_field('title')?></h1>
         <div class="form_hero__form">
-            <input type="text" name="postcode" id="postcode_<?=$id?>" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm('postcode_<?=$id?>')">Get Free Cash Offer</button>
+            <input type="text" name="postcode_<?=$id?>" id="postcode_<?=$id?>" placeholder="Enter your postcode" autocomplete="off"><button class="button button-sm" onclick="redirectToForm('postcode_<?=$id?>')">Get Free Cash Offer</button>
         </div>
     </div>
 </section>

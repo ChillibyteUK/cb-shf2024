@@ -101,7 +101,7 @@ defined('ABSPATH') || exit;
         var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
           addr1: line1,
           addr2: line2,
-          addr3: line2,
+          addr3: line3,
           town: postTown,
           postcode: postcodeOutput
         }).toString();

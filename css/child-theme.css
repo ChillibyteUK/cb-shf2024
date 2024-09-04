@@ -21039,6 +21039,10 @@ footer .colophon {
   text-align: start;
 }
 
+.idpc_toolbar {
+  display: none;
+}
+
 .form_hero__form {
   margin-top: 3rem;
 }

@@ -90,16 +90,18 @@ defined('ABSPATH') || exit;
         e.preventDefault();
 
         var postcodeField = document.querySelector('input[type="text"][id^="postcode_"]');
-        var line1 = document.getElementById('line_1').value;
-        var line2 = document.getElementById('line_2').value;
-        var postTown = document.getElementById('post_town').value;
+        var line1 = document.getElementById('addr1').value;
+        var line2 = document.getElementById('addr2').value;
+        var line3 = document.getElementById('addr3').value;
+        var postTown = document.getElementById('town').value;
         var postcodeOutput = postcodeField ? postcodeField.value : '';
 
         // Build the URL with query parameters to pass the address data
         var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
-          line_1: line1,
-          line_2: line2,
-          post_town: postTown,
+          addr1: line1,
+          addr2: line2,
+          addr3: line2,
+          town: postTown,
           postcode: postcodeOutput
         }).toString();
 
@@ -111,9 +113,10 @@ defined('ABSPATH') || exit;
 </script>
 
 <!-- Add Hidden Fields -->
-<input type="hidden" id="line_1" name="line_1">
-<input type="hidden" id="line_2" name="line_2">
-<input type="hidden" id="post_town" name="post_town">
+<input type="hidden" id="addr1" name="line_1">
+<input type="hidden" id="addr2" name="line_2">
+<input type="hidden" id="addr3" name="line_3">
+<input type="hidden" id="addr4" name="post_town">
 <input type="hidden" id="postcode_output" name="postcode_output">
 <?php wp_footer(); ?>
 </body>

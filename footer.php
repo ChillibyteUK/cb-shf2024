@@ -53,20 +53,21 @@ defined('ABSPATH') || exit;
     // Select all postcode fields
     var postcodeFields = document.querySelectorAll('input[type="text"][id^="postcode_"]'); 
 
-    console.log("Found postcode fields:", postcodeFields);
+    // console.log("Found postcode fields:", postcodeFields);
 
     // Initialize Address Finder for each postcode field
     postcodeFields.forEach(function (field) {
-      console.log("Setting up Address Finder for field:", field.id);
+    //   console.log("Setting up Address Finder for field:", field.id);
 
       // Initialize Address Finder for each postcode field
       IdealPostcodes.AddressFinder.setup({
         apiKey: "ak_m0nmyml1DLCjYH79nA9dbcf4cRs5v",  // Use your own API key
         inputField: field,  // Bind to the specific postcode field
         outputFields: {
-          line_1: "#line_1",
-          line_2: "#line_2",
-          post_town: "#post_town",
+          line_1: "#addr1",
+          line_2: "#addr2",
+          line_2: "#addr3",
+          post_town: "#town",
           postcode: "#" + field.id
         },
 
@@ -113,10 +114,10 @@ defined('ABSPATH') || exit;
 </script>
 
 <!-- Add Hidden Fields -->
-<input type="hidden" id="addr1" name="line_1">
-<input type="hidden" id="addr2" name="line_2">
-<input type="hidden" id="addr3" name="line_3">
-<input type="hidden" id="addr4" name="post_town">
+<input type="hidden" id="addr1" name="addr1">
+<input type="hidden" id="addr2" name="addr2">
+<input type="hidden" id="addr3" name="addr3">
+<input type="hidden" id="town" name="town">
 <input type="hidden" id="postcode_output" name="postcode_output">
 <?php wp_footer(); ?>
 </body>

@@ -246,4 +246,22 @@ function styleFirstWord($text) {
 }
 
 
+function add_ctas_to_nav( $items, $args ) {
+    if( $args->theme_location != 'primary_nav' ) {
+        return $items;
+    }
+    
+    $link  = '<li class="menu-item nav-item d-md-none mb-2 text-center"><a class="noline" href="tel:' . parse_phone(get_field('contact_phone','options')) . '">';
+    $link .= 'Call us on <strong class="has-blue-400-color">' . get_field('contact_phone','options') . '</strong>';
+    $link .= '</a></li>';
+    $link .= '<li class="menu-item nav-item d-md-none text-center"><a href="/free-cash-offer/" class="button button-sm">FREE CASH OFFER</a></a></li>';
+
+    $items .= $link;
+    
+    return $items;
+}
+add_action( 'wp_nav_menu_items', 'add_ctas_to_nav', 10, 2 );
+
+
+
 ?>

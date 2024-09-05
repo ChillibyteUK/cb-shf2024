@@ -18,13 +18,16 @@ get_header();
 
 ?>
 <main id="main" role="main">
-    <div class="container-xl py-6 text-center">
-        <div class="h2 mb-0 font-weight-medium">SellHouseFast.co.uk</div>
-        <h1>Property <span>Insights</span></h1>
-        <div class="form_hero__form">
-            <input type="text" name="postcode_<?=$id?>" id="postcode_<?=$id?>" placeholder="Enter your postcode" autocomplete="off"><button class="button button-sm formbutton" onclick="redirectToForm('postcode_<?=$id?>')">Get Free Cash Offer</button>
+    <section class="form_hero">
+        <div class="container-xl py-6 text-center">
+            <div class="h2 mb-0 font-weight-medium">SellHouseFast.co.uk</div>
+            <h1>Property <span>Insights</span></h1>
+            <div class="form_hero__form">
+                <input type="text" name="postcode_<?=$id?>" id="postcode_<?=$id?>" placeholder="Enter your postcode" autocomplete="off"><button class="button button-sm formbutton" onclick="redirectToForm('postcode_<?=$id?>')">Get Free Cash Offer</button>
+            </div>
         </div>
-    </div>
+    </section>
+    <?php get_template_part( 'page-templates/blocks/cb_featured_slider' ); ?>
     <section class="py-5 bg-grey-400">
         <div class="container-xl">
             <?php

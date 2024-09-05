@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Set a flag in sessionStorage to prevent repeated advancement
                     sessionStorage.setItem('addr1_advanced', 'true');
                 }
-            }, 500);  // Delay to ensure the form is ready
+            }, 250);  // Delay to ensure the form is ready
         }
     }
 });

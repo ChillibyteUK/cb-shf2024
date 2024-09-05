@@ -22486,6 +22486,7 @@ main ul.wp-block-list li::marker {
   color: var(--col-blue-400);
   font-size: var(--fs-500);
 }
+main ul.fa-ul > li,
 main ul.pagination > li.page-item {
   list-style: none;
 }

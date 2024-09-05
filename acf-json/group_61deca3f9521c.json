@@ -61,6 +61,27 @@
             "append": ""
         },
         {
+            "key": "field_66d98e1fc87ef",
+            "label": "Contact Address",
+            "name": "contact_address",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
             "key": "field_61deca4c35cb8",
             "label": "Socials",
             "name": "socials",
@@ -1066,5 +1087,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724858742
+    "modified": 1725533747
 }

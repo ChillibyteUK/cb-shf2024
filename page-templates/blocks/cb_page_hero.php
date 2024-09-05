@@ -12,7 +12,7 @@ $id = random_str(4);
         }
         ?>
         <div class="form_hero__form">
-            <input type="text" name="postcode_<?=$id?>" id="postcode_<?=$id?>" placeholder="Enter your postcode"><button class="button button-sm" onclick="redirectToForm()">Get Free Cash Offer</button>
+            <input type="text" name="postcode_<?=$id?>" id="postcode_<?=$id?>" placeholder="Enter your postcode"><button class="button button-sm formbutton" onclick="redirectToForm()">Get Free Cash Offer</button>
         </div>
     </div>
 </section>

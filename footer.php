@@ -84,7 +84,7 @@ defined('ABSPATH') || exit;
     });
 
     // Handle button click to redirect to the form page
-    var buttons = document.querySelectorAll('.button-sm');  // Assume the button has class 'button-sm'
+    var buttons = document.querySelectorAll('.formbutton');  // Assume the button has class 'button-sm'
     
     buttons.forEach(function (button) {
       button.addEventListener('click', function (e) {
@@ -107,7 +107,7 @@ defined('ABSPATH') || exit;
         }).toString();
 
         // Redirect to the form page
-        window.location.href = formPageUrl;
+        window.location.href = formPageUrl + '#gf_1';
       });
     });
   });

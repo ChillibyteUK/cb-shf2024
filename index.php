@@ -27,7 +27,7 @@ get_header();
             </div>
         </div>
     </section>
-    <?php get_template_part( 'page-templates/blocks/cb_featured_slider' ); ?>
+    <?php get_template_part( 'page-templates/blocks/cb_featured_in' ); ?>
     <section class="py-5 bg-grey-400">
         <div class="container-xl">
             <?php

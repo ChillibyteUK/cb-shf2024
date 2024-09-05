@@ -3,7 +3,13 @@
         <div class="row g-4">
             <div class="col-md-6">
                 <h2>Get in touch</h2>
-                <?=get_field('intro')?>
+                <?php
+                if (get_field('intro') ?? null) {
+                    ?>
+                <div class="mb-4"><?=get_field('intro')?></div>
+                    <?php
+                }
+                ?>
                 <ul class="fa-ul">
                     <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-phone has-blue-400-color"></i></span> <?=contact_phone()?></li>
                     <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-paper-plane has-blue-400-color"></i></span> <?=contact_email()?></li>

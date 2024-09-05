@@ -107,7 +107,7 @@ defined('ABSPATH') || exit;
         }).toString();
 
         // Redirect to the form page
-        window.location.href = formPageUrl + '#gf_1';
+        window.location.href = formPageUrl;
       });
     });
   });
@@ -119,6 +119,46 @@ defined('ABSPATH') || exit;
 <input type="hidden" id="addr3" name="addr3">
 <input type="hidden" id="town" name="town">
 <input type="hidden" id="postcode_output" name="postcode_output">
+
+<?php
+if (is_page('free-cash-offer')) {
+    ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to get the URL parameters
+    function getParameterByName(name) {
+        const url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Get the 'addr1' parameter from the URL
+    var addr1Value = getParameterByName('addr1');
+
+    // Check if 'addr1' parameter exists and if we are on the first step
+    if (addr1Value) {
+        // Use sessionStorage to ensure we only advance once
+        if (!sessionStorage.getItem('addr1_advanced')) {
+            setTimeout(function() {
+                // Simulate a click on the "Next" button to move to the next step
+                var nextButton = document.querySelector(".gform_next_button");
+                if (nextButton) {
+                    nextButton.click();
+                    // Set a flag in sessionStorage to prevent repeated advancement
+                    sessionStorage.setItem('addr1_advanced', 'true');
+                }
+            }, 500);  // Delay to ensure the form is ready
+        }
+    }
+});
+</script>
+    <?php
+}
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -263,5 +263,4 @@ function add_ctas_to_nav( $items, $args ) {
 add_action( 'wp_nav_menu_items', 'add_ctas_to_nav', 10, 2 );
 
 
-
 ?>

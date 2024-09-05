@@ -21218,6 +21218,14 @@ footer .colophon {
     grid-template-areas: "slider current arrow output" "message message arrow output";
   }
 }
+.calculator__arrow {
+  display: none;
+}
+@media (min-width: 768px) {
+  .calculator__arrow {
+    display: block;
+  }
+}
 .calculator__label {
   font-weight: var(--fw-600);
   margin-bottom: 0.5rem;

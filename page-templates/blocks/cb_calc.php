@@ -1,4 +1,7 @@
-<section class="calculator py-5">
+<?php
+$class = $block['className'] ?? 'pt-5';
+?>
+<section class="calculator <?=$class?>">
     <div class="container-xl">
         <h2><?=get_field('calculator_title','options')?></h2>
         <div class="calculator__grid">

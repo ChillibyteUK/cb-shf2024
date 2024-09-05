@@ -26,9 +26,11 @@ if (!empty($terms) && !is_wp_error($terms)) {
             <div class="row g-2">
             <?php
             
+            $c = 0;
+
             $q = new WP_Query(array(
                 'post_type' => 'post',
-                'posts_per_page' => -1,
+                'posts_per_page' => 3,
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'location',
@@ -53,24 +55,28 @@ if (!empty($terms) && !is_wp_error($terms)) {
                     </a>
                 </div>
                 <?php
+                $c++;
             }
 
-            $q = new WP_Query(array(
-                'post_type' => 'post',
-                'posts_per_page' => -1,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'location',
-                        'field'    => 'slug',
-                        'terms'    => $first_term->slug,
-                        'operator' => 'NOT IN',  // Exclude posts with this term
+            if ($c < 3) {
+                $x = $c - 3;
+            
+                $q = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => $x,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'location',
+                            'field'    => 'slug',
+                            'terms'    => $first_term->slug,
+                            'operator' => 'NOT IN',  // Exclude posts with this term
+                        ),
                     ),
-                ),
-            ));
+                ));
 
-            while ($q->have_posts()) {
-                $q->the_post();
-                ?>
+                while ($q->have_posts()) {
+                    $q->the_post();
+                    ?>
                 <div class="col-md-4">
                     <a class="news_card" href="<?=get_the_permalink()?>">
                         <?=get_the_post_thumbnail(get_the_ID(),'large',array('class' => 'news_card__image'))?>
@@ -82,7 +88,8 @@ if (!empty($terms) && !is_wp_error($terms)) {
                         </div>
                     </a>
                 </div>
-                <?php
+                    <?php
+                }
             }
 
             ?>

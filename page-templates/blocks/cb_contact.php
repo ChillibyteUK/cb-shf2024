@@ -10,6 +10,10 @@
                     <li><span class="fa-li"><i class="fa-solid fa-map-marker-alt has-blue-400-color"></i></span> <?=contact_address()?></li>
                 </ul>
             </div>
+            <div class="col-md-6">
+                <h2>Send us a message</h2>
+                <?=do_shortcode('[gravityform id="' . get_field('form_id') . '" title="false"]')?>
+            </div>
         </div>
     </div>
 </section>

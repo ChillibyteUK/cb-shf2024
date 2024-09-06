@@ -31,7 +31,7 @@ $img = get_the_post_thumbnail(get_the_ID(),'full',array('class' => 'blog__image'
     </div>
     <div class="container-xl blog__main">
         <div class="row g-4 pb-4">
-            <div class="col-lg-9 p-5">
+            <div class="col-lg-9 px-3 py-5 px-md-5">
             <?php
             $count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
             echo $count;

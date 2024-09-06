@@ -7,7 +7,7 @@
 
         <div class="row g-4 mb-5">
             <div class="col-md-6 offset-md-3">
-                <input type="text" name="pcode" id="pcode" autocomplete="off" placeholder="Enter your postcode">
+                <input type="text" name="pcode" id="pcode" autocomplete="off" placeholder="Enter postcode">
             </div>
             <div class="col-md-6">
                 <input type="text" name="addr1" id="addr1" autocomplete="off" placeholder="Address Line 1">

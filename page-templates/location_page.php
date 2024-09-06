@@ -68,8 +68,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
                         array(
                             'taxonomy' => 'location',
                             'field'    => 'slug',
-                            'terms'    => $first_term->slug,
-                            'operator' => 'NOT IN',  // Exclude posts with this term
+                            'operator' => 'NOT EXISTS',  // Exclude posts with this term
                         ),
                     ),
                 ));

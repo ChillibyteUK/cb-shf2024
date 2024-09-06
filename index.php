@@ -54,9 +54,13 @@ get_header();
             
             $results = $wpdb->get_results( $wpdb->prepare( $query, $posts_per_page, $offset ) );
             
+
             // Display the posts
             if ( ! empty( $results ) ) {
+                $count = 0; // Counter to track the number of posts
+                
                 foreach ( $results as $result ) {
+                    $count++; // Increment the post counter
                     $post = get_post( $result->ID );
                     setup_postdata( $post );
                     // Output your post content here
@@ -73,6 +77,9 @@ get_header();
                         </a>
                     </div>
                         <?php
+                    if ( $count % 6 == 0 ) {
+                        echo '<div class="col-12">CTA Banner Here</div>';
+                    }
                 }
                 wp_reset_postdata();
             }

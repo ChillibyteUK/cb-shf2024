@@ -20884,10 +20884,6 @@ h1 > span, .h1 > span {
   padding: 0.5rem 2rem;
 }
 
-.short_cta .formbutton {
-  margin-top: 1px;
-}
-
 header:not(main header) {
   background-color: var(--col-yellow-400);
   position: fixed;

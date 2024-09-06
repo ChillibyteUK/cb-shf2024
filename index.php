@@ -37,7 +37,7 @@ get_header();
 
             global $wpdb;
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $posts_per_page = 10;
+            $posts_per_page = get_option( 'posts_per_page' );
             $offset = ($paged - 1) * $posts_per_page;
             
             $query = "

@@ -20863,12 +20863,17 @@ h1 > span, .h1 > span {
   display: inline-block;
   border-radius: 0;
   border: none;
-  padding: 0.75rem 3rem;
+  padding: 0.5rem 2rem;
   text-decoration: none;
   transition: color var(--transition);
   background-color: var(--col-blue-400);
   font-weight: var(--fw-600);
   color: var(--col-white);
+}
+@media (min-width: 576px) {
+  .button {
+    padding: 0.75rem 3rem;
+  }
 }
 .button:hover {
   color: var(--col-yellow-400);

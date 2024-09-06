@@ -35,7 +35,6 @@ get_header();
             // get posts without location
             $q = new WP_Query(array(
                 'post_type'      => 'post',
-                'posts_per_page' => -1,
                 'tax_query'      => array(
                     array(
                         'taxonomy' => 'location',
@@ -65,7 +64,6 @@ get_header();
             // get posts with location
             $q = new WP_Query(array(
                 'post_type'      => 'post',
-                'posts_per_page' => -1,
                 'tax_query'      => array(
                     array(
                         'taxonomy' => 'location',

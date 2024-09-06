@@ -91,34 +91,39 @@ defined('ABSPATH') || exit;
         }
       });
     });
+    <?php 
+    /*
 
-    // Handle button click to redirect to the form page
-    var buttons = document.querySelectorAll('.formbutton');  // Assume the button has class 'button-sm'
+    // // Handle button click to redirect to the form page
+    // var buttons = document.querySelectorAll('.formbutton');  // Assume the button has class 'button-sm'
     
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
+    // buttons.forEach(function (button) {
+    //   button.addEventListener('click', function (e) {
+    //     e.preventDefault();
 
-        var postcodeField = document.querySelector('input[type="text"][id^="postcode_"]');
-        var line1 = document.getElementById('addr1').value;
-        var line2 = document.getElementById('addr2').value;
-        var line3 = document.getElementById('addr3').value;
-        var postTown = document.getElementById('town').value;
-        var postcodeOutput = postcodeField ? postcodeField.value : '';
+    //     var postcodeField = document.querySelector('input[type="text"][id^="postcode_"]');
+    //     var line1 = document.getElementById('addr1').value;
+    //     var line2 = document.getElementById('addr2').value;
+    //     var line3 = document.getElementById('addr3').value;
+    //     var postTown = document.getElementById('town').value;
+    //     var postcodeOutput = postcodeField ? postcodeField.value : '';
 
-        // Build the URL with query parameters to pass the address data
-        var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
-          addr1: line1,
-          addr2: line2,
-          addr3: line3,
-          town: postTown,
-          postcode: postcodeOutput
-        }).toString();
+    //     // Build the URL with query parameters to pass the address data
+    //     var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
+    //       addr1: line1,
+    //       addr2: line2,
+    //       addr3: line3,
+    //       town: postTown,
+    //       postcode: postcodeOutput
+    //     }).toString();
 
-        // Redirect to the form page
-        window.location.href = formPageUrl;
-      });
-    });
+    //     // Redirect to the form page
+    //     window.location.href = formPageUrl;
+    //   });
+    // });
+
+    */
+    ?>
   });
 </script>
 

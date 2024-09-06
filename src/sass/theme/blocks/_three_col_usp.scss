@@ -36,7 +36,7 @@
 
     &__item {
         display: grid;
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 30px 1fr;
         align-content: center;
         @media (min-width:576px) {
             grid-template-columns: 1fr;

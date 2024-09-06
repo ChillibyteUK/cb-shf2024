@@ -254,7 +254,7 @@ function add_ctas_to_nav( $items, $args ) {
     $link  = '<li class="menu-item nav-item d-md-none mb-2 text-center"><a class="noline" href="tel:' . parse_phone(get_field('contact_phone','options')) . '">';
     $link .= 'Call us on <strong class="has-blue-400-color">' . get_field('contact_phone','options') . '</strong>';
     $link .= '</a></li>';
-    $link .= '<li class="menu-item nav-item d-md-none text-center"><a href="/free-cash-offer/" class="button button-sm">FREE CASH OFFER</a></a></li>';
+    $link .= '<li class="menu-item nav-item d-md-none text-center"><a href="/free-cash-offer-form/" class="button button-sm">FREE CASH OFFER</a></a></li>';
 
     $items .= $link;
     

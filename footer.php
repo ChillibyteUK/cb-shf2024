@@ -131,6 +131,7 @@ defined('ABSPATH') || exit;
 <input type="hidden" id="postcode_output" name="postcode_output">
 
 <?php
+/*
 if (is_page('free-cash-offer')) {
     ?>
 <script>
@@ -168,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
     <?php
 }
+    */
 ?>
 <?php wp_footer(); ?>
 </body>

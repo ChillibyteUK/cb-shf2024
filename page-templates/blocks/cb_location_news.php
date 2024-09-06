@@ -10,22 +10,25 @@ if (!empty($terms) && !is_wp_error($terms)) {
     return;
 }
 
-$q = new WP_Query(array(
-    'post_type'      => 'post',
-    'posts_per_page' => -1,
-    'tax_query'      => array(
-        array(
-            'taxonomy' => 'location',
-            'field'    => 'term_id',
-            'terms'    => $first_term->term_id,
-        ),
-    ),
-));
 ?>
 <section class="py-5 bg-grey-400">
     <div class="container-xl">
         <div class="row g-2">
             <?php
+            // location posts
+
+            $q = new WP_Query(array(
+                'post_type'      => 'post',
+                'posts_per_page' => -1,
+                'tax_query'      => array(
+                    array(
+                        'taxonomy' => 'location',
+                        'field'    => 'term_id',
+                        'terms'    => $first_term->term_id,
+                    ),
+                ),
+            ));
+
             while ($q->have_posts()) {
                 $q->the_post();
                 ?>
@@ -43,6 +46,7 @@ $q = new WP_Query(array(
                     <?php
             }
 
+            // non location posts
             $q = new WP_Query(array(
                 'post_type' => 'post',
                 'posts_per_page' => -1,

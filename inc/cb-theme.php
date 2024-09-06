@@ -263,4 +263,15 @@ function add_ctas_to_nav( $items, $args ) {
 add_action( 'wp_nav_menu_items', 'add_ctas_to_nav', 10, 2 );
 
 
+add_shortcode('pct_bmv', 'pct_bmv');
+
+function pct_bmv()
+{
+    if (get_field('percentage', 'options')) {
+        return get_field('percentage', 'options') . '%';
+    }
+    return;
+}
+
+
 ?>

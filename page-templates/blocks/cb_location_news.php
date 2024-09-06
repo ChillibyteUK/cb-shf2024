@@ -52,10 +52,9 @@ if (!empty($terms) && !is_wp_error($terms)) {
                 'posts_per_page' => -1,
                 'tax_query' => array(
                     array(
-                        'taxonomy' => 'location',
-                        'field'    => 'term_id',
-                        'terms'    => $first_term->term_id,
-                        'operator' => 'NOT IN',  // Exclude posts with this term
+                        'taxonomy' => 'location', // Taxonomy
+                        'field'    => 'term_id',  // Can be 'term_id', 'name', or 'slug'
+                        'operator' => 'NOT EXISTS', // Exclude posts with any term in 'location'
                     ),
                 ),
             ));

@@ -22468,12 +22468,16 @@ html {
   padding-bottom: 4rem !important;
 }
 
+.py-md-6 {
+  padding-bottom: 2rem;
+}
 @media (min-width: 768px) {
   .py-md-6 {
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
   }
 }
+
 main {
   padding-top: calc(var(--h-top) + 1rem);
 }

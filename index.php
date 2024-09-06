@@ -78,7 +78,9 @@ get_header();
                     </div>
                         <?php
                     if ( $count % 6 == 0 ) {
-                        echo '<div class="col-12">CTA Banner Here</div>';
+                        echo '<div class="col-12">';
+                        get_template_part( 'page-templates/blocks/cb_short_cta' );
+                        echo '</div>';
                     }
                 }
                 wp_reset_postdata();

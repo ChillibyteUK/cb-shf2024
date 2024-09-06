@@ -1,5 +1,5 @@
 <section class="ps_hero">
-    <div class="container-xl py-6">
+    <div class="container-xl py-md-6">
         <div class="row">
             <div class="col-md-8">
                 <h1><?=get_field('title')?></h1>

@@ -30,19 +30,19 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.py-6 {
-    padding-bottom: 2rem;
-}
 
+.pt-6 {
+    padding-top: 4rem !important;
+}
+.pb-6 {
+    padding-top: 4rem !important;
+}
+.py-6 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
 @media (min-width:768px) {
-    
-    .pt-6 {
-        padding-top: 4rem !important;
-    }
-    .pb-6 {
-        padding-top: 4rem !important;
-    }
-    .py-6 {
+    .py-md-6 {
         padding-top: 4rem !important;
         padding-bottom: 4rem !important;
     }

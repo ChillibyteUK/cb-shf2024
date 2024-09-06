@@ -15,7 +15,14 @@ $blog_url = get_permalink($posts_page_id);
             'post_type'      => 'post',       // Post type
             'posts_per_page' => 3,            // Number of posts to retrieve
             'orderby'        => 'date',       // Order by date
-            'order'          => 'DESC'        // Most recent first
+            'order'          => 'DESC',       // Most recent first
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => 'location', // Taxonomy
+                    'field'    => 'term_id',  // Can be 'term_id', 'name', or 'slug'
+                    'operator' => 'NOT EXISTS', // Exclude posts with any term in 'location'
+                ),
+            ),
         ));
         
         while ($q->have_posts() ) {

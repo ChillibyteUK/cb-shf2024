@@ -1,6 +1,11 @@
 <?php
 $class = $block['className'] ?? 'py-5';
-$invert = isset(get_field('invert')[0]) && get_field('invert')[0] == 'Yes' ? 'short_cta--invert' : null;
+$invert = get_query_var( 'invert', null );
+
+// If no $invert was passed via set_query_var(), use the original logic
+if ( ! $invert ) {
+    $invert = isset(get_field('invert')[0]) && get_field('invert')[0] == 'Yes' ? 'short_cta--invert' : null;
+}
 
 $id = random_str(4);
 ?>

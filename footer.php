@@ -147,11 +147,7 @@ defined('ABSPATH') || exit;
         // Redirect to the form page
         // Log the URL to console for you to see the output
         console.log("Redirecting to: ", formPageUrl);
-
-        // Introduce a delay of 3 seconds (3000 milliseconds) before redirection
-        setTimeout(function() {
-          window.location.href = formPageUrl;
-        }, 5000); // 3 second delay        
+        window.location.href = formPageUrl;
 
       });
     });

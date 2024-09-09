@@ -80,6 +80,15 @@ defined('ABSPATH') || exit;
         onAddressRetrieved: function (address) {
           console.log("Address Retrieved for:", field.id, address);
 
+          // Manually assign the address data to the fields
+          document.getElementById('addr1').value = address.line_1 || '';
+          document.getElementById('addr2').value = address.line_2 || '';
+          document.getElementById('addr3').value = address.line_3 || '';
+          document.getElementById('town').value = address.post_town || '';
+          
+          // Also, you can manually set the postcode in the field if needed
+          field.value = address.postcode;
+
           // Once the address is retrieved, you can process the data
           var line1 = document.getElementById('addr1').value;
           var line2 = document.getElementById('addr2').value;

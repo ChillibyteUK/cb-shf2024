@@ -12,27 +12,29 @@ $contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
                 <?=get_field('text')?>
             </div>
             <div class="col-md-6 text_video__video">
-                <div class="video-wrapper" id="video-container">
-                    <div class="video-thumbnail">
-                        <img src="https://vumbnail.com/<?=get_field('vimeo_id')?>.jpg" alt="Vimeo Thumbnail" />
-                        <div class="play-button">&#9658;</div> <!-- Unicode play icon -->
-                    </div>
-                </div>
+                <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div>
             </div>
         </div>
     </div>
 </section>
         <?php
-
+/*
 // VIMEO with overlay
+<div class="video-wrapper" id="video-container">
+                    <div class="video-thumbnail">
+
+                        <img src="https://vumbnail.com/<?=get_field('vimeo_id')?>.jpg" alt="Vimeo Thumbnail" />
+                        <div class="play-button">&#9658;</div> <!-- Unicode play icon -->
+                    </div>
+                </div>
 add_action('wp_footer', function(){
     $vimeo_id = get_field('vimeo_id');
     ?>
 <style>
 .video-wrapper {
     position: relative;
-    width: 640px;  /* Set width according to your video size */
-    height: 360px; /* Set height according to your video size */
+    width: 640px;
+    height: 360px;
     cursor: pointer;
 }
 
@@ -87,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
     <?php
 });
+*/
 
 /*
 // NATIVE VIMEO
@@ -94,7 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // MY VIMEO EMBED
-<!-- <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div> -->
+*/
+
 add_action('wp_footer', function(){
     ?>
 <script>
@@ -132,4 +136,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
     <?php
 });
-*/

@@ -107,6 +107,9 @@ defined('ABSPATH') || exit;
             // Redirect to the form page
             window.location.href = formPageUrl;
           }
+          else {
+            console.log('no line1');
+          }
         },
         // Log any errors during search (for debugging)
         onSearchError: function (error) {

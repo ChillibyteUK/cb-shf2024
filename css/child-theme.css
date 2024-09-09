@@ -21037,6 +21037,8 @@ footer .colophon {
 
 .idpc_autocomplete {
   display: inline-block;
+}
+.idpc_autocomplete.gform_page_fields {
   width: 100%;
 }
 

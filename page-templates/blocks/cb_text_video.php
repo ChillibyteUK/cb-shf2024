@@ -12,13 +12,88 @@ $contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
                 <?=get_field('text')?>
             </div>
             <div class="col-md-6 text_video__video">
-                <iframe src="https://player.vimeo.com/video/<?=get_field('vimeo_id')?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                <!-- <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div> -->
+                <div class="video-wrapper" id="video-container">
+                    <div class="video-thumbnail">
+                        <img src="https://vumbnail.com/<?=get_field('vimeo_id')?>.jpg" alt="Vimeo Thumbnail" />
+                        <div class="play-button">&#9658;</div> <!-- Unicode play icon -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<?php
+        <?php
+
+// VIMEO with overlay
+add_action('wp_footer', function(){
+    ?>
+<style>
+.video-wrapper {
+    position: relative;
+    width: 640px;  /* Set width according to your video size */
+    height: 360px; /* Set height according to your video size */
+    cursor: pointer;
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const videoContainer = document.getElementById('video-container');
+
+    // Listen for click event on the video container (thumbnail area)
+    videoContainer.addEventListener('click', function () {
+        const videoID = '<?=get_field('vimeo_id')?>'; // Replace with your Vimeo video ID
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://player.vimeo.com/video/${videoID}?autoplay=1`;
+        iframe.width = '640';
+        iframe.height = '360';
+        iframe.frameBorder = '0';
+        iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+        iframe.allowFullscreen = true;
+
+        // Clear out the thumbnail and play button, then insert the iframe
+        videoContainer.innerHTML = '';
+        videoContainer.appendChild(iframe);
+    });
+});
+</script>
+    <?php
+});
+
+/*
+// NATIVE VIMEO
+<iframe src="https://player.vimeo.com/video/<?=get_field('vimeo_id')?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+
+// MY VIMEO EMBED
+<!-- <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div> -->
 add_action('wp_footer', function(){
     ?>
 <script>
@@ -56,3 +131,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
     <?php
 });
+*/

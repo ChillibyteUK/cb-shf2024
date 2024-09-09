@@ -9,9 +9,9 @@
 
 .idpc_autocomplete {
     display: inline-block;
-    &.gform_page_fields {
-        width: 100%;
-    }
+}
+.gform_page_fields .idpc_autocomplete {
+    width: 100%;
 }
 .idpc_ul {
     font-size: var(--fs-300);

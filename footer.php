@@ -129,7 +129,7 @@ defined('ABSPATH') || exit;
         var postcodeOutput = postcodeField ? postcodeField.value : '';
 
         // If postcode is empty, redirect to /free-cash-offer-form/
-        if (!postcodeOutput) {
+        if (!line1) {
           console.log('no address selected');
           window.location.href = "/free-cash-offer-form/";
           return;
@@ -152,7 +152,7 @@ defined('ABSPATH') || exit;
         setTimeout(function() {
           window.location.href = formPageUrl;
         }, 5000); // 3 second delay        
-        
+
       });
     });
 

@@ -21241,11 +21241,16 @@ footer .colophon {
 }
 .calculator h2, .calculator .h2 {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 .calculator h2 span, .calculator .h2 span {
   -webkit-text-decoration: underline var(--col-blue-400) solid 0.2em;
   text-decoration: underline var(--col-blue-400) solid 0.2em;
+}
+@media (min-width: 768px) {
+  .calculator h2, .calculator .h2 {
+    margin-bottom: 4rem;
+  }
 }
 .calculator__grid {
   display: grid;

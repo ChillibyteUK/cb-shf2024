@@ -5,7 +5,10 @@
             // border-bottom: 0.2em solid var(--col-blue-400);
             text-decoration: underline var(--col-blue-400) solid 0.2em;
         }
-        margin-bottom: 4rem;
+        margin-bottom: 1rem;
+        @media (min-width:768px) {
+            margin-bottom: 4rem;
+        }
     }
 
     &__grid {

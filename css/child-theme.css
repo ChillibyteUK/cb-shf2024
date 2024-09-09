@@ -21044,7 +21044,7 @@ footer .colophon {
   }
 }
 .idpc_autocomplete > input {
-  width: 100%;
+  width: 100% !important;
 }
 
 .gform_page_fields .idpc_autocomplete {

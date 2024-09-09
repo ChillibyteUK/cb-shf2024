@@ -12,7 +12,8 @@ $contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
                 <?=get_field('text')?>
             </div>
             <div class="col-md-6 text_video__video">
-                <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div>
+                <iframe src="https://player.vimeo.com/video/<?=get_field('vimeo_id')?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <!-- <div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div> -->
             </div>
         </div>
     </div>

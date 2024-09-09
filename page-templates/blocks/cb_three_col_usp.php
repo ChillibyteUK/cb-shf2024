@@ -17,19 +17,19 @@ if (is_front_page()) {
 <section class="three_col_usp pb-5">
     <div class="container-xl">
         <div class="row g-4 <?=$width?> mx-auto">
-            <div class="col-md-4 three_col_usp__item">
+            <div class="col-md-4 three_col_usp__item ps-0">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
                     <?=$usp1?>
                 </div>
             </div>
-            <div class="col-md-4 three_col_usp__item">
+            <div class="col-md-4 three_col_usp__item ps-0">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
                     <?=$usp2?>
                 </div>
             </div>
-            <div class="col-md-4 three_col_usp__item">
+            <div class="col-md-4 three_col_usp__item ps-0">
                 <div class="three_col_usp__icon"></div>
                 <div class="three_col_usp__content <?=$hp?>">
                     <?=$usp3?>

@@ -21043,6 +21043,9 @@ footer .colophon {
     flex: 1;
   }
 }
+.idpc_autocomplete > input {
+  width: 100%;
+}
 
 .gform_page_fields .idpc_autocomplete {
   width: 100%;

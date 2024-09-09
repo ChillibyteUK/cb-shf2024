@@ -21038,6 +21038,11 @@ footer .colophon {
 .idpc_autocomplete {
   display: inline-block;
 }
+@media (max-width: 576px) {
+  .idpc_autocomplete {
+    flex: 1;
+  }
+}
 
 .gform_page_fields .idpc_autocomplete {
   width: 100%;

@@ -273,5 +273,29 @@ function pct_bmv()
     return;
 }
 
+function open_external_links_in_new_tab( $content ) {
+    // Get the current site's URL
+    $site_url = parse_url( get_site_url(), PHP_URL_HOST );
+
+    // Use regex to find all <a> tags
+    $content = preg_replace_callback( '/<a[^>]+href="([^"]+)"[^>]*>/i', function( $matches ) use ( $site_url ) {
+        $link_url = parse_url( $matches[1], PHP_URL_HOST );
+
+        // Check if the URL is external (not matching the site's URL)
+        if ( $link_url && $link_url !== $site_url ) {
+            // Add target="_blank" if it's an external link
+            if ( strpos( $matches[0], 'target="_blank"' ) === false ) {
+                return str_replace( '<a', '<a target="_blank" rel="noopener noreferrer"', $matches[0] );
+            }
+        }
+
+        // Return the original <a> tag if it's internal
+        return $matches[0];
+    }, $content );
+
+    return $content;
+}
+add_filter( 'the_content', 'open_external_links_in_new_tab' );
+
 
 ?>

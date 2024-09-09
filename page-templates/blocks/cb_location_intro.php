@@ -63,8 +63,6 @@ if (get_field('vimeo_id')) {
 
 add_action('wp_footer', function(){
     ?>
-add_action('wp_footer', function(){
-    ?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const lazyVideos = document.querySelectorAll('.vimeo-embed, .youtube-embed');
@@ -98,7 +96,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-    <?php
-});
     <?php
 });

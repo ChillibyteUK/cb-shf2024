@@ -23,7 +23,7 @@
             </div>
         </div>
         
-        <button class="button button-sm" onclick="redirectToFormAll()">Get Free Cash Offer</button>
+        <button class="button button-sm">Get Free Cash Offer</button>
 
     </div>
 </section>

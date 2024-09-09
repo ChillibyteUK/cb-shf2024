@@ -26,6 +26,7 @@ $contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
 
 // VIMEO with overlay
 add_action('wp_footer', function(){
+    $vimeo_id = get_field('vimeo_id');
     ?>
 <style>
 .video-wrapper {
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Listen for click event on the video container (thumbnail area)
     videoContainer.addEventListener('click', function () {
-        const videoID = '<?=get_field('vimeo_id')?>'; // Replace with your Vimeo video ID
+        const videoID = '<?=$vimeo_id?>'; // Replace with your Vimeo video ID
         const iframe = document.createElement('iframe');
         iframe.src = `https://player.vimeo.com/video/${videoID}?autoplay=1`;
         iframe.width = '640';

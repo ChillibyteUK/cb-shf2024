@@ -21057,6 +21057,10 @@ footer .colophon {
   margin-inline: auto;
 }
 
+.gform_required_legend {
+  font-size: var(--fs-200);
+}
+
 .form_hero__form {
   margin-top: 3rem;
   display: flex;

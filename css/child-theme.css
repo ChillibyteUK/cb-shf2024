@@ -21048,6 +21048,11 @@ footer .colophon {
   display: none;
 }
 
+.gform_wrapper form {
+  max-width: 576px;
+  margin-inline: auto;
+}
+
 .form_hero__form {
   margin-top: 3rem;
   display: flex;

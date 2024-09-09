@@ -79,20 +79,16 @@ defined('ABSPATH') || exit;
         // Log when address is retrieved (for debugging)
         onAddressRetrieved: function (address) {
           console.log("Address Retrieved for:", field.id, address);
-        },
-        onAddressSelected: function (address) {
-          // This function is called when an address is selected
-          console.log("Address selected:", address);
 
+          // Once the address is retrieved, you can process the data
           var line1 = document.getElementById('addr1').value;
           var line2 = document.getElementById('addr2').value;
           var line3 = document.getElementById('addr3').value;
           var postTown = document.getElementById('town').value;
           var postcodeOutput = field.value;
 
-          // If address is selected and line1 has a value, auto-submit by redirecting
+          // If line1 has a value, auto-submit by redirecting
           if (line1) {
-            // Build the URL with query parameters to pass the address data
             var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
               addr1: line1,
               addr2: line2,
@@ -101,15 +97,16 @@ defined('ABSPATH') || exit;
               postcode: postcodeOutput
             }).toString();
 
-            // Log the URL to console for you to see the output
             console.log("Auto-submitting and redirecting to: ", formPageUrl);
-
-            // Redirect to the form page
             window.location.href = formPageUrl;
           }
           else {
             console.log('no line1');
           }
+        },
+        onAddressSelected: function (address) {
+          // This function is called when an address is selected
+          console.log("Address selected:", address);
         },
         // Log any errors during search (for debugging)
         onSearchError: function (error) {
@@ -166,47 +163,6 @@ defined('ABSPATH') || exit;
 <input type="hidden" id="town" name="town">
 <input type="hidden" id="postcode_output" name="postcode_output">
 
-<?php
-/*
-if (is_page('free-cash-offer')) {
-    ?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to get the URL parameters
-    function getParameterByName(name) {
-        const url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
-    // Get the 'addr1' parameter from the URL
-    var addr1Value = getParameterByName('addr1');
-
-    // Check if 'addr1' parameter exists and if we are on the first step
-    if (addr1Value) {
-        // Use sessionStorage to ensure we only advance once
-        if (!sessionStorage.getItem('addr1_advanced')) {
-            setTimeout(function() {
-                // Simulate a click on the "Next" button to move to the next step
-                var nextButton = document.querySelector(".gform_next_button");
-                if (nextButton) {
-                    nextButton.click();
-                    // Set a flag in sessionStorage to prevent repeated advancement
-                    sessionStorage.setItem('addr1_advanced', 'true');
-                }
-            }, 250);  // Delay to ensure the form is ready
-        }
-    }
-});
-</script>
-    <?php
-}
-    */
-?>
 <?php wp_footer(); ?>
 </body>
 </html>

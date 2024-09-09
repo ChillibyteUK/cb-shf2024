@@ -72,10 +72,12 @@ a.anchor {
 
 main a:not([class]) {
     text-decoration: none;
-    font-weight: var(--fw-600);
     color: var(--col-black);
     &:hover {
         color: var(--col-blue-400);
+    }
+    &:not([target="_blank"]) {
+        font-weight: var(--fw-600);
     }
 }
 a.noline {

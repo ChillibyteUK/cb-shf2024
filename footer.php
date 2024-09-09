@@ -128,6 +128,12 @@ defined('ABSPATH') || exit;
         var postTown = document.getElementById('town').value;
         var postcodeOutput = postcodeField ? postcodeField.value : '';
 
+        // If postcode is empty, redirect to /free-cash-offer-form/
+        if (!postcodeOutput) {
+          window.location.href = "/free-cash-offer-form/";
+          return;
+        }
+        
         // Build the URL with query parameters to pass the address data
         var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
           addr1: line1,

@@ -143,7 +143,12 @@ function gb_gutenberg_admin_styles()
             /* Width of "full-wide" blocks */
             .wp-block[data-align="full"] {
                 max-width: none;
-            }	
+            }
+
+            /* fix Yoast metabox */
+            #editor .edit-post-layout__metaboxes {
+               margin-top: 3rem;
+            }
         </style>
     ';
 }

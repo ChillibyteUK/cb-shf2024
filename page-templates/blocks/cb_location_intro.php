@@ -34,7 +34,7 @@ if (get_field('vimeo_id')) {
     // Convert duration to ISO 8601 format
     $duration_iso = new DateInterval("PT{$duration}S");
 
-    $image = get_stylesheet_directory_uri() . '/img/shf-logo--dark.svg';
+    $image = get_stylesheet_directory_uri() . '/img/sellhousefast-logo--dark.svg';
 
     // Generate the schema markup
     $schema_markup = [

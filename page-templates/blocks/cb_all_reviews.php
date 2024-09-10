@@ -18,7 +18,6 @@
             <?php
             if ( $count % 3 == 0 ) {
                 echo '<div class="col-12">';
-                set_query_var( 'invert', 'short_cta--invert' );
                 get_template_part( 'page-templates/blocks/cb_short_cta' );
                 echo '</div>';
             }

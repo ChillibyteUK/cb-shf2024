@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Lazy load placeholder images
   lazyVideos.forEach(v => {
     const [poster, src] = v.classList.contains('vimeo-embed') ?
-      [`vumbnail.com/${v.id}.jpg`, 'player.vimeo.com/video'] :
+      [`vumbnail.com/${v.id}_large.jpg`, 'player.vimeo.com/video'] :
       [`i.ytimg.com/vi/${v.id}/hqdefault.jpg`, 'www.youtube.com/embed'];
 
     v.innerHTML = `<img loading="lazy" src="https://${poster}" alt="${v.title}" aria-label="Play">`;

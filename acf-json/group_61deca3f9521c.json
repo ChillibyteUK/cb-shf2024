@@ -211,26 +211,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_621379de5ba0f",
-            "label": "GA Property",
-            "name": "ga_property",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_6321db49e3eb4",
             "label": "Google Site Verification",
             "name": "google_site_verification",
@@ -1087,5 +1067,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725533747
+    "modified": 1725957309
 }

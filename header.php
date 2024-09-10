@@ -29,8 +29,8 @@ defined('ABSPATH') || exit;
         as="font" type="font/woff2" crossorigin="anonymous">
 
     <?php
+if (!is_user_logged_in()) {
     if (get_field('gtm_property', 'options')) {
-        if (!is_user_logged_in()) {
         ?>
     <!-- Google Tag Manager -->
     <script>
@@ -52,9 +52,10 @@ defined('ABSPATH') || exit;
         );
     </script>
     <!-- End Google Tag Manager -->
-    <?php
-        }
+        <?php
     }
+
+}
 
 
 if (is_front_page() || is_page('contact-us')) {

@@ -21071,8 +21071,11 @@ footer .colophon {
 
 .form_hero__form {
   margin-top: 2rem;
-  display: flex;
+  display: grid;
   justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  width: min(480px, 90vw);
+  margin-inline: auto;
 }
 @media (min-width: 768px) {
   .form_hero__form {

@@ -21595,6 +21595,7 @@ footer .colophon {
 }
 .area_cta__areas .locations-list {
   padding-inline-start: 0;
+  text-align: center;
 }
 .area_cta__areas .locations-list li {
   list-style: none;
@@ -21606,6 +21607,9 @@ footer .colophon {
   }
 }
 @media (min-width: 420px) {
+  .area_cta__areas .locations-list {
+    text-align: start;
+  }
   .area_cta__areas .locations-list li {
     list-style: square;
   }

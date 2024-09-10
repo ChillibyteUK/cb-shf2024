@@ -16,17 +16,24 @@ $contentBg = get_field('background') == 'grey-400' ? 'bg-white' : 'bg-grey-400';
             </div>
         </div>
     </div>
+</div>
 </section>
-        <?php
+<?php
+
+/*
+<div class="vimeo-embed ratio ratio-16x9" id="<?=get_field('vimeo_id')?>" title="VIDEO"></div>
+*/
+
 /*
 // VIMEO with overlay
 <div class="video-wrapper" id="video-container">
-                    <div class="video-thumbnail">
+    <div class="video-thumbnail">
+        <img src="https://vumbnail.com/<?=get_field('vimeo_id')?>_large.jpg" alt="Vimeo Thumbnail" />
+        <div class="play-button">&#9658;</div> <!-- Unicode play icon --></div>
+    </div>
+</div>
 
-                        <img src="https://vumbnail.com/<?=get_field('vimeo_id')?>.jpg" alt="Vimeo Thumbnail" />
-                        <div class="play-button">&#9658;</div> <!-- Unicode play icon -->
-                    </div>
-                </div>
+
 add_action('wp_footer', function(){
     $vimeo_id = get_field('vimeo_id');
     ?>
@@ -89,15 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
     <?php
 });
-*/
 
-/*
+
 // NATIVE VIMEO
 <iframe src="https://player.vimeo.com/video/<?=get_field('vimeo_id')?>" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
+*/
 
 // MY VIMEO EMBED
-*/
+
 
 add_action('wp_footer', function(){
     ?>
@@ -108,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Lazy load placeholder images
   lazyVideos.forEach(v => {
     const [poster, src] = v.classList.contains('vimeo-embed') ?
-      [`vumbnail.com/${v.id}.jpg`, 'player.vimeo.com/video'] :
+      [`vumbnail.com/${v.id}_large.jpg`, 'player.vimeo.com/video'] :
       [`i.ytimg.com/vi/${v.id}/hqdefault.jpg`, 'www.youtube.com/embed'];
 
     v.innerHTML = `<img loading="lazy" src="https://${poster}" alt="${v.title}" aria-label="Play">`;

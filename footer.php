@@ -15,7 +15,7 @@ defined('ABSPATH') || exit;
     <div class="container-xl pt-5">
         <div class="row g-4 pb-5">
             <div class="col-sm-6 col-md-3 text-center">
-                <img class="footer__logo mb-4" src="<?=get_stylesheet_directory_uri()?>/img/shf-logo--light.svg" alt="">
+                <img class="footer__logo mb-4" width=300 height=94 src="<?=get_stylesheet_directory_uri()?>/img/shf-logo--light.svg" alt="">
                 <div class="mb-4">Call us today on<br><strong><?=do_shortcode('[contact_phone]')?></strong></div>
                 <?=social_icons()?>
                 <div class="pt-4">

@@ -114,7 +114,7 @@ if (get_field('gtm_property', 'options')) {
             <div class="container-xl py-2">
                 <a href="/" class="header_logo"><img
                         src="<?=get_stylesheet_directory_uri()?>/img/shf-logo--dark.svg"
-                        width=187 height=58 alt="SellHouseFast"></a>
+                        width=187 height=58 alt="Sell House Fast"></a>
                 <button class="header_toggle navbar-toggler input-button" id="navToggle" data-bs-toggle="collapse"
                     data-bs-target=".navbars" type="button" aria-label="Navigation"><i
                         class="fa fa-navicon"></i></button>

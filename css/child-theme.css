@@ -21706,6 +21706,19 @@ footer .colophon {
   background-color: var(--col-grey-400);
 }
 
+.form_block__form, .form_block__cta,
+.form_hero__form,
+.form_hero__cta,
+.short_cta__form,
+.short_cta__cta,
+.text_image__form,
+.text_image__cta,
+.single_cta__form,
+.single_cta__cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: min(450px, 100%);
+}
 .form_block input,
 .form_hero input,
 .short_cta input,
@@ -21714,7 +21727,7 @@ footer .colophon {
   border: 2px solid var(--col-blue-400);
   height: 42px;
   padding-inline: 0.5rem;
-  width: min(40vw, 220px);
+  width: 100%;
 }
 .form_block button,
 .form_hero button,
@@ -21742,29 +21755,6 @@ footer .colophon {
 
 .form_block input {
   width: 100%;
-}
-
-.text_image__cta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: min(450px, 100%);
-}
-.text_image input {
-  border: 2px solid var(--col-blue-400);
-  height: 42px;
-  padding-inline: 0.5rem;
-  width: min(40vw, 160px);
-}
-.text_image button {
-  height: 42px;
-  font-size: var(--fs-300);
-  padding: 0.5rem 1rem;
-}
-@media (min-width: 992px) {
-  .text_image button {
-    padding: 0.5rem 2rem;
-    font-size: var(--fs-400);
-  }
 }
 
 .use_quote {

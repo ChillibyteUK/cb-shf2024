@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
       [`vumbnail.com/${v.id}_large.jpg`, 'player.vimeo.com/video'] :
       [`i.ytimg.com/vi/${v.id}/hqdefault.jpg`, 'www.youtube.com/embed'];
 
-    v.innerHTML = `<img loading="lazy" src="https://${poster}" alt="${v.title}" aria-label="Play">`;
+    v.innerHTML = `<img src="https://${poster}" alt="${v.title}" aria-label="Play">`;
 
     v.children[0].addEventListener('click', () => {
         v.innerHTML = `<iframe allow="autoplay" src="https://${src}/${v.id}?autoplay=1" allowfullscreen></iframe>`;

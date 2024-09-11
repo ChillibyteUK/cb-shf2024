@@ -5,7 +5,7 @@
         <?php
         foreach (get_field('featured_logos','options') as $l) {
             ?>
-            <div class="swiper-slide"><?=wp_get_attachment_image($l,'full')?></div>
+            <div class="swiper-slide"><?=wp_get_attachment_image($l,'full',false,array('width' => '305', 'height' => '90' ))?></div>
             <?php
         }
         ?>
@@ -16,7 +16,7 @@
 add_action('wp_footer', function() {
     ?>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
 
     const featuredSwiper = new Swiper('.featuredSwiper', {
         autoplay: true,
@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    featuredSwiper.update();
 });
 </script>
     <?php

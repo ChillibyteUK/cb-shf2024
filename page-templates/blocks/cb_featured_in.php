@@ -17,8 +17,6 @@ add_action('wp_footer', function() {
     ?>
 <script>
 window.addEventListener('load', function() {
-    console.log('loaded');
-
     const featuredSwiper = new Swiper('.featuredSwiper', {
         autoplay: true,
         slidesPerView: 2,

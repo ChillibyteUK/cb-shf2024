@@ -5,7 +5,7 @@
         <?php
         foreach (get_field('featured_logos','options') as $l) {
             ?>
-            <div class="swiper-slide"><?=wp_get_attachment_image($l,'full',false,array('width' => '305', 'height' => '90' ))?></div>
+            <div class="swiper-slide"><?=wp_get_attachment_image_url($l,'full',false,array('width' => '305', 'height' => '90' ))?></div>
             <?php
         }
         ?>
@@ -23,6 +23,7 @@ window.addEventListener('load', function() {
         slidesPerView: 1,
         spaceBetween: 10,
         loop: true,
+        lazyPreloadPrevNext: 2,
         breakpoints: {
             340: {
                 slidesPerView: 2,

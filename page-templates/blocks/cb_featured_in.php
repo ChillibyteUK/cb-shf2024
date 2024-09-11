@@ -16,6 +16,8 @@
 add_action('wp_footer', function() {
     ?>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+
     const featuredSwiper = new Swiper('.featuredSwiper', {
         autoplay: true,
         slidesPerView: 1,
@@ -40,6 +42,7 @@ add_action('wp_footer', function() {
             }
         }
     });
+});
 </script>
     <?php
 },9999);

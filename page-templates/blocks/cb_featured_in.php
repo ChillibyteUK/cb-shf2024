@@ -17,30 +17,36 @@ add_action('wp_footer', function() {
     ?>
 <script nitro-exclude>
 window.addEventListener('load', function() {
-    const featuredSwiper = new Swiper('.featuredSwiper', {
-        autoplay: true,
-        slidesPerView: 2,
-        spaceBetween: 10,
-        loop: true,
-        lazyPreloadPrevNext: 2,
-        breakpoints: {
-            576: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            768: {
-                slidesPerView: 4,
-                spaceBetween: 20
-            },
-            992: {
-                slidesPerView: 5,
-                spaceBetween: 20
-            }
+    const initSwiper = () => {
+        if (document.querySelector('.featuredSwiper')) {
+            const featuredSwiper = new Swiper('.featuredSwiper', {
+                autoplay: true,
+                slidesPerView: 2,
+                spaceBetween: 10,
+                loop: true,
+                lazyPreloadPrevNext: 2,
+                breakpoints: {
+                    576: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 5,
+                        spaceBetween: 20
+                    }
+                }
+            });
+            featuredSwiper.update();
+        } else {
+            requestAnimationFrame(initSwiper);
         }
-    });
-
-    featuredSwiper.update();
+    };
+    requestAnimationFrame(initSwiper);
 });
 </script>
     <?php
-},9999);
+}, 9999);

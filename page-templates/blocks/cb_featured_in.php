@@ -15,34 +15,32 @@
 <?php
 add_action('wp_footer', function() {
     ?>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        const featuredSwiper = new Swiper('.featuredSwiper', {
-            autoplay: true,
-            slidesPerView: 2,
-            spaceBetween: 10,
-            loop: true,
-            lazyPreloadPrevNext: 2,
-            breakpoints: {
-                576: {
-                    slidesPerView: 3,
-                    spaceBetween: 20
-                },
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 20
-                },
-                992: {
-                    slidesPerView: 5,
-                    spaceBetween: 20
-                }
+<script nitro-exclude>
+window.addEventListener('load', function() {
+    const featuredSwiper = new Swiper('.featuredSwiper', {
+        autoplay: true,
+        slidesPerView: 2,
+        spaceBetween: 10,
+        loop: true,
+        lazyPreloadPrevNext: 2,
+        breakpoints: {
+            576: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 5,
+                spaceBetween: 20
             }
-        });
+        }
+    });
 
-        featuredSwiper.update();
-    }, 2000); // Adjust timeout as necessary
+    featuredSwiper.update();
 });
 </script>
     <?php
-}, 9999);
+},9999);

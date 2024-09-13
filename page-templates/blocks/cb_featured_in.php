@@ -15,6 +15,7 @@
 <?php
 add_action('wp_footer', function() {
     ?>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" nitro-exclude></script>
 <script nitro-exclude>
 window.addEventListener('load', function() {
     const featuredSwiper = new Swiper('.featuredSwiper', {

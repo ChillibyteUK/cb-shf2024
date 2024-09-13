@@ -16,10 +16,9 @@
 add_action('wp_footer', function() {
     ?>
 <script>
-window.addEventListener('DOMContentLoaded', function() {
-    const observer = new MutationObserver(function() {
-        const swiperEl = document.querySelector('.featuredSwiper');
-        if (swiperEl && !swiperEl.swiper) { // Check if Swiper is already initialised
+window.addEventListener('load', function() {
+    const initSwiper = () => {
+        if (document.querySelector('.featuredSwiper')) {
             const featuredSwiper = new Swiper('.featuredSwiper', {
                 autoplay: true,
                 slidesPerView: 2,
@@ -42,10 +41,11 @@ window.addEventListener('DOMContentLoaded', function() {
                 }
             });
             featuredSwiper.update();
+        } else {
+            requestAnimationFrame(initSwiper);
         }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
+    };
+    requestAnimationFrame(initSwiper);
 });
 </script>
     <?php

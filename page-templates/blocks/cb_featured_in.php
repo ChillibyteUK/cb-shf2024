@@ -16,37 +16,31 @@
 add_action('wp_footer', function() {
     ?>
 <script nitro-exclude>
-window.addEventListener('DOMContentLoaded', function() {
-    const observer = new MutationObserver(function() {
-        const swiperEl = document.querySelector('.featuredSwiper');
-        if (swiperEl && !swiperEl.swiper) { // Check if Swiper is already initialised
-            const featuredSwiper = new Swiper('.featuredSwiper', {
-                autoplay: true,
-                slidesPerView: 2,
-                spaceBetween: 10,
-                loop: true,
-                lazyPreloadPrevNext: 2,
-                breakpoints: {
-                    576: {
-                        slidesPerView: 3,
-                        spaceBetween: 20
-                    },
-                    768: {
-                        slidesPerView: 4,
-                        spaceBetween: 20
-                    },
-                    992: {
-                        slidesPerView: 5,
-                        spaceBetween: 20
-                    }
-                }
-            });
-            featuredSwiper.update();
+window.addEventListener('load', function() {
+    const featuredSwiper = new Swiper('.featuredSwiper', {
+        autoplay: true,
+        slidesPerView: 2,
+        spaceBetween: 10,
+        loop: true,
+        lazyPreloadPrevNext: 2,
+        breakpoints: {
+            576: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 5,
+                spaceBetween: 20
+            }
         }
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    featuredSwiper.update();
 });
 </script>
     <?php
-}, 9999);
+},9999);

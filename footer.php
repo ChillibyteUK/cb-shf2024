@@ -99,7 +99,7 @@ defined('ABSPATH') || exit;
 
           // If line1 has a value, auto-submit by redirecting
           if (line1) {
-            var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
+            var formPageUrl = "/free-cash-offer-form/?" + new URLSearchParams({
               addr1: line1,
               addr2: line2,
               addr3: line3,

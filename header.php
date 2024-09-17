@@ -119,7 +119,7 @@ if (get_field('gtm_property', 'options')) {
                     data-bs-target=".navbars" type="button" aria-label="Navigation"><i
                         class="fa fa-navicon"></i></button>
                 <div class="header_ctas d-none d-md-block">
-                    <a href="/free-cash-offer-form/" class="button button-sm">FREE CASH OFFER</a>
+                    <a href="/free-cash-offer/" class="button button-sm">FREE CASH OFFER</a>
                     <div>Call us: <?=contact_phone()?></div>
                 </div>
                 <?php

@@ -142,12 +142,12 @@ defined('ABSPATH') || exit;
         // If postcode is empty, redirect to /free-cash-offer-form/
         if (!line1) {
           console.log('no address selected');
-          window.location.href = "/free-cash-offer-form/";
+          window.location.href = "/free-cash-offer/";
           return;
         }
 
         // Build the URL with query parameters to pass the address data
-        var formPageUrl = "/free-cash-offer/?" + new URLSearchParams({
+        var formPageUrl = "/free-cash-offer-form/?" + new URLSearchParams({
           addr1: line1,
           addr2: line2,
           addr3: line3,

@@ -493,16 +493,11 @@ function display_post_list() {
     $output = '';
 
     if (!empty($posts)) {
-        $output .= '<ul>';
+        $output = '<ul><li><a href="' . get_site_url() . '"/insights/">Property Blog</a><ul>'
         foreach ($posts as $post) {
-            // check index status
-            $noindex = get_post_meta($post->ID, '_yoast_wpseo_meta-robots-noindex', true);
-
-            if ($noindex != '1') {
-                $output .= '<li><a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></li>';
-            }
+            $output .= '<li><a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></li>';
         }
-        $output .= '</ul>';
+        $output .= '</ul></li></ul>';
     }
 
     return $output;

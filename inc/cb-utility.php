@@ -428,4 +428,49 @@ function acf_load_menu_field_choices($field)
 }
 add_filter('acf/load_field/name=sidebar_menu', 'acf_load_menu_field_choices');
 
+
+// Function to display pages in a hierarchical list
+function display_page_hierarchy($parent_id = 0) {
+    // Get the pages with the specified parent, sorted by title
+    $args = array(
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'parent' => $parent_id,
+        'sort_column' => 'post_title', // Sort by post title for alphabetical order
+        'sort_order' => 'ASC'          // Sort ascending (A-Z)
+    );
+
+    $pages = get_pages($args);
+
+    $output = '';
+    
+    if (!empty($pages)) {
+        $output .= '<ul>';
+        foreach ($pages as $page) {
+            $output .= '<li><a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+
+            // Recursively display child pages, also sorted by title
+            $output .= display_page_hierarchy($page->ID); // Get nested child pages
+
+            $output .= '</li>';
+        }
+        $output .= '</ul>';
+    }
+
+    return $output;
+}
+
+// Register the shortcode to display the hierarchical page list
+function register_page_list_shortcode() {
+    // Start output buffering
+    ob_start();
+
+    // Display the hierarchical list
+    echo display_page_hierarchy();
+
+    // Return the buffered content
+    return ob_get_clean();
+}
+add_shortcode('page_list', 'register_page_list_shortcode');
+
 ?>

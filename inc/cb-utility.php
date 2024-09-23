@@ -450,14 +450,14 @@ function display_page_hierarchy($parent_id = 0) {
             // check index status
             $noindex = get_post_meta($page->ID, '_yoast_wpseo_meta-robots-noindex', true);
 
-            if ($noindex != '1') {
+            // if ($noindex != '1') {
                 $output .= '<li><a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+            // }
 
                 // Recursively display child pages, also sorted by title
                 $output .= display_page_hierarchy($page->ID); // Get nested child pages
 
                 $output .= '</li>';
-            }
         }
         $output .= '</ul>';
     }

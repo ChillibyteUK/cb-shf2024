@@ -485,7 +485,8 @@ function display_post_list() {
         'post_type' => 'post',
         'post_status' => 'publish',
         'orderby' => 'title', // Sort posts by title
-        'order' => 'ASC'      // Sort in ascending order (A-Z)
+        'order' => 'ASC',      // Sort in ascending order (A-Z)
+        'posts_per_page' => -1  // Retrieve all posts
     );
 
     $posts = get_posts($args);

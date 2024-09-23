@@ -478,4 +478,47 @@ function register_page_list_shortcode() {
 }
 add_shortcode('page_list', 'register_page_list_shortcode');
 
+// Function to display posts in a flat list
+function display_post_list() {
+    // Get all published posts, sorted by title
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'orderby' => 'title', // Sort posts by title
+        'order' => 'ASC'      // Sort in ascending order (A-Z)
+    );
+
+    $posts = get_posts($args);
+
+    $output = '';
+
+    if (!empty($posts)) {
+        $output .= '<ul>';
+        foreach ($posts as $post) {
+            // check index status
+            $noindex = get_post_meta($post->ID, '_yoast_wpseo_meta-robots-noindex', true);
+
+            if ($noindex != '1') {
+                $output .= '<li><a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a></li>';
+            }
+        }
+        $output .= '</ul>';
+    }
+
+    return $output;
+}
+
+// Register the shortcode to display the post list
+function register_post_list_shortcode() {
+    // Start output buffering
+    ob_start();
+
+    // Display the post list
+    echo display_post_list();
+
+    // Return the buffered content
+    return ob_get_clean();
+}
+add_shortcode('post_list', 'register_post_list_shortcode');
+
 ?>

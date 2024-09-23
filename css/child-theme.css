@@ -22561,13 +22561,10 @@ a.anchor {
 
 main a:not([class]) {
   text-decoration: none;
-  color: var(--col-black);
-}
-main a:not([class]):hover {
   color: var(--col-blue-400);
 }
-main a:not([class]):not([target=_blank]) {
-  font-weight: var(--fw-600);
+main a:not([class]):hover {
+  color: var(--col-black);
 }
 
 a.noline {

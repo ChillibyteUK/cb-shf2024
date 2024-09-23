@@ -72,13 +72,13 @@ a.anchor {
 
 main a:not([class]) {
     text-decoration: none;
-    color: var(--col-black);
+    color: var(--col-blue-400);
     &:hover {
-        color: var(--col-blue-400);
+        color: var(--col-black);
     }
-    &:not([target="_blank"]) {
-        font-weight: var(--fw-600);
-    }
+    // &:not([target="_blank"]) {
+    //     font-weight: var(--fw-600);
+    // }
 }
 a.noline {
     text-decoration: none;

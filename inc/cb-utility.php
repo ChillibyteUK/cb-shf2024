@@ -447,11 +447,17 @@ function display_page_hierarchy($parent_id = 0) {
     if (!empty($pages)) {
         $output .= '<ul>';
         foreach ($pages as $page) {
-            $output .= '<li><a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
-            // Recursively display child pages, also sorted by title
-            $output .= display_page_hierarchy($page->ID); // Get nested child pages
+            // check index status
+            $noindex = get_post_meta($page->ID, '_yoast_wpseo_meta-robots-noindex', true);
 
-            $output .= '</li>';
+            if ($noindex != '1') {
+                $output .= '<li><a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+
+                // Recursively display child pages, also sorted by title
+                $output .= display_page_hierarchy($page->ID); // Get nested child pages
+
+                $output .= '</li>';
+            }
         }
         $output .= '</ul>';
     }

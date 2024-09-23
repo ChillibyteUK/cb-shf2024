@@ -431,13 +431,17 @@ add_filter('acf/load_field/name=sidebar_menu', 'acf_load_menu_field_choices');
 
 // Function to display pages in a hierarchical list
 function display_page_hierarchy($parent_id = 0) {
+
+    $posts_page_id = get_option('page_for_posts');
+
     // Get the pages with the specified parent, sorted by title
     $args = array(
         'post_type' => 'page',
         'post_status' => 'publish',
         'parent' => $parent_id,
-        'sort_column' => 'post_title', // Sort by post title for alphabetical order
-        'sort_order' => 'ASC'          // Sort ascending (A-Z)
+        'sort_column' => 'post_title',  // Sort by post title for alphabetical order
+        'sort_order' => 'ASC',          // Sort ascending (A-Z)
+        'exclude' => $posts_page_id     // Exclude the posts page (blog index)
     );
 
     $pages = get_pages($args);

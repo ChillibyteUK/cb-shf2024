@@ -49,6 +49,7 @@ defined('ABSPATH') || exit;
                 Registered address: Office 1.01, 411 - 413 Oxford Street, London, England, W1C 2PE
             </div>
             <div class="col-md-6 order-1 order-md-2 d-flex align-items-center justify-content-md-end flex-wrap gap-1">
+                <a href="/sitemap/">Sitemap</a> |
                 <a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookie</a> Policy</a>
             </div>
         </div>

@@ -1,10 +1,10 @@
 {
-    "key": "group_66acf58986940",
-    "title": "CB Services Nav (Cards)",
+    "key": "group_66f283205ec91",
+    "title": "CB Services Nav (Buttons)",
     "fields": [
         {
-            "key": "field_66acf58ad2dde",
-            "label": "CB Services Nav (Cards)",
+            "key": "field_66f2832074f74",
+            "label": "CB Services Nav (Buttons)",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,7 +21,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_66b494b1d9d88",
+            "key": "field_66f2832078a05",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -41,7 +41,7 @@
             "append": ""
         },
         {
-            "key": "field_66c712446af71",
+            "key": "field_66f283207c47d",
             "label": "Intro",
             "name": "intro",
             "aria-label": "",
@@ -61,7 +61,7 @@
             "append": ""
         },
         {
-            "key": "field_66b4c61b9f4f0",
+            "key": "field_66f283207ff3a",
             "label": "Columns",
             "name": "columns",
             "aria-label": "",
@@ -86,7 +86,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_66b4dd358ff46",
+            "key": "field_66f28320839ae",
             "label": "Background",
             "name": "background",
             "aria-label": "",
@@ -111,7 +111,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_66b39ea8fdc51",
+            "key": "field_66f2832087442",
             "label": "Services",
             "name": "services",
             "aria-label": "",
@@ -133,7 +133,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_66b39eb0fdc52",
+                    "key": "field_66f28320bb92d",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -151,10 +151,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_66b39ea8fdc51"
+                    "parent_repeater": "field_66f2832087442"
                 },
                 {
-                    "key": "field_66b39eb9fdc53",
+                    "key": "field_66f28320bf4ab",
                     "label": "Content",
                     "name": "content",
                     "aria-label": "",
@@ -172,10 +172,10 @@
                     "rows": 3,
                     "placeholder": "",
                     "new_lines": "br",
-                    "parent_repeater": "field_66b39ea8fdc51"
+                    "parent_repeater": "field_66f2832087442"
                 },
                 {
-                    "key": "field_66b39ec5fdc54",
+                    "key": "field_66f28320c304f",
                     "label": "Link",
                     "name": "link",
                     "aria-label": "",
@@ -189,7 +189,7 @@
                         "id": ""
                     },
                     "return_format": "array",
-                    "parent_repeater": "field_66b39ea8fdc51"
+                    "parent_repeater": "field_66f2832087442"
                 }
             ]
         }
@@ -199,7 +199,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-services-nav"
+                "value": "acf\/cb-services-nav-buttons"
             }
         ]
     ],
@@ -212,5 +212,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727169346
+    "modified": 1727169330
 }

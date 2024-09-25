@@ -21,14 +21,14 @@ $bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pt-5';
             while (have_rows('services')) {
                 the_row();
                 $l = get_sub_field('link') ?? null;
-                $link_title = $l['title'] ?: get_sub_field('title');
+                $link_title = is_array($l) && isset($l['title']) ? $l['title'] : get_sub_field('title');
                 ?>
             <div class="services_nav__card services_nav__card--button">
                 <div class="services_nav__inner">
                     <h3><?=get_sub_field('title')?></h3>
                     <div><?=get_sub_field('content')?></div>
                     <?php
-                    if ($l) {
+                    if (is_array($l) && isset($l['url'])) {
                         ?>
                     <a href="<?=$l['url']?>" class="button button-sm"><?=$link_title?></a>
                         <?php

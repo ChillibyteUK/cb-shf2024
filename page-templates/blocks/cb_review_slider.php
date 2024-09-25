@@ -29,7 +29,7 @@
 <?php
 add_action('wp_footer', function() {
     ?>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer nitro-exclude></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" nitro-exclude></script>
 <script>
     const reviewSwiper = new Swiper('.review_swiper', {
         autoplay: true,

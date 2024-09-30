@@ -25,6 +25,9 @@ if (get_field('vimeo_id')) {
     $vimeo_data = file_get_contents("https://vimeo.com/api/v2/video/{$vimeo_id}.json");
     $vimeo_data = json_decode($vimeo_data, true);
 
+    echo '<!-- <pre>' . print_r($vimeo_data, true) . '</pre> -->';
+
+
     $title = $vimeo_data[0]['title'];
     $description = $vimeo_data[0]['description'];
     $thumbnail = $vimeo_data[0]['thumbnail_large'];

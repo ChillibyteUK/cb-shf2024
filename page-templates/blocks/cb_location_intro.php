@@ -29,7 +29,25 @@ if (get_field('vimeo_id')) {
     $description = $vimeo_data[0]['description'];
     $thumbnail = $vimeo_data[0]['thumbnail_large'];
     $uploadDate = $vimeo_data[0]['upload_date'];
-    $duration = $vimeo_data[0]['duration']; // Duration in seconds - convert to ISO 8601
+    $default_duration = 60; // Default to 60 seconds if needed
+    $duration = $default_duration;
+    if ($vimeo_data !== false) {
+        // Decode the Vimeo JSON data
+        $vimeo_data = json_decode($vimeo_data, true);
+    
+        // Check if duration data exists and is valid
+        if (isset($vimeo_data[0]['duration']) && is_numeric($vimeo_data[0]['duration'])) {
+            $duration = (int)$vimeo_data[0]['duration'];
+        }
+    }// Convert duration to ISO 8601 format
+    try {
+        // Create the DateInterval object using the duration in seconds
+        $duration_iso = new DateInterval("PT{$duration}S");
+    } catch (Exception $e) {
+        // Handle exception and fallback to default duration (if needed)
+        $duration_iso = new DateInterval("PT{$default_duration}S");
+    }
+    // $duration = $vimeo_data[0]['duration']; // Duration in seconds - convert to ISO 8601
 
     // Convert duration to ISO 8601 format
     $duration_iso = new DateInterval("PT{$duration}S");

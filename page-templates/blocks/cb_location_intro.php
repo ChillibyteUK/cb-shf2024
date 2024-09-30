@@ -29,17 +29,13 @@ if (get_field('vimeo_id')) {
     $description = $vimeo_data[0]['description'];
     $thumbnail = $vimeo_data[0]['thumbnail_large'];
     $uploadDate = $vimeo_data[0]['upload_date'];
+
     $default_duration = 60; // Default to 60 seconds if needed
     $duration = $default_duration;
-    if ($vimeo_data !== false) {
-        // Decode the Vimeo JSON data
-        $vimeo_data = json_decode($vimeo_data, true);
-    
-        // Check if duration data exists and is valid
-        if (isset($vimeo_data[0]['duration']) && is_numeric($vimeo_data[0]['duration'])) {
-            $duration = (int)$vimeo_data[0]['duration'];
-        }
-    }// Convert duration to ISO 8601 format
+    if (isset($vimeo_data[0]['duration']) && is_numeric($vimeo_data[0]['duration'])) {
+        $duration = (int)$vimeo_data[0]['duration'];
+    }
+
     try {
         // Create the DateInterval object using the duration in seconds
         $duration_iso = new DateInterval("PT{$duration}S");
@@ -47,10 +43,25 @@ if (get_field('vimeo_id')) {
         // Handle exception and fallback to default duration (if needed)
         $duration_iso = new DateInterval("PT{$default_duration}S");
     }
-    // $duration = $vimeo_data[0]['duration']; // Duration in seconds - convert to ISO 8601
 
-    // Convert duration to ISO 8601 format
-    $duration_iso = new DateInterval("PT{$duration}S");
+    // Format the ISO 8601 duration string correctly
+    $hours = $duration_iso->h;
+    $minutes = $duration_iso->i;
+    $seconds = $duration_iso->s;
+
+    $formatted_duration = 'PT';
+    if ($hours > 0) {
+        $formatted_duration .= $hours . 'H';
+    }
+    if ($minutes > 0) {
+        $formatted_duration .= $minutes . 'M';
+    }
+    if ($seconds > 0) {
+        $formatted_duration .= $seconds . 'S';
+    }
+
+    // // Convert duration to ISO 8601 format
+    // $duration_iso = new DateInterval("PT{$duration}S");
 
     $image = get_stylesheet_directory_uri() . '/img/sellhousefast-logo--dark.svg';
 
@@ -64,7 +75,7 @@ if (get_field('vimeo_id')) {
         "uploadDate" => $uploadDate,
         "contentUrl" => "https://vimeo.com/{$vimeo_id}",
         "embedUrl" => "https://player.vimeo.com/video/{$vimeo_id}",
-        "duration" => $duration_iso->format('PT%hH%iM%sS'),
+        "duration" => $formatted_duration,
         "transcript" => $transcript,
         "publisher" => [
             "@type" => "Organization",

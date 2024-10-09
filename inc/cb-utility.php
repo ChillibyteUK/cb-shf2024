@@ -560,8 +560,14 @@ function storeSessionData() {
         }
 
         // Store current page URL
-        $currentPageUrl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        $_SESSION['first_page'] = $currentPageUrl;
+        // $currentPageUrl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        // $_SESSION['first_page'] = $currentPageUrl;
+
+        if (!isset($_SESSION['first_page'])) {
+            $firstPageUrl = "https://" . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
+            $_SESSION['first_page'] = $firstPageUrl;
+            echo "First Page URL stored: " . $_SESSION['first_page'] . "<br>";
+        }
        
         $parametersToCapture = [
             'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',

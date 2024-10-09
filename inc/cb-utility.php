@@ -551,6 +551,8 @@ function store_session_data() {
         $_SESSION['url_parameters'] = sanitize_text_field($_POST['url_parameters']);
     }
 
+    echo json_encode(['status' => 'success', 'message' => 'Session data stored successfully']);
+
     wp_die(); // Ends AJAX request properly
 }
 

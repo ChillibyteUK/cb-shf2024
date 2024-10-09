@@ -562,10 +562,20 @@ function storeSessionData() {
         // Store current page URL
         $currentPageUrl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $_SESSION['first_page'] = $currentPageUrl;
-
-        // Store URL parameters if any
-        if (!isset($_SESSION['url_parameters']) && !empty($_SERVER['QUERY_STRING'])) {
-            $_SESSION['url_parameters'] = $_SERVER['QUERY_STRING'];
+       
+        $parametersToCapture = [
+            'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',
+            'hsa_acc', 'hsa_cam', 'hsa_grp', 'hsa_ad',
+            'hsa_src', 'hsa_tgt', 'hsa_kw', 'hsa_mt',
+            'hsa_net', 'hsa_ver', 'gad_source'
+        ];
+        
+        parse_str($_SERVER['QUERY_STRING'], $queryParams);
+        foreach ($parametersToCapture as $param) {
+            if (isset($queryParams[$param])) {
+                $_SESSION[$param] = $queryParams[$param];
+                // echo "URL Parameter {$param} stored: " . $queryParams[$param] . "<br>";
+            }
         }
 
         // Mark data as captured
@@ -578,9 +588,20 @@ function storeSessionData() {
 function getSessionData() {
     $sessionData = [
         'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
-        'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
-        'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : ''
+        'current_page' => isset($_SESSION['current_page']) ? $_SESSION['current_page'] : '',
     ];
+    
+    // Add specific URL parameters to session data
+    $parametersToCapture = [
+        'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',
+        'hsa_acc', 'hsa_cam', 'hsa_grp', 'hsa_ad',
+        'hsa_src', 'hsa_tgt', 'hsa_kw', 'hsa_mt',
+        'hsa_net', 'hsa_ver', 'gad_source'
+    ];
+    
+    foreach ($parametersToCapture as $param) {
+        $sessionData[$param] = isset($_SESSION[$param]) ? $_SESSION[$param] : '';
+    }
     
     return $sessionData;
 }

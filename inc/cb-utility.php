@@ -523,35 +523,6 @@ add_shortcode('post_list', 'register_post_list_shortcode');
 
 
 // SESSIONS STUFF
-// add_action('init', 'start_custom_session', 1);
-// function start_custom_session() {
-//     if (!session_id()) {
-//         session_start();
-//     }
-
-//     // if (session_status() == PHP_SESSION_ACTIVE) {
-//     //     echo "Session is active.<br>";
-//     // } else {
-//     //     echo "Failed to start session.<br>";
-//     // }
-
-//     storeSessionData();
-
-//     // echo "<pre> SESSION DATA\n";
-//     // print_r(getSessionData());
-//     // echo '</pre>';
-
-//     // echo '<pre>';
-//     // print_r($_SESSION);
-//     // echo '</pre>';
-
-//     // $headers = headers_list();
-//     // echo '<pre>';
-//     // print_r($headers);
-//     // echo '</pre>';
-
-// }
-
 
 add_action('init', 'start_custom_session', 1);
 function start_custom_session() {
@@ -559,7 +530,6 @@ function start_custom_session() {
         session_start();
     }
 }
-
 
 add_action('wp_ajax_store_session_data', 'store_session_data');
 add_action('wp_ajax_nopriv_store_session_data', 'store_session_data');

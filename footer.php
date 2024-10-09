@@ -219,6 +219,13 @@ defined('ABSPATH') || exit;
                 first_page: data.first_page,
                 url_parameters: data.url_parameters
             })
+        }).then(response => {
+            console.log('Data sent to server:', data);
+            return response.text();
+        }).then(responseText => {
+            console.log('Server response:', responseText);
+        }).catch(error => {
+            console.error('Error sending data to server:', error);
         });
     }
 })();

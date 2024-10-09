@@ -528,6 +528,28 @@ function start_custom_session() {
     if (!session_id()) {
         session_start();
     }
+
+    // if (session_status() == PHP_SESSION_ACTIVE) {
+    //     echo "Session is active.<br>";
+    // } else {
+    //     echo "Failed to start session.<br>";
+    // }
+
+    storeSessionData();
+
+    // echo "<pre> SESSION DATA\n";
+    // print_r(getSessionData());
+    // echo '</pre>';
+
+    // echo '<pre>';
+    // print_r($_SESSION);
+    // echo '</pre>';
+
+    // $headers = headers_list();
+    // echo '<pre>';
+    // print_r($headers);
+    // echo '</pre>';
+
 }
 
 function storeSessionData() {
@@ -539,7 +561,7 @@ function storeSessionData() {
 
         // Store current page URL
         $currentPageUrl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        $_SESSION['current_page'] = $currentPageUrl;
+        $_SESSION['first_page'] = $currentPageUrl;
 
         // Store URL parameters if any
         if (!isset($_SESSION['url_parameters']) && !empty($_SERVER['QUERY_STRING'])) {
@@ -556,7 +578,7 @@ function storeSessionData() {
 function getSessionData() {
     $sessionData = [
         'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
-        'current_page' => isset($_SESSION['current_page']) ? $_SESSION['current_page'] : '',
+        'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
         'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : ''
     ];
     

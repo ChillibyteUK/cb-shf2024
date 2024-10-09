@@ -588,7 +588,7 @@ function storeSessionData() {
 function getSessionData() {
     $sessionData = [
         'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
-        'current_page' => isset($_SESSION['current_page']) ? $_SESSION['current_page'] : '',
+        'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
     ];
     
     // Add specific URL parameters to session data

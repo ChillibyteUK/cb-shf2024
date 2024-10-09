@@ -174,35 +174,56 @@ defined('ABSPATH') || exit;
 <input type="hidden" id="town" name="town">
 <input type="hidden" id="postcode_output" name="postcode_output">
 
-
 <script>
-    (function() {
-        // Check if data has already been captured in sessionStorage
-        if (!sessionStorage.getItem('data_captured')) {
-            // Parse URL parameters
-            const params = new URLSearchParams(window.location.search);
-            const urlParams = params.toString();
+(function() {
+    // Check if data has already been captured in sessionStorage
+    if (!sessionStorage.getItem('data_captured')) {
+        // Parse URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const urlParams = params.toString();
 
-            if (urlParams) {
-                // Store URL parameters in sessionStorage
-                sessionStorage.setItem('url_parameters', urlParams);
+        if (urlParams) {
+            // Store URL parameters in sessionStorage
+            sessionStorage.setItem('url_parameters', urlParams);
 
-                // Also, store the first page URL without parameters if not already set
-                if (!sessionStorage.getItem('first_page')) {
-                    sessionStorage.setItem('first_page', window.location.origin + window.location.pathname);
-                }
-
-                // Store referring URL
-                if (!sessionStorage.getItem('referring_url') && document.referrer) {
-                    sessionStorage.setItem('referring_url', document.referrer);
-                }
-
-                // Mark data as captured
-                sessionStorage.setItem('data_captured', 'true');
+            // Also, store the first page URL without parameters if not already set
+            if (!sessionStorage.getItem('first_page')) {
+                sessionStorage.setItem('first_page', window.location.origin + window.location.pathname);
             }
+
+            // Store referring URL
+            if (!sessionStorage.getItem('referring_url') && document.referrer) {
+                sessionStorage.setItem('referring_url', document.referrer);
+            }
+
+            // Mark data as captured
+            sessionStorage.setItem('data_captured', 'true');
         }
-    })();
+
+        // Send data to the server
+        const data = {
+            referring_url: sessionStorage.getItem('referring_url'),
+            first_page: sessionStorage.getItem('first_page'),
+            url_parameters: sessionStorage.getItem('url_parameters')
+        };
+
+        // AJAX request to send data to the server
+        fetch('/wp-admin/admin-ajax.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                action: 'store_session_data',
+                referring_url: data.referring_url,
+                first_page: data.first_page,
+                url_parameters: data.url_parameters
+            })
+        });
+    }
+})();
 </script>
+
 <?php wp_footer(); ?>
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145136229.js"></script>

@@ -560,6 +560,30 @@ function start_custom_session() {
     }
 }
 
+
+add_action('wp_ajax_store_session_data', 'store_session_data');
+add_action('wp_ajax_nopriv_store_session_data', 'store_session_data');
+
+function store_session_data() {
+    if (!session_id()) {
+        session_start();
+    }
+
+    if (isset($_POST['referring_url'])) {
+        $_SESSION['referring_url'] = sanitize_text_field($_POST['referring_url']);
+    }
+
+    if (isset($_POST['first_page'])) {
+        $_SESSION['first_page'] = sanitize_text_field($_POST['first_page']);
+    }
+
+    if (isset($_POST['url_parameters'])) {
+        $_SESSION['url_parameters'] = sanitize_text_field($_POST['url_parameters']);
+    }
+
+    wp_die(); // Ends AJAX request properly
+}
+
 // Function to get session data
 function getSessionData() {
     $sessionData = [

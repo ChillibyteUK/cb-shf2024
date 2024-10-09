@@ -521,4 +521,46 @@ function register_post_list_shortcode() {
 }
 add_shortcode('post_list', 'register_post_list_shortcode');
 
+
+// SESSIONS STUFF
+add_action('init', 'start_custom_session', 1);
+function start_custom_session() {
+    if (!session_id()) {
+        session_start();
+    }
+}
+
+function storeSessionData() {
+    if (!isset($_SESSION['data_captured'])) {
+        // Store referring URL if available
+        if (!isset($_SESSION['referring_url']) && isset($_SERVER['HTTP_REFERER'])) {
+            $_SESSION['referring_url'] = $_SERVER['HTTP_REFERER'];
+        }
+
+        // Store current page URL
+        $currentPageUrl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $_SESSION['current_page'] = $currentPageUrl;
+
+        // Store URL parameters if any
+        if (!isset($_SESSION['url_parameters']) && !empty($_SERVER['QUERY_STRING'])) {
+            $_SESSION['url_parameters'] = $_SERVER['QUERY_STRING'];
+        }
+
+        // Mark data as captured
+        $_SESSION['data_captured'] = true;
+    }
+}
+
+
+// Function to get session data
+function getSessionData() {
+    $sessionData = [
+        'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
+        'current_page' => isset($_SESSION['current_page']) ? $_SESSION['current_page'] : '',
+        'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : ''
+    ];
+    
+    return $sessionData;
+}
+
 ?>

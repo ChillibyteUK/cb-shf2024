@@ -621,4 +621,22 @@ function getSessionData() {
     return $sessionData;
 }
 
+// Gravity Forms hook to populate fields dynamically
+add_filter('gform_field_value_first_page', 'populate_first_page');
+function populate_first_page() {
+    $sessionData = getSessionData();
+    return $sessionData['first_page'];
+}
+
+add_filter('gform_field_value_referring_url', 'populate_referring_url');
+function populate_referring_url() {
+    $sessionData = getSessionData();
+    return $sessionData['referring_url'];
+}
+
+add_filter('gform_field_value_url_parameters', 'populate_url_parameters');
+function populate_url_parameters() {
+    $sessionData = getSessionData();
+    return $sessionData['url_parameters'];
+}
 ?>

@@ -566,7 +566,7 @@ function storeSessionData() {
         if (!isset($_SESSION['first_page'])) {
             $firstPageUrl = "https://" . $_SERVER['HTTP_HOST'] . strtok($_SERVER['REQUEST_URI'], '?');
             $_SESSION['first_page'] = $firstPageUrl;
-            echo "First Page URL stored: " . $_SESSION['first_page'] . "<br>";
+            // echo "First Page URL stored: " . $_SESSION['first_page'] . "<br>";
         }
        
         $parametersToCapture = [

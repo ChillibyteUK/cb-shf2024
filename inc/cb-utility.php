@@ -523,35 +523,74 @@ add_shortcode('post_list', 'register_post_list_shortcode');
 
 
 // SESSIONS STUFF
+// add_action('init', 'start_custom_session', 1);
+// function start_custom_session() {
+//     if (!session_id()) {
+//         session_start();
+//     }
+
+//     // if (session_status() == PHP_SESSION_ACTIVE) {
+//     //     echo "Session is active.<br>";
+//     // } else {
+//     //     echo "Failed to start session.<br>";
+//     // }
+
+//     storeSessionData();
+
+//     // echo "<pre> SESSION DATA\n";
+//     // print_r(getSessionData());
+//     // echo '</pre>';
+
+//     // echo '<pre>';
+//     // print_r($_SESSION);
+//     // echo '</pre>';
+
+//     // $headers = headers_list();
+//     // echo '<pre>';
+//     // print_r($headers);
+//     // echo '</pre>';
+
+// }
+
+
 add_action('init', 'start_custom_session', 1);
 function start_custom_session() {
     if (!session_id()) {
         session_start();
     }
-
-    // if (session_status() == PHP_SESSION_ACTIVE) {
-    //     echo "Session is active.<br>";
-    // } else {
-    //     echo "Failed to start session.<br>";
-    // }
-
-    storeSessionData();
-
-    // echo "<pre> SESSION DATA\n";
-    // print_r(getSessionData());
-    // echo '</pre>';
-
-    // echo '<pre>';
-    // print_r($_SESSION);
-    // echo '</pre>';
-
-    // $headers = headers_list();
-    // echo '<pre>';
-    // print_r($headers);
-    // echo '</pre>';
-
 }
 
+// Function to get session data
+function getSessionData() {
+    $sessionData = [
+        'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
+        'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
+        'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : '',
+    ];
+        
+    return $sessionData;
+}
+
+// Gravity Forms hook to populate fields dynamically
+add_filter('gform_field_value_first_page', 'populate_first_page');
+function populate_first_page() {
+    $sessionData = getSessionData();
+    return $sessionData['first_page'];
+}
+
+add_filter('gform_field_value_referring_url', 'populate_referring_url');
+function populate_referring_url() {
+    $sessionData = getSessionData();
+    return $sessionData['referring_url'];
+}
+
+add_filter('gform_field_value_url_parameters', 'populate_url_parameters');
+function populate_url_parameters() {
+    $sessionData = getSessionData();
+    return $sessionData['url_parameters'];
+}
+
+/*
 function storeSessionData() {
     if (!isset($_SESSION['data_captured'])) {
         // Store referring URL if available
@@ -620,7 +659,6 @@ function getSessionData() {
     
     return $sessionData;
 }
-
 // Gravity Forms hook to populate fields dynamically
 add_filter('gform_field_value_first_page', 'populate_first_page');
 function populate_first_page() {
@@ -639,4 +677,6 @@ function populate_url_parameters() {
     $sessionData = getSessionData();
     return $sessionData['url_parameters'];
 }
+
+*/
 ?>

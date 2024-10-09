@@ -538,7 +538,7 @@ function storeSessionData() {
         }
 
         // Store current page URL
-        $currentPageUrl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $currentPageUrl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $_SESSION['current_page'] = $currentPageUrl;
 
         // Store URL parameters if any

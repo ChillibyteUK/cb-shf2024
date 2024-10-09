@@ -1,3 +1,4 @@
+<div class="container-xl py-5">
 <?php
 $sessionData = getSessionData();
 
@@ -7,5 +8,7 @@ echo 'URL parameters: ' . htmlspecialchars($sessionData['url_parameters']) . '<b
 
 foreach ($sessionData as $key => $value) {
     echo $key . ': ' . htmlspecialchars($value) . '<br>';
+}
 
 ?>
+</div>

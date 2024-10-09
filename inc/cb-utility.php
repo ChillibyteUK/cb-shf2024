@@ -568,21 +568,28 @@ function storeSessionData() {
             $_SESSION['first_page'] = $firstPageUrl;
             // echo "First Page URL stored: " . $_SESSION['first_page'] . "<br>";
         }
-       
-        $parametersToCapture = [
-            'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',
-            'hsa_acc', 'hsa_cam', 'hsa_grp', 'hsa_ad',
-            'hsa_src', 'hsa_tgt', 'hsa_kw', 'hsa_mt',
-            'hsa_net', 'hsa_ver', 'gad_source'
-        ];
-        
-        parse_str($_SERVER['QUERY_STRING'], $queryParams);
-        foreach ($parametersToCapture as $param) {
-            if (isset($queryParams[$param])) {
-                $_SESSION[$param] = $queryParams[$param];
-                // echo "URL Parameter {$param} stored: " . $queryParams[$param] . "<br>";
-            }
+
+            // Store all URL parameters as a string
+        if (!isset($_SESSION['url_parameters']) && !empty($_SERVER['QUERY_STRING'])) {
+            $_SESSION['url_parameters'] = $_SERVER['QUERY_STRING'];
+            // echo "URL Parameters stored: " . $_SESSION['url_parameters'] . "<br>";
         }
+    
+        // this splits the url parameters into name/value pairs
+        // $parametersToCapture = [
+        //     'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',
+        //     'hsa_acc', 'hsa_cam', 'hsa_grp', 'hsa_ad',
+        //     'hsa_src', 'hsa_tgt', 'hsa_kw', 'hsa_mt',
+        //     'hsa_net', 'hsa_ver', 'gad_source'
+        // ];
+        
+        // parse_str($_SERVER['QUERY_STRING'], $queryParams);
+        // foreach ($parametersToCapture as $param) {
+        //     if (isset($queryParams[$param])) {
+        //         $_SESSION[$param] = $queryParams[$param];
+        //         // echo "URL Parameter {$param} stored: " . $queryParams[$param] . "<br>";
+        //     }
+        // }
 
         // Mark data as captured
         $_SESSION['data_captured'] = true;
@@ -595,19 +602,21 @@ function getSessionData() {
     $sessionData = [
         'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
         'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
+        'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : '',
     ];
     
+    // this is if the parameters are split
     // Add specific URL parameters to session data
-    $parametersToCapture = [
-        'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',
-        'hsa_acc', 'hsa_cam', 'hsa_grp', 'hsa_ad',
-        'hsa_src', 'hsa_tgt', 'hsa_kw', 'hsa_mt',
-        'hsa_net', 'hsa_ver', 'gad_source'
-    ];
+    // $parametersToCapture = [
+    //     'utm_term', 'utm_campaign', 'utm_source', 'utm_medium',
+    //     'hsa_acc', 'hsa_cam', 'hsa_grp', 'hsa_ad',
+    //     'hsa_src', 'hsa_tgt', 'hsa_kw', 'hsa_mt',
+    //     'hsa_net', 'hsa_ver', 'gad_source'
+    // ];
     
-    foreach ($parametersToCapture as $param) {
-        $sessionData[$param] = isset($_SESSION[$param]) ? $_SESSION[$param] : '';
-    }
+    // foreach ($parametersToCapture as $param) {
+    //     $sessionData[$param] = isset($_SESSION[$param]) ? $_SESSION[$param] : '';
+    // }
     
     return $sessionData;
 }

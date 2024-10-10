@@ -174,6 +174,7 @@ defined('ABSPATH') || exit;
 <input type="hidden" id="town" name="town">
 <input type="hidden" id="postcode_output" name="postcode_output">
 
+<!--
 <script>
     (function() {
         // Check if data has already been captured in sessionStorage
@@ -226,6 +227,7 @@ defined('ABSPATH') || exit;
         });
     })();
 </script>
+-->
 
 <?php wp_footer(); ?>
 <!-- Start of HubSpot Embed Code -->

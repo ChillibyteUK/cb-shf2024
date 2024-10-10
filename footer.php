@@ -207,6 +207,9 @@ defined('ABSPATH') || exit;
             const firstPage = sessionStorage.getItem('first_page');
             const urlParameters = sessionStorage.getItem('url_parameters');
 
+            console.log(firstPage);
+            console.log(urlParameters);
+
             if (referringUrl) {
                 const referringField = document.querySelector('input[name="input_24"]');
                 if (referringField) referringField.value = referringUrl;

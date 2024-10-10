@@ -202,34 +202,33 @@ defined('ABSPATH') || exit;
             }
         }
 
-        // Populate Gravity Form fields using sessionStorage after form is rendered
+        // Populate Gravity Form fields safely after the form is rendered
         document.addEventListener('DOMContentLoaded', function () {
-            // Delay setting values to ensure Gravity Forms is fully loaded
-            setTimeout(function() {
+            // Using Gravity Forms specific event listener to ensure the form is ready
+            document.addEventListener('gform_post_render', function (event) {
                 const referringUrl = sessionStorage.getItem('referring_url');
                 const firstPage = sessionStorage.getItem('first_page');
                 const urlParameters = sessionStorage.getItem('url_parameters');
 
-                // Populate fields if they exist
-                const referringField = document.querySelector('input[name="input_24"]');
-                if (referringUrl && referringField) {
-                    referringField.value = referringUrl;
+                // Populate fields if they exist after Gravity Forms has rendered them
+                if (referringUrl) {
+                    const referringField = document.querySelector('input[name="input_24"]');
+                    if (referringField) referringField.value = referringUrl;
                 }
 
-                const firstPageField = document.querySelector('input[name="input_23"]');
-                if (firstPage && firstPageField) {
-                    firstPageField.value = firstPage;
+                if (firstPage) {
+                    const firstPageField = document.querySelector('input[name="input_23"]');
+                    if (firstPageField) firstPageField.value = firstPage;
                 }
 
-                const urlParamsField = document.querySelector('input[name="input_25"]');
-                if (urlParameters && urlParamsField) {
-                    urlParamsField.value = urlParameters;
+                if (urlParameters) {
+                    const urlParamsField = document.querySelector('input[name="input_25"]');
+                    if (urlParamsField) urlParamsField.value = urlParameters;
                 }
-            }, 500); // Adjust the delay as needed (e.g., 500ms)
+            });
         });
     })();
 </script>
-
 
 
 <?php wp_footer(); ?>

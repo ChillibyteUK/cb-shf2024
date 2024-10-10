@@ -227,6 +227,31 @@ defined('ABSPATH') || exit;
         }).catch(error => {
             console.error('Error sending data to server:', error);
         });
+
+        // Populate Gravity Form fields using sessionStorage
+        document.addEventListener('DOMContentLoaded', function () {
+            const referringUrl = sessionStorage.getItem('referring_url');
+            const firstPage = sessionStorage.getItem('first_page');
+            const urlParameters = sessionStorage.getItem('url_parameters');
+
+            console.log(firstPage);
+            console.log(urlParameters);
+            
+            if (referringUrl) {
+                const referringField = document.querySelector('input[name="input_24"]');
+                if (referringField) referringField.value = referringUrl;
+            }
+
+            if (firstPage) {
+                const firstPageField = document.querySelector('input[name="input_23"]');
+                if (firstPageField) firstPageField.value = firstPage;
+            }
+
+            if (urlParameters) {
+                const urlParamsField = document.querySelector('input[name="input_25"]');
+                if (urlParamsField) urlParamsField.value = urlParameters;
+            }
+        });
     }
 })();
 </script>

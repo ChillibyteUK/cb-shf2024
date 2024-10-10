@@ -208,6 +208,10 @@ defined('ABSPATH') || exit;
             const firstPage = sessionStorage.getItem('first_page');
             const urlParameters = sessionStorage.getItem('url_parameters');
 
+            console.log('ref '+referringUrl);
+            console.log('first '+firstPage);
+            console.log('para '+urlParameters);
+            
             if (referringUrl || firstPage || urlParameters) {
                 const params = new URLSearchParams(window.location.search);
 

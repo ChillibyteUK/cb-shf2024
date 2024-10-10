@@ -524,67 +524,67 @@ add_shortcode('post_list', 'register_post_list_shortcode');
 
 // SESSIONS STUFF
 
-add_action('init', 'start_custom_session', 1);
-function start_custom_session() {
-    if (!session_id()) {
-        session_start();
-    }
-}
+// add_action('init', 'start_custom_session', 1);
+// function start_custom_session() {
+//     if (!session_id()) {
+//         session_start();
+//     }
+// }
 
-add_action('wp_ajax_store_session_data', 'store_session_data');
-add_action('wp_ajax_nopriv_store_session_data', 'store_session_data');
+// add_action('wp_ajax_store_session_data', 'store_session_data');
+// add_action('wp_ajax_nopriv_store_session_data', 'store_session_data');
 
-function store_session_data() {
-    if (!session_id()) {
-        session_start();
-    }
+// function store_session_data() {
+//     if (!session_id()) {
+//         session_start();
+//     }
 
-    if (isset($_POST['referring_url'])) {
-        $_SESSION['referring_url'] = sanitize_text_field($_POST['referring_url']);
-    }
+//     if (isset($_POST['referring_url'])) {
+//         $_SESSION['referring_url'] = sanitize_text_field($_POST['referring_url']);
+//     }
 
-    if (isset($_POST['first_page'])) {
-        $_SESSION['first_page'] = sanitize_text_field($_POST['first_page']);
-    }
+//     if (isset($_POST['first_page'])) {
+//         $_SESSION['first_page'] = sanitize_text_field($_POST['first_page']);
+//     }
 
-    if (isset($_POST['url_parameters'])) {
-        $_SESSION['url_parameters'] = sanitize_text_field($_POST['url_parameters']);
-    }
+//     if (isset($_POST['url_parameters'])) {
+//         $_SESSION['url_parameters'] = sanitize_text_field($_POST['url_parameters']);
+//     }
 
-    echo json_encode(['status' => 'success', 'message' => 'Session data stored successfully']);
+//     echo json_encode(['status' => 'success', 'message' => 'Session data stored successfully']);
 
-    wp_die(); // Ends AJAX request properly
-}
+//     wp_die(); // Ends AJAX request properly
+// }
 
-// Function to get session data
-function getSessionData() {
-    $sessionData = [
-        'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
-        'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
-        'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : '',
-    ];
+// // Function to get session data
+// function getSessionData() {
+//     $sessionData = [
+//         'referring_url' => isset($_SESSION['referring_url']) ? $_SESSION['referring_url'] : '',
+//         'first_page' => isset($_SESSION['first_page']) ? $_SESSION['first_page'] : '',
+//         'url_parameters' => isset($_SESSION['url_parameters']) ? $_SESSION['url_parameters'] : '',
+//     ];
         
-    return $sessionData;
-}
+//     return $sessionData;
+// }
 
-// Gravity Forms hook to populate fields dynamically
-add_filter('gform_field_value_first_page', 'populate_first_page');
-function populate_first_page() {
-    $sessionData = getSessionData();
-    return $sessionData['first_page'];
-}
+// // Gravity Forms hook to populate fields dynamically
+// add_filter('gform_field_value_first_page', 'populate_first_page');
+// function populate_first_page() {
+//     $sessionData = getSessionData();
+//     return $sessionData['first_page'];
+// }
 
-add_filter('gform_field_value_referring_url', 'populate_referring_url');
-function populate_referring_url() {
-    $sessionData = getSessionData();
-    return $sessionData['referring_url'];
-}
+// add_filter('gform_field_value_referring_url', 'populate_referring_url');
+// function populate_referring_url() {
+//     $sessionData = getSessionData();
+//     return $sessionData['referring_url'];
+// }
 
-add_filter('gform_field_value_url_parameters', 'populate_url_parameters');
-function populate_url_parameters() {
-    $sessionData = getSessionData();
-    return $sessionData['url_parameters'];
-}
+// add_filter('gform_field_value_url_parameters', 'populate_url_parameters');
+// function populate_url_parameters() {
+//     $sessionData = getSessionData();
+//     return $sessionData['url_parameters'];
+// }
 
 /*
 function storeSessionData() {

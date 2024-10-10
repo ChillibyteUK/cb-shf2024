@@ -67,7 +67,7 @@ if (is_front_page() || is_page('contact-us')) {
             "name": "SellHouseFast",
             "legalName": "Jolack Limited",
             "url": "https://www.sellhousefast.co.uk/",
-            "logo": "https://www.sellhousefast.co.uk/wp-content/themes/cb-shf2024/img/shf-logo-large.png",
+            "logo": "https://sellhousefast.co.uk/wp-content/themes/cb-shf2024/img/sellhousefast-logo--dark.svg",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Office 1.01, 411 - 413 Oxford Street",
@@ -82,8 +82,10 @@ if (is_front_page() || is_page('contact-us')) {
                 "email": "info@sellhousefast.co.uk"
             },
             "sameAs": [
-                "https://twitter.com/",
-                "https://www.linkedin.com/company/"
+                "https://www.linkedin.com/company/sellhousefast-co-uk/",
+                "https://www.instagram.com/sellhousefast.co.uk/",
+                "https://www.youtube.com/channel/UCVFOxaHUpXWjYy2ax6h5MwA",
+                "https://x.com/shf_co_uk"
             ]
         }
     </script>

@@ -207,9 +207,6 @@ defined('ABSPATH') || exit;
             const firstPage = sessionStorage.getItem('first_page');
             const urlParameters = sessionStorage.getItem('url_parameters');
 
-            console.log(firstPage);
-            console.log(urlParameters);
-
             if (referringUrl) {
                 const referringField = document.querySelector('input[name="input_24"]');
                 if (referringField) referringField.value = referringUrl;
@@ -217,11 +214,13 @@ defined('ABSPATH') || exit;
 
             if (firstPage) {
                 const firstPageField = document.querySelector('input[name="input_23"]');
+                console.log('writing to firstPageField '+firstPage);
                 if (firstPageField) firstPageField.value = firstPage;
-            }
-
-            if (urlParameters) {
+              }
+              
+              if (urlParameters) {
                 const urlParamsField = document.querySelector('input[name="input_25"]');
+                console.log('writing to urlParamsField '+urlParameters);
                 if (urlParamsField) urlParamsField.value = urlParameters;
             }
         });

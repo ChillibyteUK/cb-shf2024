@@ -175,7 +175,7 @@ defined('ABSPATH') || exit;
 <input type="hidden" id="postcode_output" name="postcode_output">
 
 
-<script>
+<script nitro-exclude>
     (function() {
         // Check if data has already been captured in sessionStorage
         if (!sessionStorage.getItem('data_captured')) {

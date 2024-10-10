@@ -202,30 +202,32 @@ defined('ABSPATH') || exit;
             }
         }
 
-        // Populate Gravity Form fields safely after the form is rendered
+        // Populate Gravity Form fields after the form is rendered
         document.addEventListener('DOMContentLoaded', function () {
-            // Using Gravity Forms specific event listener to ensure the form is ready
-            document.addEventListener('gform_post_render', function (event) {
+            function populateFields() {
                 const referringUrl = sessionStorage.getItem('referring_url');
                 const firstPage = sessionStorage.getItem('first_page');
                 const urlParameters = sessionStorage.getItem('url_parameters');
 
-                // Populate fields if they exist after Gravity Forms has rendered them
-                if (referringUrl) {
-                    const referringField = document.querySelector('input[name="input_24"]');
-                    if (referringField) referringField.value = referringUrl;
+                // Populate fields if they exist
+                const referringField = document.querySelector('input[name="input_24"]');
+                if (referringUrl && referringField) {
+                    referringField.value = referringUrl;
                 }
 
-                if (firstPage) {
-                    const firstPageField = document.querySelector('input[name="input_23"]');
-                    if (firstPageField) firstPageField.value = firstPage;
+                const firstPageField = document.querySelector('input[name="input_23"]');
+                if (firstPage && firstPageField) {
+                    firstPageField.value = firstPage;
                 }
 
-                if (urlParameters) {
-                    const urlParamsField = document.querySelector('input[name="input_25"]');
-                    if (urlParamsField) urlParamsField.value = urlParameters;
+                const urlParamsField = document.querySelector('input[name="input_25"]');
+                if (urlParameters && urlParamsField) {
+                    urlParamsField.value = urlParameters;
                 }
-            });
+            }
+
+            // Delay execution to ensure form fields are available
+            setTimeout(populateFields, 1000); // Adjust the delay if needed
         });
     })();
 </script>

@@ -203,38 +203,33 @@ defined('ABSPATH') || exit;
         }
 
         // Populate Gravity Form fields using sessionStorage after form is rendered
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     const referringUrl = sessionStorage.getItem('referring_url');
-        //     const firstPage = sessionStorage.getItem('first_page');
-        //     const urlParameters = sessionStorage.getItem('url_parameters');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Delay setting values to ensure Gravity Forms is fully loaded
+            setTimeout(function() {
+                const referringUrl = sessionStorage.getItem('referring_url');
+                const firstPage = sessionStorage.getItem('first_page');
+                const urlParameters = sessionStorage.getItem('url_parameters');
 
-        //     const observer = new MutationObserver(function(mutations) {
-        //         mutations.forEach(function(mutation) {
-        //             if (mutation.type === 'childList') {
-        //                 // Check if Gravity Form fields are available and populate them
-        //                 const referringField = document.querySelector('input[name="input_24"]');
-        //                 if (referringUrl && referringField) {
-        //                     referringField.value = referringUrl;
-        //                 }
+                // Populate fields if they exist
+                const referringField = document.querySelector('input[name="input_24"]');
+                if (referringUrl && referringField) {
+                    referringField.value = referringUrl;
+                }
 
-        //                 const firstPageField = document.querySelector('input[name="input_23"]');
-        //                 if (firstPage && firstPageField) {
-        //                     firstPageField.value = firstPage;
-        //                 }
+                const firstPageField = document.querySelector('input[name="input_23"]');
+                if (firstPage && firstPageField) {
+                    firstPageField.value = firstPage;
+                }
 
-        //                 const urlParamsField = document.querySelector('input[name="input_25"]');
-        //                 if (urlParameters && urlParamsField) {
-        //                     urlParamsField.value = urlParameters;
-        //                 }
-        //             }
-        //         });
-        //     });
-
-        //     // Start observing the body for changes, particularly when the form is rendered
-        //     observer.observe(document.body, { childList: true, subtree: true });
-        // });
+                const urlParamsField = document.querySelector('input[name="input_25"]');
+                if (urlParameters && urlParamsField) {
+                    urlParamsField.value = urlParameters;
+                }
+            }, 500); // Adjust the delay as needed (e.g., 500ms)
+        });
     })();
 </script>
+
 
 
 <?php wp_footer(); ?>

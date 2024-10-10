@@ -202,16 +202,12 @@ defined('ABSPATH') || exit;
             }
         }
 
-        // Modify the URL to include the stored values for Gravity Forms to read them dynamically
+        // Append stored values as URL parameters and reload the page
         document.addEventListener('DOMContentLoaded', function() {
             const referringUrl = sessionStorage.getItem('referring_url');
             const firstPage = sessionStorage.getItem('first_page');
             const urlParameters = sessionStorage.getItem('url_parameters');
 
-            console.log('ref '+referringUrl);
-            console.log('first '+firstPage);
-            console.log('para '+urlParameters);
-            
             if (referringUrl || firstPage || urlParameters) {
                 const params = new URLSearchParams(window.location.search);
 
@@ -225,14 +221,17 @@ defined('ABSPATH') || exit;
                     params.set('url_parameters', urlParameters);
                 }
 
-                // Update the URL in the browser (without reloading the page)
+                // Update the URL and reload the page to ensure Gravity Forms sees the parameters
                 const newUrl = window.location.pathname + '?' + params.toString();
-                window.history.replaceState(null, '', newUrl);
+                if (!window.location.search.includes('referring_url') &&
+                    !window.location.search.includes('first_page') &&
+                    !window.location.search.includes('url_parameters')) {
+                    window.location.replace(newUrl);
+                }
             }
         });
     })();
 </script>
-
 
 
 <?php wp_footer(); ?>

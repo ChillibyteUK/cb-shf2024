@@ -203,36 +203,36 @@ defined('ABSPATH') || exit;
         }
 
         // Populate Gravity Form fields using sessionStorage after form is rendered
-        document.addEventListener('DOMContentLoaded', function () {
-            const referringUrl = sessionStorage.getItem('referring_url');
-            const firstPage = sessionStorage.getItem('first_page');
-            const urlParameters = sessionStorage.getItem('url_parameters');
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const referringUrl = sessionStorage.getItem('referring_url');
+        //     const firstPage = sessionStorage.getItem('first_page');
+        //     const urlParameters = sessionStorage.getItem('url_parameters');
 
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.type === 'childList') {
-                        // Check if Gravity Form fields are available and populate them
-                        const referringField = document.querySelector('input[name="input_24"]');
-                        if (referringUrl && referringField) {
-                            referringField.value = referringUrl;
-                        }
+        //     const observer = new MutationObserver(function(mutations) {
+        //         mutations.forEach(function(mutation) {
+        //             if (mutation.type === 'childList') {
+        //                 // Check if Gravity Form fields are available and populate them
+        //                 const referringField = document.querySelector('input[name="input_24"]');
+        //                 if (referringUrl && referringField) {
+        //                     referringField.value = referringUrl;
+        //                 }
 
-                        const firstPageField = document.querySelector('input[name="input_23"]');
-                        if (firstPage && firstPageField) {
-                            firstPageField.value = firstPage;
-                        }
+        //                 const firstPageField = document.querySelector('input[name="input_23"]');
+        //                 if (firstPage && firstPageField) {
+        //                     firstPageField.value = firstPage;
+        //                 }
 
-                        const urlParamsField = document.querySelector('input[name="input_25"]');
-                        if (urlParameters && urlParamsField) {
-                            urlParamsField.value = urlParameters;
-                        }
-                    }
-                });
-            });
+        //                 const urlParamsField = document.querySelector('input[name="input_25"]');
+        //                 if (urlParameters && urlParamsField) {
+        //                     urlParamsField.value = urlParameters;
+        //                 }
+        //             }
+        //         });
+        //     });
 
-            // Start observing the body for changes, particularly when the form is rendered
-            observer.observe(document.body, { childList: true, subtree: true });
-        });
+        //     // Start observing the body for changes, particularly when the form is rendered
+        //     observer.observe(document.body, { childList: true, subtree: true });
+        // });
     })();
 </script>
 

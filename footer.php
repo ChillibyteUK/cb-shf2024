@@ -202,35 +202,33 @@ defined('ABSPATH') || exit;
             }
         }
 
-        // Populate Gravity Form fields after the form is rendered
-        document.addEventListener('DOMContentLoaded', function () {
-            function populateFields() {
-                const referringUrl = sessionStorage.getItem('referring_url');
-                const firstPage = sessionStorage.getItem('first_page');
-                const urlParameters = sessionStorage.getItem('url_parameters');
+        // Modify the URL to include the stored values for Gravity Forms to read them dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const referringUrl = sessionStorage.getItem('referring_url');
+            const firstPage = sessionStorage.getItem('first_page');
+            const urlParameters = sessionStorage.getItem('url_parameters');
 
-                // Populate fields if they exist
-                const referringField = document.querySelector('input[name="input_24"]');
-                if (referringUrl && referringField) {
-                    referringField.value = referringUrl;
+            if (referringUrl || firstPage || urlParameters) {
+                const params = new URLSearchParams(window.location.search);
+
+                if (referringUrl) {
+                    params.set('referring_url', referringUrl);
+                }
+                if (firstPage) {
+                    params.set('first_page', firstPage);
+                }
+                if (urlParameters) {
+                    params.set('url_parameters', urlParameters);
                 }
 
-                const firstPageField = document.querySelector('input[name="input_23"]');
-                if (firstPage && firstPageField) {
-                    firstPageField.value = firstPage;
-                }
-
-                const urlParamsField = document.querySelector('input[name="input_25"]');
-                if (urlParameters && urlParamsField) {
-                    urlParamsField.value = urlParameters;
-                }
+                // Update the URL in the browser (without reloading the page)
+                const newUrl = window.location.pathname + '?' + params.toString();
+                window.history.replaceState(null, '', newUrl);
             }
-
-            // Delay execution to ensure form fields are available
-            setTimeout(populateFields, 1000); // Adjust the delay if needed
         });
     })();
 </script>
+
 
 
 <?php wp_footer(); ?>

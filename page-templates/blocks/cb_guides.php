@@ -1,8 +1,9 @@
 <?php
 $cols = get_field('columns') == '3' ? '' : 'two_cols';
-$bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pt-5';
+$bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pb-5';
+$class = $block['className'] ?? 'pb-5';
 ?>
-<section class="guides_nav pb-5 <?=$bg?>">
+<section class="guides_nav <?=$bg?> <?=$class?>">
     <div class="container-xl">
         <?php
         if (get_field('title') ?? null) {

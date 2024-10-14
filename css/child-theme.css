@@ -21572,7 +21572,7 @@ footer .colophon {
   height: 100%;
   z-index: 0;
   mix-blend-mode: screen;
-  background: linear-gradient(45deg, yellow, blue);
+  background: linear-gradient(45deg, var(--col-yellow-400), var(--col-blue-400));
 }
 
 .review_slider {

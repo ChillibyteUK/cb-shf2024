@@ -2,7 +2,7 @@
 $cols = get_field('columns') == '3' ? '' : 'two_cols';
 $bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pt-5';
 ?>
-<section class="services_nav pb-5 <?=$bg?>">
+<section class="guides_nav pb-5 <?=$bg?>">
     <div class="container-xl">
         <?php
         if (get_field('title') ?? null) {
@@ -16,7 +16,7 @@ $bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pt-5';
             <?php
         }
         ?>
-        <div class="services_nav__grid">
+        <div class="guides_nav__grid">
             <?php
             $parent_page = get_page_by_path('guides');
             $children = get_children(array(
@@ -30,8 +30,10 @@ $bg = get_field('background') == 'Grey' ? 'py-5 bg-grey-400' : 'pt-5';
                 foreach ($children as $child) {
                     $title = get_the_title($child->ID);
                     ?>
-                    <div class="services_nav__card services_nav__card--button">
-                        <div class="services_nav__inner">
+                    <div class="guides_nav__card guides_nav__card--button">
+                        <?=get_the_post_thumbnail($child->ID,'large',array('class' => 'guides_nav__image'))?>
+                        <div class="guides_nav__overlay"></div>
+                        <div class="guides_nav__inner">
                             <a href="<?=get_permalink($child->ID)?>" class="button button-sm"><?=$title?></a>
                         </div>
                     </div>

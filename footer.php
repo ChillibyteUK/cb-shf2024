@@ -233,10 +233,13 @@ defined('ABSPATH') || exit;
     })();
 </script>
   -->
-
+<?php
+/*
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145136229.js" nitro-exclude></script>
   <!-- End of HubSpot Embed Code -->
+*/
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

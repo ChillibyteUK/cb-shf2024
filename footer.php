@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -12,64 +13,64 @@ defined('ABSPATH') || exit;
 
 ?>
 <footer>
-    <div class="container-xl pt-5">
-        <div class="row g-4 pb-5">
-            <div class="col-sm-6 col-md-3 text-center">
-                <img class="footer__logo mb-4" width=300 height=94 src="<?=get_stylesheet_directory_uri()?>/img/shf-logo--light.svg" alt="">
-                <div class="mb-4">Call us today on<br><strong><?=do_shortcode('[contact_phone]')?></strong></div>
-                <?=social_icons()?>
-                <div class="pt-4">
-                  <!-- TrustBox script -->
-                  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-                  <!-- End TrustBox script -->
-                  <!-- TrustBox widget - Micro Star -->
-                  <div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b732fbfb950b10de65e5" data-businessunit-id="5458ad5900006400057b543a" data-style-height="25px" data-style-width="100%" data-theme="dark">
-                      <a href="https://uk.trustpilot.com/review/sellhousefast.co.uk" target="_blank" rel="noopener">Trustpilot</a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 footer__border">
-                <div class="menu-title">Services</div>
-                <?php wp_nav_menu(array('theme_location' => 'footer_menu_1')); ?>
-            </div>
-            <div class="col-sm-6 col-md-3 footer__border">
-                <div class="menu-title">Selling Guides</div>
-                <?php wp_nav_menu(array('theme_location' => 'footer_menu_2')); ?>
-            </div>
-            <div class="col-sm-6 col-md-3 footer__border">
-                <div class="menu-title">About Us</div>
-                <?php wp_nav_menu(array('theme_location' => 'footer_menu_3')); ?>
-            </div>
+  <div class="container-xl pt-5">
+    <div class="row g-4 pb-5">
+      <div class="col-sm-6 col-md-3 text-center">
+        <img class="footer__logo mb-4" width=300 height=94 src="<?= get_stylesheet_directory_uri() ?>/img/shf-logo--light.svg" alt="">
+        <div class="mb-4">Call us today on<br><strong><?= do_shortcode('[contact_phone]') ?></strong></div>
+        <?= social_icons() ?>
+        <div class="pt-4">
+          <!-- TrustBox script -->
+          <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+          <!-- End TrustBox script -->
+          <!-- TrustBox widget - Micro Star -->
+          <div class="trustpilot-widget" data-locale="en-GB" data-template-id="5419b732fbfb950b10de65e5" data-businessunit-id="5458ad5900006400057b543a" data-style-height="25px" data-style-width="100%" data-theme="dark">
+            <a href="https://uk.trustpilot.com/review/sellhousefast.co.uk" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
         </div>
+      </div>
+      <div class="col-sm-6 col-md-3 footer__border">
+        <div class="menu-title">Services</div>
+        <?php wp_nav_menu(array('theme_location' => 'footer_menu_1')); ?>
+      </div>
+      <div class="col-sm-6 col-md-3 footer__border">
+        <div class="menu-title">Selling Guides</div>
+        <?php wp_nav_menu(array('theme_location' => 'footer_menu_2')); ?>
+      </div>
+      <div class="col-sm-6 col-md-3 footer__border">
+        <div class="menu-title">About Us</div>
+        <?php wp_nav_menu(array('theme_location' => 'footer_menu_3')); ?>
+      </div>
     </div>
-    <div class="container-xl colophon pb-4">
-        <div class="row g-4">
-            <div class="col-md-6 order-2 order-md-1">
-                &copy; <?=date('Y')?> SellHouseFast | Sell House Fast is a trading style of Jolack Limited Registered in England, no. 15683659.<br>
-                Registered address: Office 1.01, 411 - 413 Oxford Street, London, England, W1C 2PE
-            </div>
-            <div class="col-md-6 order-1 order-md-2 d-flex align-items-center justify-content-md-end flex-wrap gap-1">
-                <a href="/sitemap/">Sitemap</a> |
-                <a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookie</a> Policy</a>
-            </div>
-        </div>
+  </div>
+  <div class="container-xl colophon pb-4">
+    <div class="row g-4">
+      <div class="col-md-6 order-2 order-md-1">
+        &copy; <?= date('Y') ?> SellHouseFast | Sell House Fast is a trading style of Jolack Limited Registered in England, no. 15683659.<br>
+        Registered address: Office 1.01, 411 - 413 Oxford Street, London, England, W1C 2PE
+      </div>
+      <div class="col-md-6 order-1 order-md-2 d-flex align-items-center justify-content-md-end flex-wrap gap-1">
+        <a href="/sitemap/">Sitemap</a> |
+        <a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookie</a> Policy</a>
+      </div>
     </div>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@ideal-postcodes/address-finder-bundled@4"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     // Select all postcode fields
-    var postcodeFields = document.querySelectorAll('input[type="text"][id^="postcode_"]'); 
+    var postcodeFields = document.querySelectorAll('input[type="text"][id^="postcode_"]');
 
     // Initialize Address Finder for each postcode field
-    postcodeFields.forEach(function (field) {
+    postcodeFields.forEach(function(field) {
       // Initialize Address Finder for each postcode field
       IdealPostcodes.AddressFinder.setup({
         // apiKey: "ak_m0nmyml1DLCjYH79nA9dbcf4cRs5v",
         apiKey: "ak_m0v8lgbiVjp4GmNgoHssE4wAxCqmq",
-        inputField: field,  // Bind to the specific postcode field
+        inputField: field, // Bind to the specific postcode field
         outputFields: {
           line_1: "#addr1",
           line_2: "#addr2",
@@ -79,7 +80,7 @@ defined('ABSPATH') || exit;
         },
 
         // Log when address is retrieved (for debugging)
-        onAddressRetrieved: function (address) {
+        onAddressRetrieved: function(address) {
           console.log("Address Retrieved for:", field.id, address);
 
           // Manually assign the address data to the fields
@@ -87,7 +88,7 @@ defined('ABSPATH') || exit;
           document.getElementById('addr2').value = address.line_2 || '';
           document.getElementById('addr3').value = address.line_3 || '';
           document.getElementById('town').value = address.post_town || '';
-          
+
           // Also, you can manually set the postcode in the field if needed
           field.value = address.postcode;
 
@@ -110,27 +111,26 @@ defined('ABSPATH') || exit;
 
             console.log("Auto-submitting and redirecting to: ", formPageUrl);
             window.location.href = formPageUrl;
-          }
-          else {
+          } else {
             console.log('no line1');
           }
         },
-        onAddressSelected: function (address) {
+        onAddressSelected: function(address) {
           // This function is called when an address is selected
           console.log("Address selected:", address);
         },
         // Log any errors during search (for debugging)
-        onSearchError: function (error) {
+        onSearchError: function(error) {
           console.error("Search Error for:", field.id, error);
         }
       });
     });
 
     // Handle button click to redirect to the form page
-    var buttons = document.querySelectorAll('.formbutton');  // Assume the button has class 'button-sm'
-    
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function (e) {
+    var buttons = document.querySelectorAll('.formbutton'); // Assume the button has class 'button-sm'
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
         e.preventDefault();
 
         var postcodeField = document.querySelector('input[type="text"][id^="postcode_"]');
@@ -234,9 +234,10 @@ defined('ABSPATH') || exit;
 </script>
   -->
 
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/145136229.js" nitro-exclude></script>
-  <!-- End of HubSpot Embed Code -->
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" data-cookieconsent="marketing" async defer src="//js-eu1.hs-scripts.com/145136229.js" nitro-exclude></script>
+<!-- End of HubSpot Embed Code -->
 <?php wp_footer(); ?>
 </body>
+
 </html>

@@ -187,7 +187,7 @@ function disable_taxonomy_archive() {
   }
 add_action('init', 'disable_taxonomy_archive');
 
-function get_custom_term_link($term) {
+function get_custom_term_link($term, $prefix = '') {
     // Get the term slug
     $term_slug = $term->slug;
 
@@ -199,12 +199,33 @@ function get_custom_term_link($term) {
     if ($page) {
         // If the page exists, create a custom link
         $page_link = get_permalink($page->ID);
-        return '<a href="' . esc_url($page_link) . '">' . esc_html($term->name) . '</a>';
+        $display_name = !empty($prefix) ? $prefix . ' ' . $term->name : $term->name;
+        return '<a href="' . esc_url($page_link) . '">' . esc_html($display_name) . '</a>';
     } else {
-        // If no page exists, return the term name as plain text
-        return esc_html($term->name);
+        // If no page exists, return the term name as plain text, with optional prefix
+        $display_name = !empty($prefix) ? $prefix . ' ' . $term->name : $term->name;
+        return esc_html($display_name);
     }
 }
+
+// function get_custom_term_link($term) {
+//     // Get the term slug
+//     $term_slug = $term->slug;
+
+//     $page_path = 'locations/' . $term_slug;
+
+//     // Check if a page with the term slug exists
+//     $page = get_page_by_path($page_path);
+
+//     if ($page) {
+//         // If the page exists, create a custom link
+//         $page_link = get_permalink($page->ID);
+//         return '<a href="' . esc_url($page_link) . '">' . esc_html($term->name) . '</a>';
+//     } else {
+//         // If no page exists, return the term name as plain text
+//         return esc_html($term->name);
+//     }
+// }
 
 function wrap_non_strong_content($input) {
     // Use regular expression to match content outside <strong> tags

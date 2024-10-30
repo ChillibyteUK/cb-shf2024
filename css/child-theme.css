@@ -21664,10 +21664,6 @@ footer .colophon {
     transform: rotate(0);
   }
 }
-.area_cta__areas {
-  overflow-y: scroll;
-  height: 340px;
-}
 .area_cta__areas::-webkit-scrollbar {
   width: 8px;
 }

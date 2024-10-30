@@ -20,7 +20,7 @@
                         // Loop through each term and display its name
                         foreach ( $terms as $term ) {
                             $term_link = get_term_link( $term );
-                            echo '<li>' . get_custom_term_link($term) . '</li>';
+                            echo '<li>' . get_custom_term_link($term, 'Sell in') . '</li>';
                         }
                 
                         echo '</ul>';

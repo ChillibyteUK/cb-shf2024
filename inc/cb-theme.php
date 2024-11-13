@@ -326,13 +326,18 @@ function add_template_column($columns) {
 }
 add_filter('manage_pages_columns', 'add_template_column');
 
-// Display the template name in the custom column
+// Display the nice name of the template in the custom column
 function display_template_column($column, $post_id) {
     if ($column === 'template') {
-        $template = get_page_template_slug($post_id);
-        if ($template) {
-            // Show the template name without the .php extension
-            echo str_replace('.php', '', $template);
+        // Get all available templates
+        $templates = wp_get_theme()->get_page_templates();
+        
+        // Get the template file name for the current page
+        $template_file = get_page_template_slug($post_id);
+        
+        if ($template_file && isset($templates[$template_file])) {
+            // Display the "nice name" of the template
+            echo $templates[$template_file];
         } else {
             echo 'Default';
         }

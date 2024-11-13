@@ -319,4 +319,25 @@ function open_external_links_in_new_tab( $content ) {
 add_filter( 'the_content', 'open_external_links_in_new_tab' );
 
 
+// Add a new column to the Pages admin view
+function add_template_column($columns) {
+    $columns['template'] = 'Template';
+    return $columns;
+}
+add_filter('manage_pages_columns', 'add_template_column');
+
+// Display the template name in the custom column
+function display_template_column($column, $post_id) {
+    if ($column === 'template') {
+        $template = get_page_template_slug($post_id);
+        if ($template) {
+            // Show the template name without the .php extension
+            echo str_replace('.php', '', $template);
+        } else {
+            echo 'Default';
+        }
+    }
+}
+add_action('manage_pages_custom_column', 'display_template_column', 10, 2);
+
 ?>

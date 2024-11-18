@@ -345,96 +345,96 @@ function display_template_column($column, $post_id) {
 }
 add_action('manage_pages_custom_column', 'display_template_column', 10, 2);
 
-function enqueue_email_validation_script() {
+// function enqueue_email_validation_script() {
 
-    // 1_7 is cta form free-cash-offer-form
-    // 4_7 is full form free-cash-offer
-    
-    if (is_page(['free-cash-offer', 'free-cash-offer-form'])) {
-        ?>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Custom validation script loaded"); // Log to check if code is being run
+//     // 1_7 is cta form free-cash-offer-form
+//     // 4_7 is full form free-cash-offer
 
-            // Determine form and field IDs based on the page
-            let formId, emailFieldId;
-            if (window.location.href.includes('free-cash-offer')) {
-                formId = "#gform_4";
-                emailFieldId = "#input_4_7";
-            } else if (window.location.href.includes('free-cash-offer-form')) {
-                formId = "#gform_1";
-                emailFieldId = "#input_1_7";
-            }
+//     if (is_page(['free-cash-offer', 'free-cash-offer-form'])) {
+//         ?>
+//         <script>
+//         document.addEventListener("DOMContentLoaded", function() {
+//             console.log("Custom validation script loaded"); // Log to check if code is being run
 
-            // Add a delay to ensure form and fields are rendered fully before querying them
-            setTimeout(() => {
-                const form = document.querySelector(formId);
-                const emailInput = document.querySelector(emailFieldId);
+//             // Determine form and field IDs based on the page
+//             let formId, emailFieldId;
+//             if (window.location.href.includes('free-cash-offer')) {
+//                 formId = "#gform_4";
+//                 emailFieldId = "#input_4_7";
+//             } else if (window.location.href.includes('free-cash-offer-form')) {
+//                 formId = "#gform_1";
+//                 emailFieldId = "#input_1_7";
+//             }
 
-                if (form && emailInput) {
-                    console.log("Form and email input found"); // Log to confirm form and input exist
+//             // Add a delay to ensure form and fields are rendered fully before querying them
+//             setTimeout(() => {
+//                 const form = document.querySelector(formId);
+//                 const emailInput = document.querySelector(emailFieldId);
 
-                    form.addEventListener("submit", async function(event) {
-                        event.preventDefault(); // Prevent immediate form submission
-                        console.log("Form submission intercepted"); // Log to check form submission event
+//                 if (form && emailInput) {
+//                     console.log("Form and email input found"); // Log to confirm form and input exist
 
-                        const email = emailInput.value;
-                        console.log("Email to be validated:", email); // Log the email being validated
+//                     form.addEventListener("submit", async function(event) {
+//                         event.preventDefault(); // Prevent immediate form submission
+//                         console.log("Form submission intercepted"); // Log to check form submission event
 
-                        const isValid = await validateEmail(email);
+//                         const email = emailInput.value;
+//                         console.log("Email to be validated:", email); // Log the email being validated
 
-                        if (isValid) {
-                            console.log("Email validation successful"); // Log success of lookup
-                            form.submit();
-                        } else {
-                            console.log("Email validation failed"); // Log failure of lookup
-                            alert("The email address is invalid. Please enter a valid email.");
-                        }
-                    });
-                } else {
-                    console.log("Form or email input not found"); // Log if form or input is missing
-                }
-            }, 1000); // Delay of 1000ms to allow form rendering
+//                         const isValid = await validateEmail(email);
 
-            // Email validation function using Ideal Postcodes API
-            const validateEmail = async (email) => {
-                const apiKey = "ak_m0v8lgbiVjp4GmNgoHssE4wAxCqmq";
-                const endpoint = `https://api.ideal-postcodes.co.uk/v1/emails?api_key=${apiKey}&query=${encodeURIComponent(email)}`;
+//                         if (isValid) {
+//                             console.log("Email validation successful"); // Log success of lookup
+//                             form.submit();
+//                         } else {
+//                             console.log("Email validation failed"); // Log failure of lookup
+//                             alert("The email address is invalid. Please enter a valid email.");
+//                         }
+//                     });
+//                 } else {
+//                     console.log("Form or email input not found"); // Log if form or input is missing
+//                 }
+//             }, 1000); // Delay of 1000ms to allow form rendering
 
-                try {
-                    console.log("Sending request to Ideal Postcodes API"); // Log API request
-                    const response = await fetch(endpoint, {
-                        method: 'GET',
-                        headers: {
-                            'Accept': 'application/json',
-                        }
-                    });
+//             // Email validation function using Ideal Postcodes API
+//             const validateEmail = async (email) => {
+//                 const apiKey = "ak_m0v8lgbiVjp4GmNgoHssE4wAxCqmq";
+//                 const endpoint = `https://api.ideal-postcodes.co.uk/v1/emails?api_key=${apiKey}&query=${encodeURIComponent(email)}`;
 
-                    console.log("Response status:", response.status); // Log the HTTP status code
+//                 try {
+//                     console.log("Sending request to Ideal Postcodes API"); // Log API request
+//                     const response = await fetch(endpoint, {
+//                         method: 'GET',
+//                         headers: {
+//                             'Accept': 'application/json',
+//                         }
+//                     });
 
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
+//                     console.log("Response status:", response.status); // Log the HTTP status code
 
-                    const data = await response.json();
-                    console.log("API response received:", data); // Log the API response
+//                     if (!response.ok) {
+//                         throw new Error(`HTTP error! Status: ${response.status}`);
+//                     }
 
-                    // Check the result for deliverability
-                    if (data.result && data.result.result === 'deliverable') {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } catch (error) {
-                    console.error('Error validating email:', error);
-                    return false; // Return false if there is any error
-                }
-            };
-        });
-        </script>
-        <?php
-    }
-}
-add_action('wp_footer', 'enqueue_email_validation_script');
+//                     const data = await response.json();
+//                     console.log("API response received:", data); // Log the API response
+
+//                     // Check the result for deliverability
+//                     if (data.result && data.result.result === 'deliverable') {
+//                         return true;
+//                     } else {
+//                         return false;
+//                     }
+//                 } catch (error) {
+//                     console.error('Error validating email:', error);
+//                     return false; // Return false if there is any error
+//                 }
+//             };
+//         });
+//         </script>
+//         <?php
+//     }
+// }
+// add_action('wp_footer', 'enqueue_email_validation_script');
 
 ?>

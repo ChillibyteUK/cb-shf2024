@@ -349,7 +349,7 @@ function enqueue_email_validation_script() {
 
     // 1_7 is cta form free-cash-offer-form
     // 4_7 is full form free-cash-offer
-
+    
     if (is_page(['free-cash-offer', 'free-cash-offer-form'])) {
         ?>
         <script>
@@ -366,14 +366,13 @@ function enqueue_email_validation_script() {
                 emailFieldId = "#input_1_7";
             }
 
-            // MutationObserver to detect form rendering
-            const observer = new MutationObserver((mutations, obs) => {
+            // Add a delay to ensure form and fields are rendered fully before querying them
+            setTimeout(() => {
                 const form = document.querySelector(formId);
                 const emailInput = document.querySelector(emailFieldId);
 
                 if (form && emailInput) {
-                    console.log("Form and email input found via MutationObserver"); // Log to confirm form and input exist
-                    obs.disconnect(); // Stop observing once the form is found
+                    console.log("Form and email input found"); // Log to confirm form and input exist
 
                     form.addEventListener("submit", async function(event) {
                         event.preventDefault(); // Prevent immediate form submission
@@ -393,15 +392,9 @@ function enqueue_email_validation_script() {
                         }
                     });
                 } else {
-                    console.log("Form or email input not found yet"); // Log if form or input is missing
+                    console.log("Form or email input not found"); // Log if form or input is missing
                 }
-            });
-
-            // Start observing the body for changes (e.g., form becoming visible)
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
+            }, 1000); // Delay of 1000ms to allow form rendering
 
             // Email validation function using Ideal Postcodes API
             const validateEmail = async (email) => {
@@ -425,7 +418,13 @@ function enqueue_email_validation_script() {
 
                     const data = await response.json();
                     console.log("API response received:", data); // Log the API response
-                    return data.valid; // Assuming `data.valid` returns true if the email is valid
+
+                    // Check the result for deliverability
+                    if (data.result && data.result.result === 'deliverable') {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 } catch (error) {
                     console.error('Error validating email:', error);
                     return false; // Return false if there is any error

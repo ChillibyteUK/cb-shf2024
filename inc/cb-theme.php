@@ -366,13 +366,14 @@ function enqueue_email_validation_script() {
                 emailFieldId = "#input_1_7";
             }
 
-            // Add a delay to ensure form and fields are rendered fully before querying them
-            setTimeout(() => {
+            // MutationObserver to detect form rendering
+            const observer = new MutationObserver((mutations, obs) => {
                 const form = document.querySelector(formId);
                 const emailInput = document.querySelector(emailFieldId);
 
                 if (form && emailInput) {
-                    console.log("Form and email input found"); // Log to confirm form and input exist
+                    console.log("Form and email input found via MutationObserver"); // Log to confirm form and input exist
+                    obs.disconnect(); // Stop observing once the form is found
 
                     form.addEventListener("submit", async function(event) {
                         event.preventDefault(); // Prevent immediate form submission
@@ -392,9 +393,15 @@ function enqueue_email_validation_script() {
                         }
                     });
                 } else {
-                    console.log("Form or email input not found"); // Log if form or input is missing
+                    console.log("Form or email input not found yet"); // Log if form or input is missing
                 }
-            }, 1000); // Delay of 1000ms to allow form rendering
+            });
+
+            // Start observing the body for changes (e.g., form becoming visible)
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
 
             // Email validation function using Ideal Postcodes API
             const validateEmail = async (email) => {

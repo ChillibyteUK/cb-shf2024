@@ -367,11 +367,29 @@ function enqueue_email_validation_script() {
             }
 
             const form = document.querySelector(formId);
-            const emailInput = document.querySelector(emailFieldId);
 
-            if (form && emailInput) {
-                console.log("Form and email input found"); // Log to confirm form and input exist
+            if (form) {
+                console.log("Form found, waiting for email input to become visible"); // Log to confirm form exists
 
+                // Wait for the email input to become visible
+                const waitForEmailField = () => {
+                    const emailInput = document.querySelector(emailFieldId);
+                    if (emailInput && emailInput.offsetParent !== null) {
+                        console.log("Email input now visible"); // Log to confirm email field is now visible
+                        addEmailValidation(form, emailInput);
+                    } else {
+                        // Retry after a short delay if the field is not visible yet
+                        setTimeout(waitForEmailField, 500);
+                    }
+                };
+
+                waitForEmailField();
+            } else {
+                console.log("Form not found"); // Log if form is missing
+            }
+
+            // Function to add validation to the email field
+            const addEmailValidation = (form, emailInput) => {
                 form.addEventListener("submit", async function(event) {
                     event.preventDefault(); // Prevent immediate form submission
                     console.log("Form submission intercepted"); // Log to check form submission event
@@ -389,9 +407,7 @@ function enqueue_email_validation_script() {
                         alert("The email address is invalid. Please enter a valid email.");
                     }
                 });
-            } else {
-                console.log("Form or email input not found"); // Log if form or input is missing
-            }
+            };
 
             // Email validation function using Ideal Postcodes API
             const validateEmail = async (email) => {
@@ -406,6 +422,8 @@ function enqueue_email_validation_script() {
                             'Accept': 'application/json',
                         }
                     });
+
+                    console.log("Response status:", response.status); // Log the HTTP status code
 
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);

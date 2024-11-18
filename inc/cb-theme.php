@@ -345,4 +345,74 @@ function display_template_column($column, $post_id) {
 }
 add_action('manage_pages_custom_column', 'display_template_column', 10, 2);
 
+function enqueue_email_validation_script() {
+
+    // 1_7 is cta form free-cash-offer-form
+    // 4_7 is full form free-cash-offer
+
+    if (is_page(['free-cash-offer', 'free-cash-offer-form'])) {
+        ?>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Determine form and field IDs based on the page
+            let formId, emailFieldId;
+            if (window.location.href.includes('free-cash-offer')) {
+                formId = "#gform_4";
+                emailFieldId = "#input_4_7";
+            } else if (window.location.href.includes('free-cash-offer-form')) {
+                formId = "#gform_1";
+                emailFieldId = "#input_1_7";
+            }
+
+            const form = document.querySelector(formId);
+            const emailInput = document.querySelector(emailFieldId);
+
+            if (form && emailInput) {
+                form.addEventListener("submit", async function(event) {
+                    event.preventDefault(); // Prevent immediate form submission
+
+                    const email = emailInput.value;
+                    const isValid = await validateEmail(email);
+
+                    if (isValid) {
+                        // Allow form submission if email is valid
+                        form.submit();
+                    } else {
+                        // Show error message if email is invalid
+                        alert("The email address is invalid. Please enter a valid email.");
+                    }
+                });
+            }
+
+            // Email validation function using Ideal Postcodes API
+            const validateEmail = async (email) => {
+                const apiKey = "ak_m0v8lgbiVjp4GmNgoHssE4wAxCqmq";
+                const endpoint = `https://api.ideal-postcodes.co.uk/v1/emails?api_key=${apiKey}&query=${encodeURIComponent(email)}`;
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    return data.valid; // Assuming `data.valid` returns true if email is valid
+                } catch (error) {
+                    console.error('Error validating email:', error);
+                    return false; // Return false if there is any error
+                }
+            };
+        });
+        </script>
+        <?php
+    }
+}
+add_action('wp_footer', 'enqueue_email_validation_script');
+
 ?>

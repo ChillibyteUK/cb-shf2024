@@ -366,48 +366,35 @@ function enqueue_email_validation_script() {
                 emailFieldId = "#input_1_7";
             }
 
-            const form = document.querySelector(formId);
+            // Add a delay to ensure form and fields are rendered fully before querying them
+            setTimeout(() => {
+                const form = document.querySelector(formId);
+                const emailInput = document.querySelector(emailFieldId);
 
-            if (form) {
-                console.log("Form found, waiting for email input to become visible"); // Log to confirm form exists
+                if (form && emailInput) {
+                    console.log("Form and email input found"); // Log to confirm form and input exist
 
-                // Wait for the email input to become visible
-                const waitForEmailField = () => {
-                    const emailInput = document.querySelector(emailFieldId);
-                    if (emailInput && emailInput.offsetParent !== null) {
-                        console.log("Email input now visible"); // Log to confirm email field is now visible
-                        addEmailValidation(form, emailInput);
-                    } else {
-                        // Retry after a short delay if the field is not visible yet
-                        setTimeout(waitForEmailField, 500);
-                    }
-                };
+                    form.addEventListener("submit", async function(event) {
+                        event.preventDefault(); // Prevent immediate form submission
+                        console.log("Form submission intercepted"); // Log to check form submission event
 
-                waitForEmailField();
-            } else {
-                console.log("Form not found"); // Log if form is missing
-            }
+                        const email = emailInput.value;
+                        console.log("Email to be validated:", email); // Log the email being validated
 
-            // Function to add validation to the email field
-            const addEmailValidation = (form, emailInput) => {
-                form.addEventListener("submit", async function(event) {
-                    event.preventDefault(); // Prevent immediate form submission
-                    console.log("Form submission intercepted"); // Log to check form submission event
+                        const isValid = await validateEmail(email);
 
-                    const email = emailInput.value;
-                    console.log("Email to be validated:", email); // Log the email being validated
-
-                    const isValid = await validateEmail(email);
-
-                    if (isValid) {
-                        console.log("Email validation successful"); // Log success of lookup
-                        form.submit();
-                    } else {
-                        console.log("Email validation failed"); // Log failure of lookup
-                        alert("The email address is invalid. Please enter a valid email.");
-                    }
-                });
-            };
+                        if (isValid) {
+                            console.log("Email validation successful"); // Log success of lookup
+                            form.submit();
+                        } else {
+                            console.log("Email validation failed"); // Log failure of lookup
+                            alert("The email address is invalid. Please enter a valid email.");
+                        }
+                    });
+                } else {
+                    console.log("Form or email input not found"); // Log if form or input is missing
+                }
+            }, 1000); // Delay of 1000ms to allow form rendering
 
             // Email validation function using Ideal Postcodes API
             const validateEmail = async (email) => {

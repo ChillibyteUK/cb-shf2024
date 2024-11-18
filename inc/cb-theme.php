@@ -354,6 +354,8 @@ function enqueue_email_validation_script() {
         ?>
         <script>
         document.addEventListener("DOMContentLoaded", function() {
+            console.log("Custom validation script loaded"); // Log to check if code is being run
+
             // Determine form and field IDs based on the page
             let formId, emailFieldId;
             if (window.location.href.includes('free-cash-offer')) {
@@ -368,20 +370,27 @@ function enqueue_email_validation_script() {
             const emailInput = document.querySelector(emailFieldId);
 
             if (form && emailInput) {
+                console.log("Form and email input found"); // Log to confirm form and input exist
+
                 form.addEventListener("submit", async function(event) {
                     event.preventDefault(); // Prevent immediate form submission
+                    console.log("Form submission intercepted"); // Log to check form submission event
 
                     const email = emailInput.value;
+                    console.log("Email to be validated:", email); // Log the email being validated
+
                     const isValid = await validateEmail(email);
 
                     if (isValid) {
-                        // Allow form submission if email is valid
+                        console.log("Email validation successful"); // Log success of lookup
                         form.submit();
                     } else {
-                        // Show error message if email is invalid
+                        console.log("Email validation failed"); // Log failure of lookup
                         alert("The email address is invalid. Please enter a valid email.");
                     }
                 });
+            } else {
+                console.log("Form or email input not found"); // Log if form or input is missing
             }
 
             // Email validation function using Ideal Postcodes API
@@ -390,6 +399,7 @@ function enqueue_email_validation_script() {
                 const endpoint = `https://api.ideal-postcodes.co.uk/v1/emails?api_key=${apiKey}&query=${encodeURIComponent(email)}`;
 
                 try {
+                    console.log("Sending request to Ideal Postcodes API"); // Log API request
                     const response = await fetch(endpoint, {
                         method: 'GET',
                         headers: {
@@ -402,7 +412,8 @@ function enqueue_email_validation_script() {
                     }
 
                     const data = await response.json();
-                    return data.valid; // Assuming `data.valid` returns true if email is valid
+                    console.log("API response received:", data); // Log the API response
+                    return data.valid; // Assuming `data.valid` returns true if the email is valid
                 } catch (error) {
                     console.error('Error validating email:', error);
                     return false; // Return false if there is any error

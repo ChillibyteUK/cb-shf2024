@@ -356,6 +356,7 @@ function filter_gform_max_async_feed_attempts( $max_attempts, $form, $entry, $ad
 }
 
 
+/*
 // function enqueue_email_validation_script() {
 
 //     // 1_7 is cta form free-cash-offer-form
@@ -447,5 +448,6 @@ function filter_gform_max_async_feed_attempts( $max_attempts, $form, $entry, $ad
 //     }
 // }
 // add_action('wp_footer', 'enqueue_email_validation_script');
+*/
 
 ?>

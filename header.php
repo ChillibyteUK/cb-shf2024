@@ -65,7 +65,7 @@ if (is_front_page() || is_page('contact-us')) {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "SellHouseFast",
-            "legalName": "Jolack Limited",
+            "legalName": "Boniam Investments Limited",
             "url": "https://www.sellhousefast.co.uk/",
             "logo": "https://sellhousefast.co.uk/wp-content/themes/cb-shf2024/img/sellhousefast-logo--dark.svg",
             "address": {
